@@ -1,0 +1,101 @@
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script type="text/javascript">
+  WebFont.load({
+    google: {
+      families: ["{{options.general_font}}", "{{options.titles_font}}", "{{options.menu_font}}"]
+    }
+  });
+</script>
+
+<style type="text/css">
+  body, p, span, strong, small, ul, li, .product-info__description, .cart-estimate__field label, #checkout .field label {
+    {% case options.general_font %}
+     {% when "Arvo" %}
+    font-family: 'Arvo', serif !important;
+    {% when "Domine" %}
+    font-family: 'Domine', serif !important;
+    {% when "Droid Serif" %}
+    font-family: 'Droid Serif', serif !important;
+    {% when "Glegoo" %}
+    font-family: 'Glegoo', serif !important;
+    {% when "Inconsolata" %}
+    font-family: 'Inconsolata', monospace !important;
+    {% when "Lora" %}
+    font-family: 'Lora', serif !important;
+    {% when "Noto Sans" %}
+    font-family: 'Noto Sans', sans-serif !important;
+    {% when "Open Sans" %}
+    font-family: 'Open Sans', sans-serif !important;
+    {% when "Oxygen" %}
+    font-family: 'Oxygen', sans-serif !important;
+    {% when "Roboto" %}
+    font-family: 'Roboto', sans-serif !important;
+    {% when "Work Sans" %}
+    font-family: 'Work Sans', sans-serif !important;
+    {% endcase%}
+  }
+
+ h1, h2, h3, h4, h5, h6, .main-nav__menu-logo-anchor {
+    {% case options.titles_font %}
+    {% when "Abril Fatface" %}
+    font-family: 'Abril Fatface', cursive !important;
+    {% when "Arsenal" %}
+    font-family: 'Arsenal', sans-serif !important;
+    {% when "Comfortaa" %}
+    font-family: 'Comfortaa', cursive !important;
+    {% when "Cormorant Garamond" %}
+    font-family: 'Cormorant Garamond', serif !important;
+    {% when "Dancing Script" %}
+    font-family: 'Dancing Script', cursive !important;
+    {% when "Josefin Slab" %}
+    font-family: 'Josefin Slab', serif !important;
+    {% when "Julius Sans One" %}
+    font-family: 'Julius Sans One', sans-serif !important;
+    {% when "Montserrat" %}
+    font-family: 'Montserrat', sans-serif !important;
+    {% when "Philosopher" %}
+    font-family: 'Philosopher', sans-serif !important;
+    {% when "Playfair Display" %}
+    font-family: 'Playfair Display', serif !important;
+    {% when "Poiret One" %}
+    font-family: 'Poiret One', cursive !important;
+    {% when "Raleway" %}
+    font-family: 'Raleway', sans-serif !important;
+    {% when "Unica One" %}
+    font-family: 'Unica One', cursive !important;
+    {% endcase%}
+  }
+  .main-nav__menu-item-anchor, .main-nav__menu-item-string,
+  .footer-top__menu-item-anchor, .footer-top__menu-item-string,
+  *.raleway {
+    {% case options.menu_font %}
+    {% when "Arvo" %}
+    font-family: 'Arvo', serif !important;
+    {% when "Domine" %}
+    font-family: 'Domine', serif !important;
+    {% when "Droid Serif" %}
+    font-family: 'Droid Serif', serif !important;
+    {% when "Glegoo" %}
+    font-family: 'Glegoo', serif !important;
+    {% when "Lora" %}
+    font-family: 'Lora', serif !important;
+    {% when "Noto Sans" %}
+    font-family: 'Noto Sans', sans-serif !important;
+    {% when "Open Sans" %}
+    font-family: 'Open Sans', sans-serif !important;
+    {% when "Oxygen" %}
+    font-family: 'Oxygen', sans-serif !important;
+    {% when "Playfair Display" %}
+    font-family: 'Playfair Display', serif !important;
+    {% when "Raleway" %}
+    font-family: 'Raleway', sans-serif !important;
+    {% when "Roboto" %}
+    font-family: 'Roboto', sans-serif !important;
+    {% endcase%}
+  }
+  #blog-post__content p, #blog-post__content ul, #blog-post__content ul li, #blog-post__content ol, #blog-post__content ol li,
+  .product-description__content {
+    font-size: {{ options.general_font_size }} !important;
+  }
+
+</style>

@@ -1,0 +1,186 @@
+<!-- Heading -->
+<div class="small-12  columns  text-center  testimonials-heading">
+  <h2 class="testimonials-heading__title">
+    {% if options.testimonials_title != blank %}
+    {{ options.testimonials_title }}
+    {% else %}
+    {% t "We have been mentioned in" %}
+    {% endif %}
+  </h2>
+</div>
+<!-- end .testimonials-heading -->
+
+<div class="small-12  medium-12  large-6  large-push-3  columns  testimonials-content">
+  <div id="testimonials-quotes">
+    {% if options.enable_testimony_1 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_1_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_2 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_2_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_3 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_3_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_4 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_4_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_5 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_5_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_6 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_6_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_7 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_7_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_8 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_8_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_9 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_9_quote }}"</p>
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_10 %}
+    <div class="testimonials-quotes__block">
+      <p class="testimonials-quotes__block-text">"{{ options.testimony_10_quote }}"</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+<!-- end .testimonials-content -->
+
+<div class="small-12  columns  testimonials-content">
+  <!-- Testimonials Logos -->
+  <div id="testimonials-logos">
+    {% if options.enable_testimony_1 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_1_logo != blank %}
+      <img src="{{ options.testimony_1_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_1_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_2 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_2_logo != blank %}
+      <img src="{{ options.testimony_2_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_2_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_3 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_3_logo != blank %}
+      <img src="{{ options.testimony_3_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_3_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_4 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_4_logo != blank %}
+      <img src="{{ options.testimony_4_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_4_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_5 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_5_logo != blank %}
+      <img src="{{ options.testimony_5_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_5_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_6 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_6_logo != blank %}
+      <img src="{{ options.testimony_6_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_6_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_7 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_7_logo != blank %}
+      <img src="{{ options.testimony_7_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_7_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_8 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_8_logo != blank %}
+      <img src="{{ options.testimony_8_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_8_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_9 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_9_logo != blank %}
+      <img src="{{ options.testimony_9_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_9_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if options.enable_testimony_10 %}
+    <div class="testimonials-logos__block">
+      {% if options.testimony_10_logo != blank %}
+      <img src="{{ options.testimony_10_logo }}" class="testimonials-logos__block-image" alt="{{ options.testimony_10_logo_name }}">
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  <!-- end #testimonials-logos -->
+</div>
+<!-- end .testimonials-content -->
+
+<!-- Testimonials Script -->
+<script type="application/javascript">
+  $(document).ready(function(){
+    $('#testimonials-quotes').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '#testimonials-logos'
+    });
+    $('#testimonials-logos').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      asNavFor: '#testimonials-quotes',
+      dots: true,
+      arrows: false,
+      centerMode: true,
+      focusOnSelect: true
+    });
+  });
+</script>
+<!-- end Testimonials Script -->

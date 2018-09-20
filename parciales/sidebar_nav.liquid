@@ -1,0 +1,187 @@
+<!-- Close button -->
+<!--<button class="close-button" aria-label="Close menu" type="button" data-close>
+  <span aria-hidden="true">&times;</span>
+</button>-->
+
+{% if languages.size > 1 %}
+<!-- Sidebar Languages -->
+<div id="sidebar-langs" class="small-12  columns  text-center">
+  <ul class="menu  simple  sidebar-langs__menu">
+    {% for language in languages %}
+    <li class="sidebar-langs__menu-item{% if forloop.first %}  sidebar-langs__menu-item--first{% elsif forloop.last %}  sidebar-langs__menu-item--last{% endif %}">
+      <a href="{{ language.url }}" class="sidebar-langs__menu-item-anchor{% if languages.first.code == language.code %}  sidebar-langs__menu-item-anchor--active{% endif %}" title="{{ language.name }}">{{ language.name }}</a>
+    </li>
+    <!-- end .sidebar-langs__menu-item -->
+    {% endfor %}
+  </ul>
+  <!-- end .sidebar-langs__menu -->
+</div>
+<!-- end #sidebar-langs -->
+{% endif %}
+
+{% if options.enable_search %}
+<!-- Sidebar Search -->
+<form id="sidebar-search" class="small-12  columns" method="get" action="{{ search.url_send }}">
+  <input type="text" id="sidebar-search__input" class="text text-left trsn" name="q" placeholder="{% t "Buscar aquí..." %}" />
+  <button id="sidebar-search__button" type="submit" class="submit trsn"><i class="fa fa-search fa-fw"></i></button>
+</form>
+<!-- end #sidebar-search -->
+{% endif %}
+
+<!-- Sidebar Nav Menu -->
+<div class="small-12  columns  sidebar-wrapper">
+  <!-- Sidebar Menu -->
+  <ul id="sidebar-menu" class="vertical menu" data-drilldown data-back-button='<li class="js-drilldown-back"><a tabindex="0">{% t "Go Back" %}</a></li>'>
+    {% if menu.main %}
+    {% for item in menu.main.items %}
+    <li class="sidebar-menu__item{% if forloop.first %}  sidebar-menu__item--first{% endif %}">
+      {% if item.dropdown %}
+      <a class="sidebar-menu__item-anchor">{{ item.name }} <i class="fa fa-angle-right fa-fw"></i></a>
+      {% else %}
+      <a href="{{ item.url }}" class="sidebar-menu__item-anchor" title="{{ item.name }}">{{ item.name }}</a>
+      {% endif %}
+
+      {% if item.dropdown %}
+      <ul class="vertical  menu  sidebar-menu__submenu">
+        <li class="sidebar-menu__submenu-title">{{ item.name }}</li>
+
+        {% for item in item.items %}
+        <li class="sidebar-menu__submenu-item">
+          <a href="{{ item.url }}" class="sidebar-menu__submenu-item-anchor" title="{{ item.name }}">{{ item.name }}</a>
+          {% if item.dropdown %}
+          <ul class="dropdown">
+            {% for item in item.items %}
+             <li class="sidebar-menu__submenu-item">
+                <a href="{{ item.url }}" class="sidebar-menu__submenu-item-anchor" title="{{ item.name }}">{{ item.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        <!-- end .sidebar-menu__submenu-item -->
+        {% endfor %}
+
+        <li class="sidebar-menu__submenu-actions">
+          <a href="{{ item.url }}" class="sidebar-menu__submenu-actions-anchor" title="{% t "Ir a" %} {{ item.name }}">{% t "Ir a" %} {{ item.name }}</a>
+        </li>
+        <!-- end .sidebar-menu__submenu-actions -->
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+
+    <li class="sidebar-menu__item"><span class="sidebar-menu__item-divider"></span></li>
+    {% endif %}
+
+    {% if store.customers_enabled %}
+    <li class="sidebar-menu__item">
+      <a class="sidebar-menu__item-anchor" role="button">{% if customer %}{% t "My cuenta" %}{% else %}{% t "Ingresar" %}{% endif %} <i class="fa fa-angle-right fa-fw"></i></a>
+
+      <ul class="vertical  menu  sidebar-menu__submenu">
+        <li class="sidebar-menu__submenu-title">{% if customer %}{% t "Mi cuenta" %}{% else %}{% t "Ingresar" %}{% endif %}</li>
+
+        {% if customer %}
+        <li class="sidebar-menu__submenu-item">
+          <p class="sidebar-menu__submenu-item-text">{% t "Verifica tu historial de compras y modifica tus datos de contacto, envío y pago" %}</p>
+        </li>
+        <!-- end .sidebar-menu__submenu-item -->
+
+        <li class="sidebar-menu__submenu-item">
+          <a href="{{ customer_account_url }}" class="sidebar-menu__submenu-item-anchor" title="{% t "Ir a mi cuenta" %}">{% t "Ir a mi cuenta" %} <i class="fa fa-angle-right fa-fw"></i></a>
+        </li>
+        <!-- end .sidebar-menu__submenu-item -->
+
+        <li class="sidebar-menu__submenu-item  sidebar-menu__submenu-item--last">
+          <a href="{{ customer.logout_url }}" class="sidebar-menu__submenu-item-anchor" title="{% t "Salir" %}"><i class="fa fa-close fa-fw"></i>{% t "Salir" %}</a>
+        </li>
+        <!-- end .sidebar-menu__submenu-item -->
+        {% else %}
+        <li class="sidebar-menu__submenu-item">
+          <a href="{{ customer_login_url }}" class="sidebar-menu__submenu-item-anchor" title="{% t "Ingresar a mi cuenta" %}">{% t "Ingresar a mi cuenta" %} <i class="fa fa-angle-right fa-fw"></i></a>
+        </li>
+        <!-- end .sidebar-menu__submenu-item -->
+
+        <li class="sidebar-menu__submenu-item">
+          <p class="sidebar-menu__submenu-item-text"><strong>{% t "Eres nuevo en" %} {{ store.name }}?</strong><br>{% t "¡Crea una cuenta y haz más rápido tus compras, además podrás tener un historial de compras asociado!" %}</p>
+        </li>
+        <!-- end .sidebar-menu__submenu-item -->
+
+        <li class="sidebar-menu__submenu-item  sidebar-menu__submenu-item--last">
+          <a href="{{ customer_registration_url }}" class="sidebar-menu__submenu-item-anchor" title="{% t "Crear cuenta" %}">{% t "Crear cuenta" %}</a>
+        </li>
+        <!-- end .sidebar-menu__submenu-item -->
+        {% endif %}
+      </ul>
+      <!-- end .sidebar-menu__submenu -->
+    </li>
+    <!-- end .sidebar-menu__item -->
+
+    <li class="sidebar-menu__item"><span class="sidebar-menu__item-divider"></span></li>
+    {% endif %}
+
+    {% if social.facebook_url != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ social.facebook_url }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i>{{ store.name }} {% t "en Facebook" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if social.twitter_url != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ social.twitter_url }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i>{{ store.name }} {% t "en Twitter" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if social.instagram_url != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ social.instagram_url }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i>{{ store.name }} {% t "en Instagram" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if social.pinterest_url != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ social.pinterest_url }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i>{{ store.name }} {% t "en Pinterest" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if options.store_youtube != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ options.store_youtube }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i>{{ store.name }} {% t "en Youtube" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if options.store_vimeo != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ options.store_vimeo }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i>{{ store.name }} {% t "en Vimeo" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if options.store_linkedin != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ options.store_linkedin }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i>{{ store.name }} {% t "en LinkedIn" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if options.store_google_plus != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ options.store_google_plus }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i>{{ store.name }} {% t "en Google+" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+
+    {% if options.store_github != blank %}
+    <li class="sidebar-menu__item">
+      <a href="{{ options.store_github }}" class="sidebar-menu__item-anchor  sidebar-menu__item-anchor--social" title="{{ store.name }} {% t "en GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i>{{ store.name }} {% t "en GitHub" %}</a>
+    </li>
+    <!-- end .sidebar-menu__item -->
+    {% endif %}
+  </ul>
+  <!-- end #sidebar-menu -->
+</div>
+<!-- end .sidebar-wrapper -->

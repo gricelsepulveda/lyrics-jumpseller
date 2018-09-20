@@ -1,0 +1,34 @@
+{% assign short_description = product.field["Short Description"] %}
+{% capture sharing_description %}{% if short_description and short_description != blank %}{{ short_description.value }}{% else %}{% if product.description != blank %}{{ product.description | strip_html | truncate:120 }}{% endif %}{% endif %}{% endcapture %}
+
+<div class="row  row-large">
+  <div class="small-12  columns  text-center">
+    <h6 class="product-share__title">{% t "Comparte este producto" %}</h6>
+
+    <ul class="no-bullet  product-share__list">
+      <!-- Facebook -->
+      <li class="product-share__list-item">
+        <a href="http://www.facebook.com/sharer.php?s=100&p[url]={{ store.url }}{{ product.url }}&p[images][0]=https:{{ product.images.first | resize:'630x315' }}&p[title]={{ product.name }}&p[summary]={{ sharing_description }}" class="product-share__list-anchor  product-share__list-anchor--facebook" title="{% t "Compartir en" %} Facebook" target="_blank">
+          <i class="fa fa-facebook fa-fw"></i> Facebook
+        </a>
+      </li>
+
+      <!-- Twitter -->
+      <li class="product-share__list-item">
+        {% capture store_twitter_user %}{{ social.twitter_url | split: '/' | last }}{% endcapture %}
+        <a href="https://twitter.com/share?url={{ store.url }}{{ product.url }}&text={{ product.name }}{% if store_twitter_user != blank %}&via={{ store_twitter_user }}{% endif %}" class="product-share__list-anchor  product-share__list-anchor--twitter" title="{% t "Compartir en" %} Twitter" target="_blank">
+          <i class="fa fa-twitter fa-fw"></i> Twitter
+        </a>
+      </li>
+
+      <!-- Pinterest -->
+      <li class="product-share__list-item">
+        <a href="http://pinterest.com/pin/create/bookmarklet/?media=https:{{ product.images.first | resize:'300x200'}}&url={{ product.url }}&is_video=false&description={{ sharing_description }}" class="product-share__list-anchor  product-share__list-anchor--pinterest" title="{% t "Compartir en" %} Pinterest" target="_blank">
+          <i class="fa fa-pinterest fa-fw"></i> Pinterest
+        </a>
+      </li>
+    </ul>
+    <!-- end .product-share__list -->
+  </div>
+</div>
+<!-- end .row-large -->

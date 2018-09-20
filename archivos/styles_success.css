@@ -1,0 +1,229 @@
+/* ====================================================================================
+  SUCCESS PAGE  
+==================================================================================== */
+#success-container {
+  padding-top: 0;
+  background: #024965;
+}
+  .success-wrapper {
+    padding-top: 2.875rem;
+    padding-bottom: 3.875rem;
+  }
+    .success-box {
+      margin-bottom: 2.875rem;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      -webkit-box-shadow: 0 0 30px rgba(0,0,0,.25);
+      -moz-box-shadow: 0 0 30px rgba(0,0,0,.25);
+      box-shadow: 0 0 30px rgba(0,0,0,.25);
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+    .success-actions {
+      padding-bottom: 2.875rem;
+    }
+
+/*  Success Header  
+==================================================================================== */
+.success-header {
+  margin-bottom: 1.875rem;
+  padding-top: 1.875rem;
+}
+  .success-header__name {
+    font-family: "Khula", sans-serif !important;
+    font-size: 2.5rem;
+    color: #FFFFFF !important;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+  }
+  .success-header__logo {
+    max-width: 200px;
+  }
+
+/*  Success Heading  
+==================================================================================== */
+.success-heading {
+  padding-top: 1.875rem;
+  padding-bottom: 0.9375rem;
+  background: #A1DD4A;
+}
+  .success-heading__icon {
+    font-size: 1.875rem;
+    color: #FFFFFF;
+    line-height: 66px;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.25rem;
+    display: block;
+    border: 2px solid #FFFFFF;
+    -webkit-border-radius: 70px;
+    -moz-border-radius: 70px;
+    border-radius: 70px;
+  }
+  .success-heading__title {
+    font-size: 1.75rem;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  .success-heading__text {
+    font-size: 1rem;
+    color: rgba(255,255,255,.86);
+    font-weight: 600;
+  }
+    .success-heading__text strong {
+      color: #FFFFFF;
+    }
+
+/*  Success Content  
+==================================================================================== */
+.success-content {
+  background: #FFFFFF;
+}
+
+/*  Content Heading  */
+.success-content__heading {
+  padding-top: 0.875rem;
+  padding-bottom: 0.75rem;
+  background: #EEF2F5;
+}
+  .success-content__heading-title {
+    font-size: 0.9375rem;
+    color: rgba(2, 73, 101, .5);
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin: 0;
+  }
+
+/*  Content Block  */
+.success-content__block {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
+.success-content__block.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+  .success-content__list {
+    margin: 0;
+  }
+    .success-content__list-item {
+      width: 100%;
+      height: 40px;
+      padding: 0 0.9375rem;
+      padding: 0 1.75rem;
+      display: block;
+      /* border-bottom: 1px solid rgba(2, 73, 101, .05); */
+      border-bottom: 1px solid #EEF2F5;
+    }
+    .success-content__list-string {
+      font-size: 0.75rem;
+      color: rgba(2, 73, 101, .5);
+      font-weight: 600;
+      line-height: 40px;
+      text-transform: uppercase;
+      width: 50%;
+      float: left;
+      display: block;
+    }
+    .success-content__list-string + .success-content__list-string {
+      font-size: 0.875rem;
+      color: rgba(2, 73, 101, .75);
+      text-transform: inherit;
+      text-align: right;
+    }
+  .success-content__block-text, 
+  .success-content__block-text > p {
+    font-size: 0.9375rem;
+    color: rgba(2, 73, 101, .5);
+    margin: 0;
+  }
+
+/*  Content Product  */
+.success-content__product {
+  min-height: 185px;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  border-right: 1px solid #EEF2F5;
+  border-bottom: 1px solid #EEF2F5;
+}
+  .success-content__product-image {
+    margin: 0 auto 0.5rem;
+    display: block;
+  }
+  .success-content__product-name, 
+  .success-content__product-option, 
+  .success-content__product-price {
+    display: block;
+  }
+  .success-content__product-name {
+    font-size: 1rem;
+    color: rgba(2, 73, 101, .75);
+    font-weight: bold;
+    line-height: 1.25;
+  }
+  .success-content__product-option {
+    font-size: 0.85rem;
+    color: rgba(2, 73, 101, .5);
+    line-height: 1;
+    margin-top: 0.15rem;
+  }
+  .success-content__product-price {
+    font-size: 0.9375rem;
+    color: rgba(2, 73, 101, .75);
+    font-weight: 600;
+  }
+
+/*  Create Password Form  */
+#create_password {
+  padding: 0.9375rem 0;
+}
+  #credentials {
+    width: 100%;
+    display: inline-block;
+  }
+    #create_password .field {
+      width: 50%;
+      margin-bottom: 1.875rem;
+      padding: 0 0.9375rem;
+      float: left;
+    }
+      #create_password .field label {
+        font-family: "Khula", sans-serif !important;
+        color: rgba(2, 73, 100, .5);
+        font-weight: 600;
+      }
+      #create_password .field .text {
+        font-size: 0.875rem;
+        color: rgba(2, 73, 100, .75);
+        margin: 0;
+        border-width: 2px;
+        border-color: rgba(223, 230, 233, .75);
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        background-color: #FFFFFF;
+      }
+      #create_password .field .text:focus {
+        border-color: #CCD7DD;
+      }
+      #create_password .actions .button {
+        font-size: 0.785rem;
+        margin: 0;
+        padding: 1rem 1.875rem 0.9375rem;
+        -webkit-border-radius: 9999px;
+        -moz-border-radius: 9999px;
+        border-radius: 9999px;
+        background: rgba(2, 73, 101, .5);
+      }
+      #create_password .actions .button:hover, 
+      #create_password .actions .button:focus {
+        background: rgba(2, 73, 101, .75);
+      }

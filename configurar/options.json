@@ -1,0 +1,1557 @@
+{
+  "Opciones de la Tienda": {
+    "icon": "cog",
+    "options": {
+      "enable_search": {
+        "name": "Buscar en la Tienda",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "enable_home_specs": {
+        "name": "Especificaciones del producto en la Página Principal",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "enable_home_blog_feed": {
+        "name": "Blog Feed en Página de inicio",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "enable_footer_info": {
+        "name": "Menú de información en el Pie de Página",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "enable_footer_products": {
+        "name": "Menú de productos en Pie de Página",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "product_sku_visibility": {
+        "name": "Sku del Producto en la Página de Producto",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "related_products_visibility": {
+        "name": "Productos Relacionados en la Página del Producto",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "enable_product_share": {
+        "name": "Compartir en Redes Sociales en Página del Producto",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "enable_cart_estimate": {
+        "name": "Estimación de Envío en la Página del Carro",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "products_category_limit": {
+        "name": "Productos de Categoría por Página",
+        "type": "select",
+        "default": "24",
+        "options": [
+          {
+            "3": "3"
+          },
+          {
+            "6": "6"
+          },
+          {
+            "9": "9"
+          },
+          {
+            "12": "12"
+          },
+          {
+            "15": "15"
+          },
+          {
+            "18": "18"
+          },
+          {
+            "21": "21"
+          },
+          {
+            "24 (Default)": "24"
+          },
+          {
+            "36": "36"
+          }
+        ]
+      },
+      "products_search_limit": {
+        "name": "Buscar Productos por Página",
+        "type": "select",
+        "default": "24",
+        "options": [
+          {
+            "3": "3"
+          },
+          {
+            "6": "6"
+          },
+          {
+            "9": "9"
+          },
+          {
+            "12": "12"
+          },
+          {
+            "15": "15"
+          },
+          {
+            "18": "18"
+          },
+          {
+            "21": "21"
+          },
+          {
+            "24 (Default)": "24"
+          },
+          {
+            "36": "36"
+          }
+        ]
+      },
+      "enable_slider": {
+        "name": "Activar sección slider",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slider_transition": {
+        "name": "Transición de slide",
+        "type": "select",
+        "default": "Fade",
+        "options": [
+          {
+            "Fade": "Fade"
+          },
+          {
+            "Carousel": "Carousel"
+          }
+        ]
+      },
+      "slider_arrows": {
+        "name": "Activar la navegación del slider por flechas",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slider_dots": {
+        "name": "Activar la navegación del slider por Puntos",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slider_autoplay": {
+        "name": "Activar la función Autoplay del del slider",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slider_autoplay_speed": {
+        "name": "Velocidad de reproducción automática del Slider (p.e. 1s = 1000)",
+        "type": "input",
+        "default": "3000"
+      }
+    }
+  },
+  "Información de la Tienda": {
+    "icon": "info-circle",
+    "options": {
+      "store_favicon": {
+        "name": "Favicon de la Tienda (máx: 70x70px)",
+        "type": "file",
+        "default": ""
+      },
+      "store_contact_email": {
+        "name": "Email de Contacto",
+        "type": "input",
+        "default": "contacto@lyrics.cl"
+      },
+      "store_sales_email": {
+        "name": "Correo electrónico de ventas",
+        "type": "input",
+        "default": "ventas@lyrics.cl"
+      },
+      "store_contact_phone_1": {
+        "name": "Teléfono de Contacto 1",
+        "type": "input",
+        "default": "+56 (22) 5023258"
+      },
+      "store_contact_phone_2": {
+        "name": "Teléfono de Contacto 2",
+        "type": "input",
+        "default": "+569 31938111"
+      },
+      "store_address": {
+        "name": "Dirección de la Tienda",
+        "type": "text",
+        "default": "Nancy #570 - Ñuñoa."
+      },
+      "store_address_url": {
+        "name": "URL de Google Map",
+        "type": "text",
+        "default": "https://goo.gl/maps/eXznkxqsngx"
+      },
+      "store_hours": {
+        "name": "Horario de Apertura / Cierre",
+        "type": "text",
+        "default": "Abierto de Lun-Vier (10:00-18:00hrs)"
+      },
+      "contact_title": {
+        "name": "Título de la Página de Contacto",
+        "type": "input",
+        "default": "Contacto"
+      },
+      "contact_description": {
+        "name": "Descripción de la Página de Contacto",
+        "type": "text",
+        "default": "Ven a nuestra tienda física o conócenos a través de nuestras redes sociales, correo y teléfono. Nos gusta conversar de música y tecnología."
+      },
+      "contact_background": {
+        "name": "Imagen de fondo del Encabezado",
+        "type": "file",
+        "default": ""
+      },
+      "contact_background_color": {
+        "name": "Color de fondo del Encabezado",
+        "type": "color",
+        "default": "0f0606"
+      }
+    }
+  },
+  "Slide de Inicio1": {
+    "icon": "image",
+    "options": {
+      "enable_slide_1": {
+        "name": "Habilitar slide",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_1_alignment": {
+        "name": "Alineación de slide (Basado en la posición de contenido)",
+        "type": "select",
+        "default": "Left",
+        "options": [
+          {
+            "Left": "Left"
+          },
+          {
+            "Right": "Right"
+          }
+        ]
+      },
+      "slide_1_image": {
+        "name": "Imagen de slide",
+        "type": "file",
+        "default": ""
+      },
+      "slide_1_background_image": {
+        "name": "Imagen de fondo de slide",
+        "type": "file",
+        "default": ""
+      },
+      "slide_1_background": {
+        "name": "Color de fondo de slide",
+        "type": "color",
+        "default": "08759f"
+      },
+      "slide_1_title_color": {
+        "name": "Color del título de slide",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "slide_1_text_color": {
+        "name": "Color de Texto de slide",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "slide_1_button_1_text_color": {
+        "name": "Botón 1 - Color del texto",
+        "type": "color",
+        "default": "024964"
+      },
+      "slide_1_button_1_background": {
+        "name": "Botón 1 - Color de fondo",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "slide_1_button_2_text_color": {
+        "name": "Botón 2 - Texto y Color del borde",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "slide_1_title": {
+        "name": "Título de la slide",
+        "type": "input",
+        "default": "Lorem ipsum dolor sit amet"
+      },
+      "slide_1_text": {
+        "name": "Texto de slide",
+        "type": "text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      "enable_slide_1_button_1": {
+        "name": "Activar Botón 1",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_1_button_1_link": {
+        "name": "Botón 1 - Enlace",
+        "type": "input",
+        "default": "/watches"
+      },
+      "slide_1_button_1_text": {
+        "name": "Botón 1 - Texto",
+        "type": "input",
+        "default": "VER DETALLES"
+      },
+      "enable_slide_1_button_2": {
+        "name": "Activar Botón 2",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "slide_1_button_2_link": {
+        "name": "Botón 2 - Enlace",
+        "type": "input",
+        "default": "/kickstart-white"
+      },
+      "slide_1_button_2_text": {
+        "name": "Botón 2 - Texto",
+        "type": "input",
+        "default": "Pre-Order"
+      }
+    }
+  },
+  "Slide de Inicio2": {
+    "icon": "image",
+    "options": {
+      "enable_slide_2": {
+        "name": "Enable Slide",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_2_alignment": {
+        "name": "Slide Alignment (Based on content position)",
+        "type": "select",
+        "default": "Right",
+        "options": [
+          {
+            "Left": "Left"
+          },
+          {
+            "Right": "Right"
+          }
+        ]
+      },
+      "slide_2_image": {
+        "name": "Slide Image",
+        "type": "file",
+        "default": ""
+      },
+      "slide_2_background_image": {
+        "name": "Slide Background Image",
+        "type": "file",
+        "default": ""
+      },
+      "slide_2_background": {
+        "name": "Slide Background Color",
+        "type": "color",
+        "default": "054056"
+      },
+      "slide_2_title_color": {
+        "name": "Slide Title Color",
+        "type": "color",
+        "default": "fafafa"
+      },
+      "slide_2_text_color": {
+        "name": "Slide Text Color",
+        "type": "color",
+        "default": "fafafa"
+      },
+      "slide_2_button_1_text_color": {
+        "name": "Button 1 - Text Color",
+        "type": "color",
+        "default": "024964"
+      },
+      "slide_2_button_1_background": {
+        "name": "Button 1 - Background Color",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "slide_2_button_2_text_color": {
+        "name": "Button 2 - Text & Border Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_2_title": {
+        "name": "Slide Title",
+        "type": "input",
+        "default": "Lorem ipsum dolor sit amet"
+      },
+      "slide_2_text": {
+        "name": "Slide Text",
+        "type": "text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      },
+      "enable_slide_2_button_1": {
+        "name": "Enable Button 1",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_2_button_1_link": {
+        "name": "Button 1 - Link",
+        "type": "input",
+        "default": "/watches"
+      },
+      "slide_2_button_1_text": {
+        "name": "Button 1 - Text",
+        "type": "input",
+        "default": "VER DETALLES"
+      },
+      "enable_slide_2_button_2": {
+        "name": "Enable Button 2",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "slide_2_button_2_link": {
+        "name": "Button 2 - Link",
+        "type": "input",
+        "default": ""
+      },
+      "slide_2_button_2_text": {
+        "name": "Button 2 - Text",
+        "type": "input",
+        "default": ""
+      }
+    }
+  },
+  "Slide de Inicio3": {
+    "icon": "image",
+    "options": {
+      "enable_slide_3": {
+        "name": "Enable Slide",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "slide_3_alignment": {
+        "name": "Slide Alignment (Based on content position)",
+        "type": "select",
+        "default": "Left",
+        "options": [
+          {
+            "Left": "Left"
+          },
+          {
+            "Right": "Right"
+          }
+        ]
+      },
+      "slide_3_image": {
+        "name": "Slide Image",
+        "type": "file",
+        "default": ""
+      },
+      "slide_3_background_image": {
+        "name": "Slide Background Image",
+        "type": "file",
+        "default": ""
+      },
+      "slide_3_background": {
+        "name": "Slide Background Color",
+        "type": "color",
+        "default": "08759F"
+      },
+      "slide_3_title_color": {
+        "name": "Slide Title Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_3_text_color": {
+        "name": "Slide Text Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_3_button_1_text_color": {
+        "name": "Button 1 - Text Color",
+        "type": "color",
+        "default": "024964"
+      },
+      "slide_3_button_1_background": {
+        "name": "Button 1 - Background Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_3_button_2_text_color": {
+        "name": "Button 2 - Text & Border Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_3_title": {
+        "name": "Slide Title",
+        "type": "input",
+        "default": ""
+      },
+      "slide_3_text": {
+        "name": "Slide Text",
+        "type": "text",
+        "default": ""
+      },
+      "enable_slide_3_button_1": {
+        "name": "Enable Button 1",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_3_button_1_link": {
+        "name": "Button 1 - Link",
+        "type": "input",
+        "default": ""
+      },
+      "slide_3_button_1_text": {
+        "name": "Button 1 - Text",
+        "type": "input",
+        "default": ""
+      },
+      "enable_slide_3_button_2": {
+        "name": "Enable Button 2",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_3_button_2_link": {
+        "name": "Button 2 - Link",
+        "type": "input",
+        "default": ""
+      },
+      "slide_3_button_2_text": {
+        "name": "Button 2 - Text",
+        "type": "input",
+        "default": ""
+      }
+    }
+  },
+  "Slide de Inicio 4": {
+    "icon": "image",
+    "options": {
+      "enable_slide_4": {
+        "name": "Enable Slide",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "slide_4_alignment": {
+        "name": "Slide Alignment (Based on content position)",
+        "type": "select",
+        "default": "Right",
+        "options": [
+          {
+            "Left": "Left"
+          },
+          {
+            "Right": "Right"
+          }
+        ]
+      },
+      "slide_4_image": {
+        "name": "Slide Image",
+        "type": "file",
+        "default": ""
+      },
+      "slide_4_background_image": {
+        "name": "Slide Background Image",
+        "type": "file",
+        "default": ""
+      },
+      "slide_4_background": {
+        "name": "Slide Background Color",
+        "type": "color",
+        "default": "08759F"
+      },
+      "slide_4_title_color": {
+        "name": "Slide Title Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_4_text_color": {
+        "name": "Slide Text Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_4_button_1_text_color": {
+        "name": "Button 1 - Text Color",
+        "type": "color",
+        "default": "024964"
+      },
+      "slide_4_button_1_background": {
+        "name": "Button 1 - Background Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_4_button_2_text_color": {
+        "name": "Button 2 - Text & Border Color",
+        "type": "color",
+        "default": "FFFFFF"
+      },
+      "slide_4_title": {
+        "name": "Slide Title",
+        "type": "input",
+        "default": ""
+      },
+      "slide_4_text": {
+        "name": "Slide Text",
+        "type": "text",
+        "default": ""
+      },
+      "enable_slide_4_button_1": {
+        "name": "Enable Button 1",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_4_button_1_link": {
+        "name": "Button 1 - Link",
+        "type": "input",
+        "default": ""
+      },
+      "slide_4_button_1_text": {
+        "name": "Button 1 - Text",
+        "type": "input",
+        "default": ""
+      },
+      "enable_slide_4_button_2": {
+        "name": "Enable Button 2",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "slide_4_button_2_link": {
+        "name": "Button 2 - Link",
+        "type": "input",
+        "default": ""
+      },
+      "slide_4_button_2_text": {
+        "name": "Button 2 - Text",
+        "type": "input",
+        "default": ""
+      }
+    }
+  },
+  "Caracteristicas": {
+    "icon": "star",
+    "options": {
+      "enable_features": {
+        "name": "Activar sección de Destacados",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "features_background": {
+        "name": "Color de fondo de Destacados",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "features_titles_colors": {
+        "name": "Colores de Títulos Destacados",
+        "type": "color",
+        "default": "10142f"
+      },
+      "features_texts_colors": {
+        "name": "Colores de Textos Destacados",
+        "type": "color",
+        "default": "0b0f2b"
+      },
+      "features_button_color": {
+        "name": "Color texto del botón en Destacados",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "features_button_background": {
+        "name": "Color de fondo del Botón en Destacados",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "features_title": {
+        "name": "Título para Destacados",
+        "type": "input",
+        "default": "Destacados en Audio"
+      },
+      "features_text": {
+        "name": "Texto de Destacados",
+        "type": "text",
+        "default": "Precios especiales en marcas de alta calidad para tus proyectos de música, audio y tecnología."
+      },
+      "features_link": {
+        "name": "Enlace de Destacados",
+        "type": "input",
+        "default": "https://lyrics.jumpseller.com/inicio/57-pro-audio"
+      },
+      "features_link_text": {
+        "name": "Enlace Texto Destacados",
+        "type": "input",
+        "default": "Ver catálogo completo"
+      },
+      "features_1_image": {
+        "name": "Destacado 1 - Imagen",
+        "type": "file",
+        "default": ""
+      },
+      "features_1_title": {
+        "name": "Destacado 1 - Título",
+        "type": "input",
+        "default": "Micrófono dinámico hypercard V7 - sE Electronics"
+      },
+      "features_1_text": {
+        "name": "Destacado 1 - Texto",
+        "type": "text",
+        "default": "$87.890"
+      },
+      "features_2_image": {
+        "name": "Destacado 2 - Imagen",
+        "type": "file",
+        "default": ""
+      },
+      "features_2_title": {
+        "name": "Destacado 2 - Título",
+        "type": "input",
+        "default": "iConnect - Audio 2"
+      },
+      "features_2_text": {
+        "name": "Destacado 2 - Texto",
+        "type": "text",
+        "default": "$196.900"
+      },
+      "features_3_image": {
+        "name": "Destacado 3 - Imagen",
+        "type": "file",
+        "default": ""
+      },
+      "features_3_title": {
+        "name": "Destacado 3 - Título",
+        "type": "input",
+        "default": "Micrófono SU013 Hiper Cardioide - Soyuz"
+      },
+      "features_3_text": {
+        "name": "Destacado 3 - Texto",
+        "type": "text",
+        "default": "$86.390"
+      },
+      "features_4_image": {
+        "name": "Destacado 4 - Imagen",
+        "type": "file",
+        "default": ""
+      },
+      "features_4_title": {
+        "name": "Destacado 4 - Título",
+        "type": "input",
+        "default": "OB6 sintetizador polifónico - Oberheim"
+      },
+      "features_4_text": {
+        "name": "Destacado 4 - Texto",
+        "type": "text",
+        "default": "$2.550.000"
+      }
+    }
+  },
+  "Especificación del producto 1": {
+    "icon": "check-square",
+    "options": {
+      "product_spec_1_enable": {
+        "name": "Habilitar Spec 1",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "product_spec_1_background": {
+        "name": "Color de fondo de la sección",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "product_spec_1_title_color": {
+        "name": "Color del título",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_1_text_color": {
+        "name": "Color de texto",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_1_button_colors": {
+        "name": "Color del Botón y borde",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_1_image": {
+        "name": "Imagen",
+        "type": "file",
+        "default": ""
+      },
+      "product_spec_1_title": {
+        "name": "Título",
+        "type": "input",
+        "default": "Diamond - Cavallo MBT"
+      },
+      "product_spec_1_text": {
+        "name": "Texto",
+        "type": "text",
+        "default": "Consíguela esta semana por sólo $565.000 "
+      },
+      "product_spec_1_button_link": {
+        "name": "Enlace del botón",
+        "type": "input",
+        "default": "https://lyrics.jumpseller.com/cavallo-mbt-diamond"
+      },
+      "product_spec_1_button_text": {
+        "name": "Texto del Botón",
+        "type": "input",
+        "default": "Ver detalles"
+      }
+    }
+  },
+  "Especificación del producto 2": {
+    "icon": "check-square",
+    "options": {
+      "product_spec_2_enable": {
+        "name": "Habilitar Spec 2",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "product_spec_2_background": {
+        "name": "Section Background Color",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "product_spec_2_title_color": {
+        "name": "Title Color",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_2_text_color": {
+        "name": "Text Color",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_2_button_colors": {
+        "name": "Button Color & Border",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_2_image": {
+        "name": "Image",
+        "type": "file",
+        "default": ""
+      },
+      "product_spec_2_title": {
+        "name": "Title",
+        "type": "input",
+        "default": "Diamond - Bolero Trans Gunmetal "
+      },
+      "product_spec_2_text": {
+        "name": "Text",
+        "type": "text",
+        "default": "$590.000"
+      },
+      "product_spec_2_button_link": {
+        "name": "Button Link",
+        "type": "input",
+        "default": "https://lyrics.jumpseller.com/bolero-trans-gunmetal-diamond"
+      },
+      "product_spec_2_button_text": {
+        "name": "Button Text",
+        "type": "input",
+        "default": "Mírala acá"
+      }
+    }
+  },
+  "Especificación del producto 3": {
+    "icon": "check-square",
+    "options": {
+      "product_spec_3_enable": {
+        "name": "Habilitar Spec 3",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "product_spec_3_background": {
+        "name": "Section Background Color",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "product_spec_3_title_color": {
+        "name": "Title Color",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_3_text_color": {
+        "name": "Text Color",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_3_button_colors": {
+        "name": "Button Color & Border",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "product_spec_3_image": {
+        "name": "Image",
+        "type": "file",
+        "default": ""
+      },
+      "product_spec_3_title": {
+        "name": "Title",
+        "type": "input",
+        "default": "Diamond - Bolero Kona Brown"
+      },
+      "product_spec_3_text": {
+        "name": "Text",
+        "type": "text",
+        "default": "Agrégala a tu colección esta semana por sólo $620.000"
+      },
+      "product_spec_3_button_link": {
+        "name": "Button Link",
+        "type": "input",
+        "default": "https://lyrics.jumpseller.com/bolero-kona-brown-diamond"
+      },
+      "product_spec_3_button_text": {
+        "name": "Button Text",
+        "type": "input",
+        "default": "Conócelo"
+      }
+    }
+  },
+  "Productos Destacados": {
+    "icon": "shopping-bag",
+    "options": {
+      "enable_featured_products": {
+        "name": "Habilitar productos Destacados",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "products_featured_limit": {
+        "name": "Productos a mostrar",
+        "type": "select",
+        "default": "3",
+        "options": [
+          {
+            "3 (Default)": "3"
+          },
+          {
+            "6": "6"
+          },
+          {
+            "9": "9"
+          },
+          {
+            "12": "12"
+          },
+          {
+            "15": "15"
+          },
+          {
+            "18": "18"
+          },
+          {
+            "21": "21"
+          },
+          {
+            "24": "24"
+          },
+          {
+            "27": "27"
+          },
+          {
+            "30": "30"
+          },
+          {
+            "33": "33"
+          },
+          {
+            "36": "36"
+          },
+          {
+            "39": "39"
+          }
+        ]
+      },
+      "featured_products_background": {
+        "name": "Section Background Color",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "featured_products_title_color": {
+        "name": "Title Color",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "featured_products_text_color": {
+        "name": "Text Color",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "featured_products_button_text_color": {
+        "name": "Color del texto del botón",
+        "type": "color",
+        "default": "0f0606"
+      },
+      "featured_products_button_background": {
+        "name": "Fondo del Botón",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "featured_products_title": {
+        "name": "Title",
+        "type": "input",
+        "default": "Destacados de la semana"
+      },
+      "featured_products_text": {
+        "name": "Text",
+        "type": "text",
+        "default": "¡Sólo por 7 días aplicamos el descuento Lyrics!"
+      },
+      "featured_products_button_link": {
+        "name": "Button Link",
+        "type": "input",
+        "default": "#"
+      },
+      "featured_products_button_text": {
+        "name": "Button Text",
+        "type": "input",
+        "default": "Conócelo"
+      }
+    }
+  },
+  "Testimonios": {
+    "icon": "quote-left",
+    "options": {
+      "enable_testimonials": {
+        "name": "Habilitar sección de Testimonios",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "testimonials_background": {
+        "name": "Section Background Color",
+        "type": "color",
+        "default": "803527"
+      },
+      "testimonials_title_color": {
+        "name": "Testimonios Color del Título ",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "testimonials_quotes_colors": {
+        "name": "Testimonios Color de la Cita",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "testimonials_title": {
+        "name": "Testimonios Título",
+        "type": "input",
+        "default": "Confía en nuestros clientes:"
+      },
+      "enable_testimony_1": {
+        "name": "Habilitar Testimonio 1",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "testimony_1_logo": {
+        "name": "Testimonio 1 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_1_logo_name": {
+        "name": "Testimonio 1 - Nombre del Logotipo",
+        "type": "input",
+        "default": "Nestor Lupcke"
+      },
+      "testimony_1_quote": {
+        "name": "Testimonio 1 - Cita",
+        "type": "text",
+        "default": "El team de Lyrics muy ameno, amables y atentos a las preguntas de la gente. De los equipos, particularmente en mi caso, los micrófonos de lujo y a excelentes precios. Absolutamente recomendable por precio y atención al cliente."
+      },
+      "enable_testimony_2": {
+        "name": "Habilitar Testimonio 2",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "testimony_2_logo": {
+        "name": "Testimonio 2 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_2_logo_name": {
+        "name": "Testimonio 2 - Nombre del Logo",
+        "type": "input",
+        "default": "Vincent Mejías"
+      },
+      "testimony_2_quote": {
+        "name": "Testimonio 2 - Cita",
+        "type": "text",
+        "default": "Compre 2 Sennheiser 421, excelente atención y asesoramiento. 100% recomendado! ¡Háganle!"
+      },
+      "enable_testimony_3": {
+        "name": "Habilitar Testimonio 3",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "testimony_3_logo": {
+        "name": "Testimonio 3 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_3_logo_name": {
+        "name": "Testimonio 3 - Nombre del Logo",
+        "type": "input",
+        "default": "Gabriel Hidalgo"
+      },
+      "testimony_3_quote": {
+        "name": "Testimonio 3 - Cita",
+        "type": "text",
+        "default": "Excelente local, estudio de grabación y calidad humana!!! Un 7! Totalmente recomendado."
+      },
+      "enable_testimony_4": {
+        "name": "Habilitar Testimonio 4",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "testimony_4_logo": {
+        "name": "Testimonio 4 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_4_logo_name": {
+        "name": "Testimonio 4 - Nombre del Logo",
+        "type": "input",
+        "default": "Rodrigo Miranda"
+      },
+      "testimony_4_quote": {
+        "name": "Testimonio 4 - Cita",
+        "type": "text",
+        "default": "Excelente tienda!!!! Tremendas guitarras!! Muy buena atención, recomendado 100%."
+      },
+      "enable_testimony_5": {
+        "name": "Habilitar Testimonio 5",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "testimony_5_logo": {
+        "name": "Testimonio 5 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_5_logo_name": {
+        "name": "Testimonio 5 - Nombre del Logo",
+        "type": "input",
+        "default": "Mashable"
+      },
+      "testimony_5_quote": {
+        "name": "Testimonio 5 - Cita",
+        "type": "text",
+        "default": "5.- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula metus, venenatis vel odio id, sagittis elementum risus. Maecenas semper, turpis vel suscipit faucibus."
+      },
+      "enable_testimony_6": {
+        "name": "Habilitar Testimonio 6",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "testimony_6_logo": {
+        "name": "Testimonio 6 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_6_logo_name": {
+        "name": "Testimonio 6 - Nombre del Logo",
+        "type": "input",
+        "default": "Fast Company"
+      },
+      "testimony_6_quote": {
+        "name": "Testimonio 6 - Cita",
+        "type": "text",
+        "default": "6.- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ligula metus, venenatis vel odio id, sagittis elementum risus. Maecenas semper, turpis vel suscipit faucibus."
+      },
+      "enable_testimony_7": {
+        "name": "Habilitar Testimonio 7",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "testimony_7_logo": {
+        "name": "Testimonio 7 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_7_logo_name": {
+        "name": "Testimonio 7 - Nombre del Logo",
+        "type": "input",
+        "default": ""
+      },
+      "testimony_7_quote": {
+        "name": "Testimonio 7 - Cita",
+        "type": "text",
+        "default": ""
+      },
+      "enable_testimony_8": {
+        "name": "Habilitar Testimonio 8",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "testimony_8_logo": {
+        "name": "Testimonio 8 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_8_logo_name": {
+        "name": "Testimonio 8 - Nombre del Logo",
+        "type": "input",
+        "default": ""
+      },
+      "testimony_8_quote": {
+        "name": "Testimonio 8 - Cita",
+        "type": "text",
+        "default": ""
+      },
+      "enable_testimony_9": {
+        "name": "Habilitar Testimonio 9",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "testimony_9_logo": {
+        "name": "Testimonio 9 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_9_logo_name": {
+        "name": "Testimonio 9 - Nombre del Logo",
+        "type": "input",
+        "default": ""
+      },
+      "testimony_9_quote": {
+        "name": "Testimonio 9 - Cita",
+        "type": "text",
+        "default": ""
+      },
+      "enable_testimony_10": {
+        "name": "Habilitar Testimonio 10",
+        "type": "checkbox",
+        "default": "0"
+      },
+      "testimony_10_logo": {
+        "name": "Testimonio 10 - Logotipo",
+        "type": "file",
+        "default": ""
+      },
+      "testimony_10_logo_name": {
+        "name": "Testimonio 10 - Nombre del Logo",
+        "type": "input",
+        "default": ""
+      },
+      "testimony_10_quote": {
+        "name": "Testimonio 10 - Cotización",
+        "type": "text",
+        "default": ""
+      }
+    }
+  },
+  "Colores de la Tienda": {
+    "icon": "tint",
+    "options": {
+      "main_color": {
+        "name": "Color Principal",
+        "type": "color",
+        "default": "000000"
+      },
+      "home_color": {
+        "name": "Segundo Color de la Página Principal",
+        "type": "color",
+        "default": "ffffff"
+      },
+      "footer_color": {
+        "name": "Color del Pie de Página",
+        "type": "color",
+        "default": "FFFFFF"
+      }
+    }
+  },
+  "Tipos de Letra": {
+    "icon": "font",
+    "options": {
+      "general_font": {
+        "name": "General",
+        "type": "select",
+        "default": "Open Sans",
+        "options": [
+          {
+            "Arvo": "Arvo"
+          },
+          {
+            "Domine": "Domine"
+          },
+          {
+            "Droid Serif": "Droid Serif"
+          },
+          {
+            "Glegoo": "Glegoo"
+          },
+          {
+            "Inconsolata": "Inconsolata"
+          },
+          {
+            "Lora": "Lora"
+          },
+          {
+            "Noto Sans": "Noto Sans"
+          },
+          {
+            "Open Sans (Default)": "Open Sans"
+          },
+          {
+            "Oxygen": "Oxygen"
+          },
+          {
+            "Roboto": "Roboto"
+          },
+          {
+            "Work Sans": "Work Sans"
+          }
+        ]
+      },
+      "titles_font": {
+        "name": "Títulos",
+        "type": "select",
+        "default": "Montserrat",
+        "options": [
+          {
+            "Arsenal": "Arsenal"
+          },
+          {
+            "Abril Fatface": "Abril Fatface"
+          },
+          {
+            "Comfortaa": "Comfortaa"
+          },
+          {
+            "Cormorant Garamond": "Cormorant Garamond"
+          },
+          {
+            "Dancing Script": "Dancing Script"
+          },
+          {
+            "Josefin Slab": "Josefin Slab"
+          },
+          {
+            "Julius Sans One": "Julius Sans One"
+          },
+          {
+            "Montserrat": "Montserrat"
+          },
+          {
+            "Philosopher": "Philosopher"
+          },
+          {
+            "Playfair Display": "Playfair Display"
+          },
+          {
+            "Poiret One": "Poiret One"
+          },
+          {
+            "Raleway (Default)": "Raleway"
+          },
+          {
+            "Unica One": "Unica One"
+          }
+        ]
+      },
+      "menu_font": {
+        "name": "Menú",
+        "type": "select",
+        "default": "Open Sans",
+        "options": [
+          {
+            "Arvo": "Arvo"
+          },
+          {
+            "Domine": "Domine"
+          },
+          {
+            "Droid Serif": "Droid Serif"
+          },
+          {
+            "Glegoo": "Glegoo"
+          },
+          {
+            "Lora": "Lora"
+          },
+          {
+            "Noto Sans": "Noto Sans"
+          },
+          {
+            "Open Sans": "Open Sans"
+          },
+          {
+            "Oxygen": "Oxygen"
+          },
+          {
+            "Playfair Display": "Playfair Display"
+          },
+          {
+            "Raleway (Default)": "Raleway"
+          },
+          {
+            "Roboto": "Roboto"
+          }
+        ]
+      },
+      "general_font_size": {
+        "name": "Blog y Descripción del Producto",
+        "type": "select",
+        "default": "14px",
+        "options": [
+          {
+            "10px": "10px"
+          },
+          {
+            "11px": "11px"
+          },
+          {
+            "12px": "12px"
+          },
+          {
+            "13px": "13px"
+          },
+          {
+            "14px (Default)": "14px"
+          },
+          {
+            "15px": "15px"
+          },
+          {
+            "16px": "16px"
+          },
+          {
+            "17px": "17px"
+          },
+          {
+            "18px": "18px"
+          },
+          {
+            "20px": "20px"
+          }
+        ]
+      }
+    }
+  },
+  "Redes Sociales": {
+    "icon": "share-alt",
+    "options": {
+      "store_youtube": {
+        "name": "URL de Youtube",
+        "type": "input",
+        "default": ""
+      },
+      "store_vimeo": {
+        "name": "URL de Vimeo",
+        "type": "input",
+        "default": ""
+      },
+      "store_linkedin": {
+        "name": "URL de LinkedIn",
+        "type": "input",
+        "default": ""
+      },
+      "store_google_plus": {
+        "name": "URL de Google+",
+        "type": "input",
+        "default": ""
+      },
+      "store_github": {
+        "name": "URL de GitHub",
+        "type": "input",
+        "default": ""
+      }
+    }
+  },
+  "Otras opciones": {
+    "icon": "cogs",
+    "options": {
+      "blog_feed_display": {
+        "name": "Visualización del feed de Blogs (en la Página Principal)",
+        "type": "select",
+        "default": "Gallery",
+        "options": [
+          {
+            "Gallery (Default)": "Gallery"
+          },
+          {
+            "Slider": "Slider"
+          }
+        ]
+      },
+      "blog_feed_title": {
+        "name": "Título del Blog (en la Página Principal)",
+        "type": "input",
+        "default": "Análisis experto"
+      },
+      "blog_feed_description": {
+        "name": "Blog Feed Descripción (en la Página Principal)",
+        "type": "text",
+        "default": "Antes de comprar revisa nuestras reseñas de instrumentos y tecnología."
+      },
+      "blog_feed_link": {
+        "name": "Enlace de Feed Blog",
+        "type": "input",
+        "default": ""
+      },
+      "blog_feed_link_text": {
+        "name": "Texto del enlace de Blog",
+        "type": "input",
+        "default": "Visita el blog"
+      },
+      "blog_posts_limit": {
+        "name": "Publicaciones de Blog por Página",
+        "type": "select",
+        "default": "24",
+        "options": [
+          {
+            "12": "12"
+          },
+          {
+            "15": "15"
+          },
+          {
+            "18": "18"
+          },
+          {
+            "21": "21"
+          },
+          {
+            "24 (Default)": "24"
+          },
+          {
+            "36": "36"
+          }
+        ]
+      },
+      "enable_subscribe": {
+        "name": "Habilitar Formulario de Suscripción",
+        "type": "checkbox",
+        "default": "1"
+      },
+      "mailchimp_post_url": {
+        "name": "Url del Formulario del Newsletter Mailchimp",
+        "type": "input",
+        "default": "#"
+      },
+      "subscribe_title": {
+        "name": "Título del Newsletter",
+        "type": "input",
+        "default": "Llegó a Lyrics..."
+      },
+      "subscribe_text": {
+        "name": "Texto del Formulario de Newsletter",
+        "type": "text",
+        "default": "¡Suscríbete al newsletter y te escribiremos cuando lleguen productos nuevos, ofertas y eventos!"
+      },
+      "currencies": {
+        "name": "Monedas (por ejemplo: USD, EUR)",
+        "type": "input",
+        "default": "CLP"
+      },
+      "open_exchange_rates_token": {
+        "name": "ID de Aplicación OpenExchangeRates",
+        "type": "input",
+        "default": ""
+      }
+    }
+  }
+}

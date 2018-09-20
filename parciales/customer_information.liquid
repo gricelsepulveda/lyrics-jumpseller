@@ -1,0 +1,171 @@
+<!-- Accordion -->
+<div id="customer-info__accordion" class="small-12  columns">
+  <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+    <!-- Contact Info -->
+    <li class="accordion-item  is-active" data-accordion-item>
+      <a href="#" class="accordion-title" role="button">{% t "Información de contacto" %}</a>
+
+      <div id="customer_contact_info" class="accordion-content" data-tab-content>
+        <ul class="no-bullet  customer-info__list">
+          {% if customer.name != blank %}
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Nombre" %}</small>
+            {{ customer.name }}
+          </li>
+          {% endif %}
+          <!-- end .customer-info__list-item -->
+
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Correo" %}</small>
+            {{ customer.email }}
+          </li>
+          <!-- end .customer-info__list-item -->
+
+          {% if customer.phone != blank %}
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Teléfono" %}</small>
+            {{ customer.phone }}
+          </li>
+          <!-- end .customer-info__list-item -->
+          {% endif %}
+
+          <li class="customer-info__list-actions">
+            <a href="{{ customer.logout_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Salir" %}">
+              <i class="fa fa-close fa-fw"></i> {% t "Salir" %}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- end .customer-info__accordion-content -->
+    </li>
+    <!-- end .customer-info__accordion-block -->
+
+    <!-- Shipping Address -->
+    <li class="accordion-item  customer-info__accordion-block" data-accordion-item>
+      <a href="#" class="accordion-title" role="button">{% t "Información de envío" %}</a>
+
+      <div id="customer_shipping_address" class="accordion-content" data-tab-content>
+      <ul class="no-bullet  customer-info__list">
+        <li class="customer-info__list-actions">
+        <a href="{{ customer.add_shipping_address_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Agregar detalles de envío" %}"><i class="fa fa-plus fa-fw"></i> {% t "Agregear detalles de envío" %}</a>
+        </li>
+        {% if customer.shipping_addresses == blank %}
+        <li class="customer-info__list-item">{% t "No hay detalles de envío disponibles" %}</li>
+        {% endif %}
+        </ul>
+
+      {% for shipping_address in customer.shipping_addresses %}
+        <ul class="no-bullet  customer-info__list">
+          <!-- Name -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Nombre" %}</small>
+            {{ shipping_address.name }}
+          </li>
+          <!-- end .customer-info__list-item -->
+
+          {% if shipping_address.taxid != blank %}
+          <!-- Tax ID -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Impuestos" %}</small>
+            {{ shipping_address.taxid }}
+          </li>
+          <!-- end .customer-info__list-item -->
+          {% endif %}
+
+          <!-- Address / Postal Code -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Dirección" %}{% if shipping_address.postal != blank %} / {% t "Código postal" %}{% endif %}</small>
+            {{ shipping_address.address }}{% if shipping_address.postal != blank %}, {{ shipping_address.postal }}{% endif %}
+          </li>
+          <!-- end .customer-info__list-item -->
+
+          <!-- City / Region / Country -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Ciudad / Region / País" %}</small>
+            {{ shipping_address.city }}, {{ shipping_address.region }}, {{ shipping_address.country }}
+          </li>
+          <!-- end .customer-info__list-item -->
+
+          <!-- Edit / Delete -->
+          <li class="customer-info__list-actions">
+            <a href="{{ shipping_address.edit_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Editar" %}"><i class="fa fa-pencil fa-fw"></i> {% t "Editar" %}</a>
+            <a href="{{ shipping_address.delete_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Borrar" %}"><i class="fa fa-trash fa-fw"></i> {% t "Borrar" %}</a>
+            {% if shipping_address.default == false %}
+              <a href="{{ shipping_address.set_primary_url}}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Set as Primary" %}" alt="{% t "Set as Primary" %}"><i class="fa fa-star"></i>{% t "Set as Primary" %}</a>
+            {% endif %}
+          </li>
+          <!-- end .customer-info__list-actions -->
+
+        </ul>
+        {% endfor %}
+        <!-- end .customer-info__list -->
+      </div>
+      <!-- end .customer-info__accordion-content -->
+    </li>
+    <!-- end .customer-info__accordion-block -->
+
+    <!-- Billing Address -->
+    <li class="accordion-item  customer-info__accordion-block" data-accordion-item>
+      <a class="accordion-title" role="button">{% t "Billing Information" %}</a>
+
+      <div id="customer_billing_address" class="accordion-content" data-tab-content>
+      <ul class="no-bullet  customer-info__list">
+        <li class="customer-info__list-actions">
+          <a href="{{ customer.add_billing_address_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Add billing details" %}"><i class="fa fa-plus fa-fw"></i> {% t "Add billing details" %}</a>
+        </li>
+        {% if customer.billing_addresses == blank %}
+        <li class="customer-info__list-item">No hay detalles de facturación disponibles.</li>
+        {% endif %}
+        </ul>
+      {% for billing_address in customer.billing_addresses %}
+        <ul class="no-bullet  customer-info__list">
+          <!-- Name -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Name" %}</small>
+            {{ billing_address.name }}
+          </li>
+          <!-- end .customer-info__list-item -->
+
+          {% if billing_address.taxid != blank %}
+          <!-- Tax ID -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">RUT</small>
+            {{ billing_address.taxid }}
+          </li>
+          <!-- end .customer-info__list-item -->
+          {% endif %}
+
+          <!-- Address / Postal Code -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "Address" %}{% if billing_address.postal != blank %} / {% t "Postal Code" %}{% endif %}</small>
+            {{ billing_address.address }}{% if billing_address.postal != blank %}, {{ billing_address.postal }}{% endif %}
+          </li>
+          <!-- end .customer-info__list-item -->
+
+          <!-- City / Region / Country -->
+          <li class="customer-info__list-item">
+            <small class="customer-info__list-title">{% t "City / Region / Country" %}</small>
+            {{ billing_address.city }}, {{ billing_address.region }}, {{ billing_address.country }}
+          </li>
+          <!-- end .customer-info__list-item -->
+
+          <!-- Edit / Delete -->
+          <li class="customer-info__list-actions">
+            <a href="{{ billing_address.edit_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Edit" %}"><i class="fa fa-pencil fa-fw"></i> {% t "Edit" %}</a>
+            <a href="{{ billing_address.delete_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Delete" %}"><i class="fa fa-trash fa-fw"></i> {% t "Delete" %}</a>
+            {% if billing_address.default == false %}
+            <a href="{{ billing_address.set_primary_url}}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Set as Primary" %}" alt="{% t "Set as Primary" %}"><i class="fa fa-star"></i>{% t "Set as Primary" %}</a>
+            {% endif %}
+          </li>
+          <!-- end .customer-info__list-actions -->
+        </ul>
+        {% endfor %}
+        <!-- end .customer-info__list -->
+      </div>
+      <!-- end .customer-info__accordion-content -->
+    </li>
+    <!-- end .customer-info__accordion-block -->
+  </ul>
+  <!-- end .customer-info__accordion -->
+</div>
+<!-- end .customer-info__block -->

@@ -1,0 +1,30 @@
+<div class="row">
+  <!-- Heading -->
+  <div class="small-12  columns  post-block__heading">
+    <a href="{{ page.url }}" class="post-block__heading-wrapper" title="{% t "Leer artículo" %}">
+      <div class="post-block__heading-wrapper-content">
+        <div class="post-block__heading-wrapper-cell">
+          <span class="post-block__date">{{ page.date | date: "%d | %m | %Y (%H:%M:%S %p)" }}</span>
+          <h2 class="post-block__title">{{ page.title }}</h2>
+        </div>
+        <!-- end .post-block__heading-wrapper-cell -->
+      </div>
+      <!-- end .post-block__heading-wrapper-content -->
+    </a>
+    <!-- end .post-block__heading-wrapper -->
+
+    {% if page.images.size == 0 %}
+    <img src="{{ 'blog-post-no-image.jpg' | asset }}" alt="{{ page.title }}">
+    {% else %}
+    <img src="{{ page.images.first | thumb:'640x320' }}" alt="{{ page.title }}">
+    {% endif %}
+  </div>
+  <!-- end .post-block__heading -->
+
+  <div class="small-12  columns  post-block__content">
+    <p class="post-block__excerpt">{{ page.body | strip_html | truncate:200}}</p>
+    <a href="{{ page.url }}" class="button  tiny  light-blue  radius  post-block__anchor" title="{% t "Leer artículo" %}">{% t "Read Article" %} <i class="fa fa-angle-right fa-fw"></i></a>
+  </div>
+  <!-- end .post-block__content -->
+</div>
+<!-- end .row -->

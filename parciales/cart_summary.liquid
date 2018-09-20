@@ -1,0 +1,104 @@
+<!-- Cart Heading -->
+<div class="small-12  columns  cart-heading">
+  <div class="row">
+    <h1 class="cart-heading__title">{% t "Resumen de tu orden" %}</h1>
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-summary__heading -->
+
+{% if template == 'checkout' or template == 'revieworder' %}
+{% for product in order.products %}
+<div class="small-12  columns  cart-summary__product">
+  {% if product.image %}
+  <img src="{{ product.image | resize:'60x60' }}" class="cart-summary__product-image" alt="{{ product.name }}">
+  {% else %}
+  <i class="fa fa-picture-o fa-fw" aria-hidden="true" style="color: #2199e8; margin-top: 22px;"></i>
+  {% endif %}
+  <div class="cart-summary__product-info">
+    <span class="cart-summary__product-name">{{ product.name }}</span>
+    {% if product.options.size > 0 %}
+    <span class="cart-summary__product-options">{% for option in product.options %}{{ option.name }}: {{ option.value }}{% unless forloop.last %} / {% endunless %}{% endfor %}</span>
+    {% endif %}
+    <span class="cart-summary__product-price">{{ product.qty }} x <span class="cart-summary__product-price-value">{{ product.price | minus:product.discount | price }}</span></span>
+  </div>
+  <!-- end .cart-summary__product-info -->
+</div>
+<!-- end .cart-summary__product -->
+{% endfor %}
+{% endif %}
+
+{% if order.subtotal != order.total %}
+<div class="small-12  columns  cart-summary__totals">
+  <div class="row">
+    <span class="cart-summary__totals-string">{% t "Subtotal" %}</span>
+    <span class="text-right  cart-summary__totals-string">{{ order.subtotal | price }}</span>
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-totals__block -->
+{% endif %}
+
+{% if order.shipping_required %}
+<div class="small-12  columns  cart-summary__totals">
+  <div class="row">
+    <span class="cart-summary__totals-string">{% t "Envío" %}</span>
+    <span class="text-right  cart-summary__totals-string">{{ order.shipping | price }}</span>
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-totals__block -->
+{% endif %}
+
+{% if order.tax > 0 %}
+<div class="small-12  columns  cart-summary__totals">
+  <div class="row">
+    <span class="cart-summary__totals-string">{% t "Impuestos" %}</span>
+    <span class="text-right  cart-summary__totals-string">{{ order.tax | price }}</span>
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-totals__block -->
+{% endif %}
+
+{% if order.discount > 0 %}
+<div class="small-12  columns  cart-summary__totals">
+  <div class="row">
+    <span class="cart-summary__totals-string">{% t "Descuentos" %}</span>
+    <span class="text-right  cart-summary__totals-string">&hyphen;{{ order.discount | price }}</span>
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-totals__block -->
+{% endif %}
+
+<div class="small-12  columns  cart-summary__totals  cart-summary__totals--last">
+  <div class="row">
+    <span class="cart-summary__totals-string  cart-summary__totals-string--bold">{% t "Total" %}</span>
+    <span class="text-right  cart-summary__totals-string  cart-summary__totals-string--bold">{{ order.total | price }}</span>
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-summary__totals-block -->
+
+{% if template == 'cart' %}
+<!-- Cart Summary Actions -->
+<div class="small-12  columns  text-right  cart-summary__actions">
+  <div class="row">
+    <a href="{{ order.checkout_url }}" class="button  blue  circular  cart-summary__actions-button" title="{% t "Ir al Checkout" %}">{% t "Ir al Checkout" %}</a>
+    <br>
+    <a href="{{ store.url }}" class="cart-summary__actions-anchor" title="{% t "Continuar comprando" %}"><i class="fa fa-long-arrow-left fa-fw"></i> {% t "Continuar comprando" %}</a>
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-summary__actions -->
+{% elsif template == 'revieworder' %}
+<!-- Cart Actions -->
+<form id="review_form" class="small-12  columns  text-right  cart-summary__actions" action="{{ order.place_order_url }}" method="post">
+  <div class="row">
+    <input type="submit" id="review-info__actions-button" class="button  blue  circular  cart-summary__actions-button" value="{% t "Ordenar" %}" />
+  </div>
+  <!-- end .row -->
+</form>
+<!-- end .cart-summary__actions -->
+{% endif %}

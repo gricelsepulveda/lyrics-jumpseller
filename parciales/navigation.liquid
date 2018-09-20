@@ -1,0 +1,281 @@
+<!-- Main Navigation (Desktop Navigation) -->
+<nav id="main-nav" class="top-bar  show-for-large" {% if menu.main.items.size < 5 and store.logo == blank%} style="padding: 30px" {% endif %}>
+  <div class="row  main-nav__container">
+
+  <div class="top-bar-right">
+    <ul class="dropdown  menu  main-nav__menu" data-dropdown-menu>
+      {% if template == 'cart' %}
+      <li class="main-nav__menu-item">
+        <a href="{{ store.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--lighter" title="{% t "Continue Shopping" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Continue Shopping" %}</a>
+      </li>
+      {% elsif template == 'checkout' or template == 'revieworder' %}
+      <li class="main-nav__menu-item">
+        <a href="{{ cart.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--lighter" title="{% t "Edit Order" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Edit Order" %}</a>
+      </li>
+      {% else %}
+      {% if social.facebook_url != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ social.facebook_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if social.twitter_url != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ social.twitter_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if social.instagram_url != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ social.instagram_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if social.pinterest_url != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ social.pinterest_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if options.store_youtube != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ options.store_youtube }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if options.store_vimeo != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ options.store_vimeo }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if options.store_linkedin != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ options.store_linkedin }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if options.store_google_plus != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ options.store_google_plus }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      {% if options.store_github != blank %}
+      <li class="main-nav__menu-item">
+        <a href="{{ options.store_github }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+
+      <li class="main-nav__menu-item"><span class="main-nav__menu-item-divider"></span></li>
+      <!-- end divider -->
+
+      {% if options.enable_search %}
+      <li class="main-nav__menu-item">
+        <a class="main-nav__menu-item-anchor" title="{% t "Search" %}" role="button" data-open="search-modal"><i class="fa fa-search fa-fw"></i> {% t "Search" %}</a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+
+      <li class="main-nav__menu-item"><span class="main-nav__menu-item-divider"></span></li>
+      <!-- end divider -->
+      {% endif %}
+
+      {% if store.customers_enabled %}
+      <li class="main-nav__menu-item">
+        <a href="{% if customer %}{{ customer_account_url }}{% else %}{{ customer_login_url }}{% endif %}" class="main-nav__menu-item-anchor" title="{% if customer %}{% t "Go to my Account" %}{% else %}{% t "Login" %}{% endif %}">{% if customer %}{% t "Account" %}{% else %}{% t "Login" %}{% endif %}</a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+
+      <li class="main-nav__menu-item"><span class="main-nav__menu-item-divider"></span></li>
+      <!-- end divider -->
+      {% endif %}
+
+      {% if languages.size > 1 %}
+      <li class="main-nav__menu-item">
+        {% for language in languages %}
+        {% if languages.first.code == language.code %}
+        <span class="main-nav__menu-item-anchor" role="button"><i class="fa fa-globe fa-fw"></i> {{ language.code }}<i class="fa fa-angle-down fa-fw"></i></span>
+        {% endif %}
+        {% endfor %}
+
+        <ul class="menu  vertical  main-nav__submenu">
+          {% for language in languages %}
+          <li class="main-nav__submenu-item">
+            <a href="{{ language.url }}" class="main-nav__submenu-item-anchor" title="{{ language.name }}">{{ language.name }}</a>
+          </li>
+          <!-- end .main-nav__submenu-item -->
+          {% endfor %}
+        </ul>
+        <!-- end .main-nav__submenu -->
+      </li>
+      <!-- end .secondary-nav__menu-item -->
+
+      <li class="main-nav__menu-item"><span class="main-nav__menu-item-divider"></span></li>
+      <!-- end divider -->
+      {% endif  %}
+
+      {% if options.currencies != blank %}
+      <li class="main-nav__menu-item">
+        <span id="current_currency" class="main-nav__menu-item-anchor" role="button"><i class="fa fa-dollar fa-fw"></i> {{store.currency_code}}<i class="fa fa-angle-down fa-fw"></i></span>
+
+        <ul class="menu  vertical  main-nav__submenu">
+          <li class="main-nav__submenu-item">
+            <a class="main-nav__submenu-item-anchor" onclick="Jumpseller.setCurrency('{{store.currency_code}}');" title="{{store.currency_code}}">{{store.currency_code}}</a>
+          </li>
+          {% assign store_currencies = options.currencies | split: ',' %}
+          {% for currency in store_currencies %}
+          <li class="main-nav__submenu-item">
+            <a class="main-nav__submenu-item-anchor" onclick="Jumpseller.setCurrency('{{currency}}');" title="{{currency}}">{{currency}}</a>
+          </li>
+          <!-- end .main-nav__submenu-item -->
+          {% endfor %}
+        </ul>
+        <!-- end .main-nav__submenu -->
+      </li>
+      <!-- end .secondary-nav__menu-item -->
+
+      <li class="main-nav__menu-item"><span class="main-nav__menu-item-divider"></span></li>
+      <!-- end divider -->
+      {% endif  %}
+
+      <li class="main-nav__menu-item">
+        <a href="{{ cart.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--cart" title="{% t "Go to Cart" %}">
+          <i class="fa fa-shopping-cart fa-fw"></i> {% t "Cart" %} <span>{{ order.products_count }}</span>
+        </a>
+      </li>
+      <!-- end .main-nav__menu-item -->
+      {% endif %}
+    </ul>
+    <!-- end .toolbar-menu -->
+  </div>
+  <!-- end .top-bar-right -->
+
+    <div class="top-bar-left">
+      <ul class="dropdown  menu  main-nav__menu" data-dropdown-menu>
+        <li class="main-nav__menu-logo">
+          <a href="{{ store.url }}" class="main-nav__menu-logo-anchor" title="{% t "Go to Home page" %}">
+            {% if store.logo != blank %}
+            <img src="{{ store.logo }}" class="main-nav__menu-logo-object" alt="Logo {{ store.name }}">
+            {% else %}
+            {{ store.name }}
+            {% endif %}
+          </a>
+        </li>
+        <!-- end .main-nav__menu-logo -->
+
+        {% if template == 'cart' or template == 'checkout' or template == 'revieworder' %}
+        <!-- Cart -->
+        <li class="main-nav__menu-item">
+          {% if template == 'checkout' or template == 'revieworder' %}
+          <a href="{{ order.url }}" class="main-nav__menu-item-anchor" title="{% t "Go to Cart" %}">
+            <em class="main-nav__menu-item-string-number"><i class="fa fa-check fa-fw"></i></em> {% t "Cart" %}
+          </a>
+          {% else %}
+          <span class="main-nav__menu-item-string{% if template == 'cart' %}  current{% endif %}"><em class="main-nav__menu-item-string-number">1</em> {% t "Cart" %}</span>
+          {% endif %}
+        </li>
+        <!-- end .main-nav__menu-item -->
+
+        <!-- Checkout -->
+        <li class="main-nav__menu-item">
+          {% if template == 'revieworder' %}
+          <a href="{{ order.checkout_url }}" class="main-nav__menu-item-anchor" title="{% t "Go to Checkout" %}">
+            <em class="main-nav__menu-item-string-number"><i class="fa fa-check fa-fw"></i></em> {% t "Checkout" %}
+          </a>
+          {% else %}
+          <span class="main-nav__menu-item-string{% if template == 'checkout' %}  current{% endif %}">
+            <em class="main-nav__menu-item-string-number">2</em> {% t "Checkout" %}
+          </span>
+          {% endif %}
+        </li>
+        <!-- end .main-nav__menu-item -->
+
+        <!-- Review Order -->
+        <li class="main-nav__menu-item">
+          <span class="main-nav__menu-item-string{% if template == 'revieworder' %}  current{% endif %}">
+            <em class="main-nav__menu-item-string-number">3</em> {% t "Review Order" %}
+          </span>
+        </li>
+        <!-- end .main-nav__menu-item -->
+
+        <!-- Success -->
+        <li class="main-nav__menu-item">
+          <span class="main-nav__menu-item-string"><em class="main-nav__menu-item-string-number">4</em> {% t "Success" %}</span>
+        </li>
+        <!-- end .main-nav__menu-item -->
+        {% else %}
+        {% if menu.main %}
+        {% for item in menu.main.items %}
+        <li class="main-nav__menu-item">
+          <a href="{{ item.url }}" class="main-nav__menu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Go to" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}{% if item.dropdown %}<i class="fa fa-angle-down fa-fw"></i>{% endif %}</a>
+          {% if item.dropdown %}
+          <ul class="menu  vertical  main-nav__submenu">
+            {% for item in item.items %}
+            <li class="main-nav__submenu-item">
+              <a href="{{ item.url }}" class="main-nav__submenu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Go to" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}{% if item.dropdown %}<i class="fa fa-angle-right fa-fw"></i>{% endif %}</a>
+
+              {% if item.dropdown %}
+              <ul class="menu  vertical  main-nav__submenu">
+                {% for item in item.items %}
+                <li class="main-nav__submenu-item">
+                  <a href="{{ item.url }}" class="main-nav__submenu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Go to" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}</a>
+                </li>
+                <!-- end .main-nav__submenu-item -->
+                {% endfor %}
+              </ul>
+              <!-- end .main-nav__submenu -->
+              {% endif %}
+            </li>
+            <!-- end .main-nav__submenu-item -->
+            {% endfor %}
+          </ul>
+          <!-- end .main-nav__submenu -->
+          {% endif %}
+        </li>
+        <!-- end .main-nav__menu-item -->
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+      </ul>
+      <!-- end .main-nav__menu -->
+    </div>
+    <!-- end .top-bar-left -->
+
+  </div>
+  <!-- end .main-nav__container -->
+</nav>
+<!-- end #main-nav -->
+
+<!-- Mobile Nav (Medium & Small devices navigation) -->
+<div id="mobile-nav" class="title-bar  hide-for-large">
+  <div class="title-bar-left  mobile-nav__left">
+    <button class="mobile-nav__button  trsn" type="button" data-open="sidebar-nav"><i class="fa fa-bars fa-fw"></i> Menu</button>
+  </div>
+  <!-- end .mobile-nav__left -->
+
+  <div class="mobile-nav__center">
+    <a href="{{ store.url }}" class="mobile-nav__center-anchor">
+      {% if store.logo != empty %}
+      <img src="{{ store.logo }}" class="mobile-nav__center-logo" alt="Logo {{ store.name }}">
+      {% else %}
+      {{ store.name }}
+      {% endif %}
+    </a>
+  </div>
+  <!-- end .mobile-nav__center -->
+
+  <div class="title-bar-right  mobile-nav__right">
+    <button class="mobile-nav__button  trsn" type="button" data-open="sidebar-cart"><i class="fa fa-shopping-cart fa-fw"></i> </button>
+  </div>
+  <!-- end .mobile-nav__right -->
+</div>
+<!-- end #mobile-nav -->

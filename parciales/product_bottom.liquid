@@ -1,0 +1,33 @@
+<div class="row  row-large">
+  {% if product.description != blank %}
+  <!-- Product Description -->
+  <section id="product-description" class="small-12  medium-12  large-6{% unless product.fields != empty and product.field["Short Description"].value == blank %}  large-push-3{% endunless %}  columns">
+    <h1 class="product-description__title">{% t "Description" %}</h1>
+    <div class="product-description__content">{{ product.description }}</div>
+  </section>
+  <!-- end #product-description -->
+  {% endif %}
+  {% if product.fields != empty and product.field["Short Description"].value == blank %}
+  <section id="product-specs" class="small-12  medium-12  large-6{% if product.description == blank %}  large-push-3{% endif %}  columns">
+    <h1 class="product-specs__title">{% t "Specifications" %}</h1>
+    <ul class="no-bullet  product-specs__list">
+      {% for field in product.fields %}
+      <li class="product-specs__list-item">
+        <span class="product-specs__list-title  raleway"><strong>{{field.label}}: </strong> {{field.value}}</span>
+      </li>
+      <!-- end .product-specs__list-item -->
+      {% endfor %}
+
+      {% if product.digital == false %}
+      {% for attachment in product.attachments %}
+      <li class="product-specs__list-item">
+        <span class="product-specs__list-title  raleway"><a href="{{attachment.url}}" target="_blank"><strong>{{attachment.name}}</strong></a></span>
+      </li>
+      {% endfor %}
+      {% endif %}
+    </ul>
+    <!-- end .product-specs__list -->
+  </section>
+  {% endif %}
+</div>
+<!-- end .row-large -->

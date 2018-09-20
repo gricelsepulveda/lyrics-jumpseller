@@ -1,0 +1,96 @@
+<div id="product-modal-{{ product.id }}" class="reveal  {% if product.options.size == 0 %}small{% else %}large{% endif %}  text-center  product-modal" data-reveal data-animation-in="slide-in-down" data-animation-out="slide-out-up" data-v-offset="10">
+  <button class="close-button  product-modal__close" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  <!-- Product Modal Info -->
+  <div class="small-12{% if product.options.size > 0 %}  medium-6  large-6{% endif %}  columns  product-modal__info">
+    {% if product.brand != blank %}
+    <span class="product-modal__brand">{{ product.brand }}</span>
+    {% endif %}
+    <h2 class="product-modal__name">{{ product.name }}</h2>
+
+    {% if product.sku != blank and options.product_sku_visibility %}
+      <h2 class="sku_elem">{{product.sku}}</h2>
+    {% endif %}
+
+    <h3 class="product-modal__price">
+      {% if product.discount > 0 %}
+      <span class="product-modal__price-current">{{ product.price | minus:product.discount | price | replace:'USD','<em>USD</em>' }}</span>
+      <small class="product-modal__price-old">{% t "Before" %} <span>{{ product.price | price }}</span></small>
+      {% else %}
+      <span class="product-modal__price-current">{{ product.price | price | replace:'USD','<em>USD</em>' }}</span>
+      {% endif %}
+    </h3>
+    {% if product.description != blank %}
+      <a href="{{ product.url }}" class="product-modal__anchor  raleway" title="{% t "More Details" %}">{% t "More Details" %} <i class="fa fa-angle-right fa-fw"></i></a>
+    {% endif %}
+    <br>
+    {% if product.images.size > 0 %}
+    <img src="{{ product.images.first | resize:'250x250' }}" class="product-modal__image" alt="{{ product.name }}">
+    {% else %}
+
+    <img src="{{'product-block-no-image.jpg' | asset | resize:'250x250' }}" class="product-modal__image" alt="{{ product.name }}">
+    {% endif %}
+  </div>
+  <!-- end .product-modal__info -->
+
+  <!-- Product Modal Form -->
+  <form id="product-form-modal" class="small-12{% if product.options.size > 0 %}  medium-6  large-6{% endif %}  columns  product-form  product-form__modal{% if product.options.size > 0 %}  vertical{% endif %}" action="{{ product.add_to_cart_url }}" method="post" name="buy" enctype="multipart/form-data">
+    <div class="row">
+      {% if product.options.size > 0 %}
+      {% include 'product_options' %}
+      {% endif %}
+
+      <!-- Quantity -->
+      <div id="product-qty-{{ product.id }}" class="small-12  medium-12  large-4  columns  text-center  large-text-right  product-form__qty">
+        <div class="product-form__qty-wrapper">
+          <span class="product-form__qty-plus"><i class="fa fa-caret-up fa-fw"></i></span>
+          <input type="text" id="input-qty-{{ product.id }}" class="text  text-center  product-form__qty-input prod-options" name="qty" maxlength="5" value="1" />
+          <span class="product-form__qty-minus"><i class="fa fa-caret-down fa-fw"></i></span>
+        </div>
+
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('#product-qty-{{ product.id }}').find('.product-form__qty-plus').on('click', function(){
+              // Fake input
+              var divUpd = $(this).parent().find('.product-form__qty-input'),
+                newVal = parseInt(divUpd.val(), 10)+1;
+                divUpd.val(newVal);
+
+              // Hidden input
+              var divUpdMain = $(this).parent().find('#hidden_qty'),
+                newMainVal = parseInt(divUpdMain.val(), 10)+1;
+                divUpdMain.val(newMainVal);
+            });
+
+            $('#product-qty-{{ product.id }}').find('.product-form__qty-minus').on('click', function(){
+              // Fake input
+              var divUpd = $(this).parent().find('.product-form__qty-input'),
+                newVal = parseInt(divUpd.val(), 10)-1;
+              if(newVal>=1) divUpd.val(newVal);
+
+              // Hidden input
+              var divUpdMain = $(this).parent().find('#hidden_qty'),
+                newMainVal = parseInt(divUpdMain.val(), 10)-1;
+              if(newMainVal>=1) divUpdMain.val(newMainVal);
+            });
+          });
+        </script>
+      </div>
+      <!-- end .product-form__qty -->
+
+      <!-- Add to Cart -->
+      <div class="small-12  medium-12  large-8  columns  text-center  large-text-left  product-form__actions">
+        <input type="submit" id="product-form__actions-add-{{ product.id }}" class="button  large  circular  green  product-form__actions-button" value="{% t "Add to Cart" %}" onclick="$('#product-form-modal').submit()"/>
+      </div>
+      <!-- end .product-form__actions -->
+    </div>
+    <!-- end .row -->
+  </form>
+  <!-- end .product-form -->
+
+  <!-- Product Scripts -->
+  {% include 'product_block_modal_script' %}
+</div>
+<!-- end .product-modal -->

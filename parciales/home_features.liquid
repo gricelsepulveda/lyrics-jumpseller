@@ -1,0 +1,53 @@
+<!-- Heading -->
+<div class="small-12  columns  text-center  page-heading">
+  <h2 class="page-heading__title">{{ options.features_title }}</h2>
+  <p class="page-heading__text">{{ options.features_text }}</p>
+</div>
+<!-- end .page-heading -->
+
+<!-- Feature 1 -->
+<div class="small-12  medium-3  large-3  columns  features-block">
+  {% if options.features_1_image != blank %}
+  <img src="{{ options.features_1_image }}" class="features-block__image" alt="{{ options.features_1_title }}">
+  {% endif %}
+  <h2 class="features-block__title">{{ options.features_1_title }}</h2>
+  <p class="features-block__text">{{ options.features_1_text }}</p>
+</div>
+<!-- end .features-block -->
+
+<!-- Feature 2 -->
+<div class="small-12  medium-3  large-3  columns  features-block">
+  {% if options.features_2_image != blank %}
+  <img src="{{ options.features_2_image }}" class="features-block__image" alt="{{ options.features_2_title }}">
+  {% endif %}
+  <h2 class="features-block__title">{{ options.features_2_title }}</h2>
+  <p class="features-block__text">{{ options.features_2_text }}</p>
+</div>
+<!-- end .features-block -->
+
+<!-- Feature 3 -->
+<div class="small-12  medium-3  large-3  columns  features-block">
+  {% if options.features_3_image != blank %}
+  <img src="{{ options.features_3_image }}" class="features-block__image" alt="{{ options.features_3_title }}">
+  {% endif %}
+  <h2 class="features-block__title">{{ options.features_3_title }}</h2>
+  <p class="features-block__text">{{ options.features_3_text }}</p>
+</div>
+<!-- end .features-block -->
+
+<!-- Feature 4 -->
+<div class="small-12  medium-3  large-3  columns  features-block">
+  {% if options.features_4_image != blank %}
+  <img src="{{ options.features_4_image }}" class="features-block__image" alt="{{ options.features_4_title }}">
+  {% endif %}
+  <h2 class="features-block__title">{{ options.features_4_title }}</h2>
+  <p class="features-block__text">{{ options.features_4_text }}</p>
+</div>
+<!-- end .features-block -->
+
+{% if options.features_link != blank %}
+<div class="small-12  columns  features-actions">
+  <a href="{{ options.features_link }}" class="button  blue  circular  features-actions__button" title="{{ options.features_link_text }}">{{ options.features_link_text }} <i class="fa fa-arrow-right fa-fw"></i></a>
+</div>
+<!-- end .features-actions -->
+{% endif %}

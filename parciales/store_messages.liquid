@@ -1,0 +1,19 @@
+<!-- Success | Product Message -->
+<div id="product-message__success" class="reveal  small  text-center  product-message" aria-labelledby="product-message__success-title" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">
+  <h2 id="product-message__success-title" class="product-message__title">{% t "¡Listo!" %}</h2>
+  <p class="product-message__text">{% t "Tu producto fue añadido al carrito" %}</p>
+  <a href="{{ cart.url }}" class="button  circular  green  product-message__button" title="{% t "Ver carrito" %}">{% t "Ver carrito" %}</a>
+  <br>
+  <button class="close-button  product-message__close  trsn" data-close aria-label="Close reveal" type="button">{% t "Seguir comprando" %}</button>
+</div>
+<!-- end #product-message__success -->
+
+<!-- Error | Product Message -->
+<div id="product-message__error" class="reveal  small  text-center  product-message" aria-labelledby="product-message__error-title" data-reveal data-close-on-click="true" data-animation-in="slide-in-down" data-animation-out="slide-out-up">
+  <h2 id="product-message__error-title" class="product-message__title">{% t "Ops!" %}</h2>
+  <p class="product-message__text">{% t "Tu producto no pudo ser agregado" %}</p>
+  <button class="close-button  product-message__close  trsn" data-close aria-label="Close reveal" type="button">
+    <i class="fa fa-times fa-fw"></i> {% t "Intentar de nuevo" %}
+  </button>
+</div>
+<!-- end #product-message__error -->

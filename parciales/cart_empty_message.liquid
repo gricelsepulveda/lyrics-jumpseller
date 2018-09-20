@@ -1,0 +1,14 @@
+<!-- Void Message -->
+<div class="small-12  medium-10  medium-push-1  large-8  large-push-2  columns  text-center  cart-empty">
+  <div class="small-12  columns  cart-empty__wrapper">
+    <h3 class="cart-empty__title">{% t "Tu carrito está vacío" %}</h3>
+    {% if options.enable_search %}
+    <p class="cart-empty__text"><a class="cart-empty__text-anchor" title="{% t "Buscar" %}" data-open="search-modal" role="button">{% t "Intenta buscar" %}</a> {% t 'o continua mirando haciendo click en el siguiente botón' %}.</p>
+    {% else %}
+    <p class="cart-empty__text">{% t 'Continua mirando haciendo click en el siguiente botón' %}.</p>
+    {% endif %}
+    <a onclick="history.go(-1); return false;" class="button  small  circular  blue" title="{% t "Ir atrás y seguir comprando" %}"><i class="fa fa-arrow-left fa-fw"></i> {% t "Ir atrás y seguir comprando" %}</a>
+  </div>
+  <!-- end .alert-box -->
+</div>
+<!-- end .cart-empty -->

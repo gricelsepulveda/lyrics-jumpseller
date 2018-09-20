@@ -1,0 +1,23 @@
+{% if product.brand != blank %}
+<span class="product-info__brand">{{ product.brand }}</span>
+{% endif %}
+<h1 class="product-info__name">{{ product.name }}</h1>
+<h2 class="product-info__price">
+  {% if product.discount > 0 %}
+  <span class="product-info__price-current">{{ product.price | minus:product.discount | price | replace:'USD','<em>USD</em>' }}</span>
+  <small class="product-info__price-old">{% t "Before" %} <span>{{ product.price | price }}</span></small>
+  {% else %}
+  <span class="product-info__price-current">{{ product.price | price | replace:'USD','<em>USD</em>' }}</span>
+  {% endif %}
+</h2>
+{% if product.sku != blank and options.product_sku_visibility %}
+  <h2 class="sku_elem">{{product.sku}}</h2>
+{% endif %}
+{% if product.field["Short Description"] and product.field["Short Description"].value != blank %}
+<h3 class="product-info__description">{{ product.field["Short Description"].value }}</h3>
+{% endif %}
+{% if product.description != blank %}
+<a href="#product-bottom" class="product-info__anchor  raleway" title="{% t "More Details" %}" role="button">{% t "Más detalles" %} <i class="fa fa-angle-down fa-fw"></i></a>
+{% endif %}
+<br>
+<hr class="product-info__divider">

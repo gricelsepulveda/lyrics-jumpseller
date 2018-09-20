@@ -1,0 +1,41 @@
+<div class="small-12  columns  hide-for-large  cart-breadcrumbs">
+  <ul class="no-bullet  cart-breadcrumbs__menu">
+    <!-- Cart -->
+    <li class="cart-breadcrumbs__menu-item{% if template == 'cart' %}  current{% endif %}">
+      {% if template == 'checkout' or template == 'revieworder' %}
+      <a href="{{ order.url }}" class="cart-breadcrumbs__menu-anchor" title="{% t "Go to Cart" %}"><div class="cart-breadcrumbs__menu-number"><i class="fa fa-check fa-fw"></i></div>{% t "Cart" %}</a>
+      {% else %}
+      <span class="cart-breadcrumbs__menu-string"><div class="cart-breadcrumbs__menu-number">1</div>{% t "Cart" %}</span>
+      {% endif %}
+    </li>
+    <!-- end .cart-breadcrumbs__menu-item -->
+
+    <!-- Checkout -->
+    <li class="cart-breadcrumbs__menu-item{% if template == 'checkout' %}  current{% endif %}">
+      {% if template == 'revieworder' %}
+      <a href="{{ order.checkout_url }}" class="cart-breadcrumbs__menu-anchor" title="{% t "Ir al checkout" %}"><div class="cart-breadcrumbs__menu-number"><i class="fa fa-check fa-fw"></i></div>{% t "Checkout" %}</a>
+      {% else %}
+      <span class="cart-breadcrumbs__menu-string"><div class="cart-breadcrumbs__menu-number">2</div>{% t "Checkout" %}</span>
+      {% endif %}
+    </li>
+    <!-- end .cart-breadcrumbs__menu-item -->
+
+    <!-- Review Order -->
+    <li class="cart-breadcrumbs__menu-item{% if template == 'revieworder' %}  current{% endif %}">
+      <span class="cart-breadcrumbs__menu-string"><div class="cart-breadcrumbs__menu-number">3</div>{% t "Revisar orden" %}</span>
+    </li>
+    <!-- end .cart-breadcrumbs__menu-item -->
+
+    <!-- Success -->
+    <li class="cart-breadcrumbs__menu-item">
+      <span class="cart-breadcrumbs__menu-string"><div class="cart-breadcrumbs__menu-number">4</div>{% t "Correcto" %}</span>
+    </li>
+    <!-- end .cart-breadcrumbs__menu-item -->
+    
+    <li class="cart-breadcrumbs__menu-item  last">
+      <a href="{{ order.url }}" class="cart-breadcrumbs__menu-back" title="{% t "Editar Orden" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Editar orden" %}</a>
+    </li>
+    <!-- end .cart-breadcrumbs__menu-item -->
+  </ul>
+  <!-- end .cart-breadcrumbs__menu -->  
+</div>

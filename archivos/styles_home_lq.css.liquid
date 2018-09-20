@@ -1,0 +1,132 @@
+
+/* ====================================================================================
+  SLIDESHOW
+==================================================================================== */
+/*  Slides Color Assignment
+==================================================================================== */
+{% if options.enable_slide_1 %}
+/*  Slide 1  */
+#slider_block_1 {background-color: {{ options.slide_1_background }};}
+{% if options.slide_1_background_image != blank %}
+#slider_block_1 {background-image: url("{{ options.slide_1_background_image }}");}
+{% endif %}
+#slider_block_1 .slider-block__title {color: {{ options.slide_1_title_color }};}
+#slider_block_1 .slider-block__text {color: {{ options.slide_1_text_color }};}
+#slider_block_1 .slider-block__button--first {color: {{ options.slide_1_button_1_text_color }}; background: {{ options.slide_1_button_1_background }};}
+#slider_block_1 .slider-block__button--second {color: {{ options.slide_1_button_2_text_color }}; border-color: {{ options.slide_1_button_2_text_color }};}
+{% endif %}
+@media only screen and (max-width: 768px) {
+  #slider_block_1,#slider_block_2,#slider_block_3,#slider_block_4 { background-position: center center; background-size: cover !important;}
+}
+{% if options.enable_slide_2 %}
+/*  Slide 2  */
+#slider_block_2 {background-color: {{ options.slide_2_background }};}
+{% if options.slide_2_background_image != blank %}
+#slider_block_2 {background-image: url("{{ options.slide_2_background_image }}");}
+{% endif %}
+#slider_block_2 .slider-block__title {color: {{ options.slide_2_title_color }};}
+#slider_block_2 .slider-block__text {color: {{ options.slide_2_text_color }};}
+#slider_block_2 .slider-block__button--first {color: {{ options.slide_2_button_1_text_color }}; background: {{ options.slide_2_button_1_background }};}
+#slider_block_2 .slider-block__button--second {color: {{ options.slide_2_button_2_text_color }}; border-color: {{ options.slide_2_button_2_text_color }};}
+{% endif %}
+
+{% if options.enable_slide_3 %}
+/*  Slide 3  */
+#slider_block_3 {background-color: {{ options.slide_3_background }};}
+{% if options.slide_3_background_image != blank %}
+#slider_block_3 {background-image: url("{{ options.slide_3_background_image }}");}
+{% endif %}
+#slider_block_3 .slider-block__title {color: {{ options.slide_3_title_color }};}
+#slider_block_3 .slider-block__text {color: {{ options.slide_3_text_color }};}
+#slider_block_3 .slider-block__button--first {color: {{ options.slide_3_button_1_text_color }}; background: {{ options.slide_3_button_1_background }};}
+#slider_block_3 .slider-block__button--second {color: {{ options.slide_3_button_2_text_color }}; border-color: {{ options.slide_3_button_2_text_color }};}
+{% endif %}
+
+{% if options.enable_slide_4 %}
+/*  Slide 4  */
+#slider_block_4 {background-color: {{ options.slide_4_background }};}
+{% if options.slide_4_background_image != blank %}
+#slider_block_4 {background-image: url("{{ options.slide_4_background_image }}");}
+{% endif %}
+#slider_block_4 .slider-block__title {color: {{ options.slide_4_title_color }};}
+#slider_block_4 .slider-block__text {color: {{ options.slide_4_text_color }};}
+#slider_block_4 .slider-block__button--first {color: {{ options.slide_4_button_1_text_color }}; background: {{ options.slide_4_button_1_background }};}
+#slider_block_4 .slider-block__button--second {color: {{ options.slide_4_button_2_text_color }}; border-color: {{ options.slide_4_button_2_text_color }};}
+{% endif %}
+
+
+/* ====================================================================================
+  FEATURES
+==================================================================================== */
+/*  Features Actions
+==================================================================================== */
+.features-actions__button {
+  color: {{ options.features_button_color }} !important;
+  background: {{ options.features_button_background }} !important;
+}
+
+/*  Features Color Assignments
+==================================================================================== */
+#features {background: {{ options.features_background }};}
+
+/*  Features Titles  */
+#features .page-heading__title,
+#features .features-block__title  {color: {{ options.features_titles_colors }};}
+
+/*  Features Texts  */
+#features .page-heading__text,
+#features .features-block__text  {color: {{ options.features_texts_colors }};}
+
+
+/* ====================================================================================
+  SPECIFICATIONS
+==================================================================================== */
+/*  Spec Color Assignment
+==================================================================================== */
+/*  Spec 1  */
+#product-spec__first {background: {{ options.product_spec_1_background }};}
+#product-spec__first .product-spec__content-title {color: {{ options.product_spec_1_title_color }} !important;}
+#product-spec__first .product-spec__content-text {color: {{ options.product_spec_1_text_color }};}
+#product-spec__first .product-spec__content-button {color: {{ options.product_spec_1_button_colors }} !important; border-color: {{ options.product_spec_1_button_colors }} !important;}
+#product-spec__first .product-spec__content-button:hover {background: {{ options.product_spec_1_button_colors }} !important; color: #FFF !important;}
+
+/*  Spec 2  */
+#product-spec__second {background: {{ options.product_spec_2_background }};}
+#product-spec__second .product-spec__content-title {color: {{ options.product_spec_2_title_color }} !important;}
+#product-spec__second .product-spec__content-text {color: {{ options.product_spec_2_text_color }};}
+#product-spec__second .product-spec__content-button {color: {{ options.product_spec_2_button_colors }} !important; border-color: {{ options.product_spec_2_button_colors }} !important;}
+#product-spec__second .product-spec__content-button:hover {background:{{ options.product_spec_2_button_colors }}!important; color: #FFF !important;}
+
+/*  Spec 3  */
+#product-spec__third {background: {{ options.product_spec_3_background }};}
+#product-spec__third .product-spec__content-title {color: {{ options.product_spec_3_title_color }} !important;}
+#product-spec__third .product-spec__content-text {color: {{ options.product_spec_3_text_color }};}
+#product-spec__third .product-spec__content-button {color: {{ options.product_spec_3_button_colors }} !important; border-color: {{ options.product_spec_3_button_colors }} !important;}
+#product-spec__third .product-spec__content-button:hover {background:{{ options.product_spec_3_button_colors }}!important; color: #FFF !important;}
+
+/* ====================================================================================
+  FEATURED PRODUCTS
+==================================================================================== */
+/*  Featured Products Heading & Actions
+==================================================================================== */
+#featured-products .page-heading__title {
+  color: {{ options.featured_products_title_color }};
+}
+#featured-products .page-heading__text {
+  color: {{ options.featured_products_text_color }};
+}
+#featured-products .featured-products__actions-button,
+.blog-feed__actions .button.blue {
+  color: {{ options.featured_products_button_text_color }};
+  background: {{ options.featured_products_button_background }};
+}
+
+
+/* ====================================================================================
+  TESTIMONIALS
+==================================================================================== */
+/*  Testimonials Color Assignment
+==================================================================================== */
+#testimonials {background: {{ options.testimonials_background }};}
+.testimonials-heading__title {color: {{ options.testimonials_title_color }};}
+.testimonials-quotes__block-text {color: {{ options.testimonials_quotes_colors }};}

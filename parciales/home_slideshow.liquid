@@ -1,0 +1,190 @@
+<div id="slider">
+  {% if options.enable_slide_1 == true %}
+  <!-- Slide 1 -->
+  <div id="slider_block_1" class="slider-block">
+    <div class="row  slider-block__wrapper" data-equalizer="slider-block-1" data-equalize-on="medium">
+      <div class="small-12  medium-6  large-6{% if options.slide_1_alignment == 'Right' %}  large-push-6{% endif %}  columns  text-center  large-text-left  slider-block__content" data-equalizer-watch="slider-block-1">
+        <div class="slider-block__content-wrapper">
+          <div class="slider-block__content-wrapper-cell">
+             {% if options.slide_1_title != blank %}
+              <h2 class="slider-block__title">{{ options.slide_1_title }}</h2>
+            {% endif %}
+            {% if options.slide_1_text != blank %}
+              <div class="slider-block__text">{{ options.slide_1_text }}</div>
+            {% endif %}
+            {% if options.enable_slide_1_button_1 == true and options.slide_1_button_1_text != blank %}
+              <a href="{{ options.slide_1_button_1_link }}" class="button  circular  white  slider-block__button  slider-block__button--first" title="{{ options.slide_1_button_1_text }}">{{ options.slide_1_button_1_text }}</a>
+            {% endif %}
+            {% if options.enable_slide_1_button_2 == true and options.slide_1_button_2_text != blank %}
+            <a href="{{ options.slide_1_button_2_link }}" class="button  circular  bordered  white  slider-block__button  slider-block__button--second" title="{{ options.slide_1_button_2_text }}">{{ options.slide_1_button_2_text }}</a>
+            {% endif %}
+          </div>
+          <!-- end .slider-block__content-wrapper-cell -->
+        </div>
+        <!-- end .slider-block__content-wrapper -->
+      </div>
+      <!-- end .slider-block__content -->
+
+      {% if options.slide_1_image != blank %}
+      <div class="small-12  medium-6  large-6{% if options.slide_1_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-1">
+        <img src="{{ options.slide_1_image }}" class="slider-block__image-object" alt="{{ options.slide_1_title }}">
+      </div>
+      <!-- end .slider-block__image -->
+      {% else %}
+      <div class="small-12  medium-6  large-6{% if options.slide_1_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-1">
+        <img src="{{ 'slider-image-demo.png' | asset }}" class="slider-block__image-object" alt="{{ options.slide_1_title }}">
+      </div>
+      {% endif %}
+    </div>
+    <!-- end .row -->
+  </div>
+  <!-- end #slider_block_1 -->
+  {% endif %}
+
+  {% if options.enable_slide_2 == true %}
+  <!-- Slide 2 -->
+  <div id="slider_block_2" class="slider-block">
+    <div class="row  slider-block__wrapper" data-equalizer="slider-block-2" data-equalize-on="medium">
+      <div class="small-12  medium-6  large-6{% if options.slide_2_alignment == 'Right' %}  large-push-6{% endif %}  columns  text-center  large-text-left  slider-block__content" data-equalizer-watch="slider-block-2">
+        <div class="slider-block__content-wrapper">
+          <div class="slider-block__content-wrapper-cell">
+            {% if options.slide_2_title != blank %}
+              <h2 class="slider-block__title">{{ options.slide_2_title }}</h2>
+            {% endif %}
+            {% if options.slide_2_text != blank %}
+              <div class="slider-block__text">{{ options.slide_2_text }}</div>
+            {% endif %}
+            {% if options.enable_slide_2_button_1 == true and options.slide_2_button_1_text != blank %}
+            <a href="{{ options.slide_2_button_1_link }}" class="button  circular  white  slider-block__button  slider-block__button--first" title="{{ options.slide_2_button_1_text }}">{{ options.slide_2_button_1_text }}</a>
+            {% endif %}
+            {% if options.enable_slide_2_button_2 == true and options.slide_2_button_2_text != blank %}
+            <a href="{{ options.slide_2_button_2_link }}" class="button  circular  bordered  white  slider-block__button  slider-block__button--second" title="{{ options.slide_2_button_2_text }}">{{ options.slide_2_button_2_text }}</a>
+            {% endif %}
+          </div>
+          <!-- end .slider-block__content-wrapper-cell -->
+        </div>
+        <!-- end .slider-block__content-wrapper -->
+      </div>
+      <!-- end .slider-block__content -->
+
+      {% if options.slide_2_image != blank %}
+      <div class="small-12  medium-6  large-6{% if options.slide_2_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-2">
+        <img src="{{ options.slide_2_image }}" class="slider-block__image-object" alt="{{ options.slide_2_title }}">
+      </div>
+      <!-- end .slider-block__image -->
+      {% else %}
+      <div class="small-12  medium-6  large-6{% if options.slide_2_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-1">
+        <img src="{{ 'slider-image-demo.png' | asset }}" class="slider-block__image-object" alt="{{ options.slide_1_title }}">
+      </div>
+      {% endif %}
+    </div>
+    <!-- end .row -->
+  </div>
+  <!-- end #slider_block_2 -->
+  {% endif %}
+
+  {% if options.enable_slide_3 == true %}
+  <!-- Slide 3 -->
+  <div id="slider_block_3" class="slider-block">
+    <div class="row  slider-block__wrapper" data-equalizer="slider-block-3" data-equalize-on="medium">
+      <div class="small-12  medium-6  large-6{% if options.slide_3_alignment == 'Right' %}  large-push-6{% endif %}  columns  text-center  large-text-left  slider-block__content" data-equalizer-watch="slider-block-3">
+        <div class="slider-block__content-wrapper">
+          <div class="slider-block__content-wrapper-cell">
+            {% if options.slide_3_title != blank %}
+            <h2 class="slider-block__title">{{ options.slide_3_title }}</h2>
+            {% endif %}
+            {% if options.slide_3_text != blank %}
+            <div class="slider-block__text">{{ options.slide_3_text }}</div>
+            {% endif %}
+            {% if options.enable_slide_3_button_1 == true and options.slide_3_button_1_text != blank %}
+            <a href="{{ options.slide_3_button_1_link }}" class="button  circular  white  slider-block__button  slider-block__button--first" title="{{ options.slide_3_button_1_text }}">{{ options.slide_3_button_1_text }}</a>
+            {% endif %}
+            {% if options.enable_slide_3_button_2 == true and options.slide_3_button_2_text != blank %}
+            <a href="{{ options.slide_3_button_2_link }}" class="button  circular  bordered  white  slider-block__button  slider-block__button--second" title="{{ options.slide_3_button_2_text }}">{{ options.slide_3_button_2_text }}</a>
+            {% endif %}
+          </div>
+          <!-- end .slider-block__content-wrapper-cell -->
+        </div>
+        <!-- end .slider-block__content-wrapper -->
+      </div>
+      <!-- end .slider-block__content -->
+
+      {% if options.slide_3_image != blank %}
+      <div class="small-12  medium-6  large-6{% if options.slide_3_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-3">
+        <img src="{{ options.slide_3_image }}" class="slider-block__image-object" alt="{{ options.slide_3_title }}">
+      </div>
+      <!-- end .slider-block__image -->
+      {% else %}
+      <div class="small-12  medium-6  large-6{% if options.slide_3_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-1">
+        <img src="{{ 'slider-image-demo.png' | asset }}" class="slider-block__image-object" alt="{{ options.slide_1_title }}">
+      </div>
+      {% endif %}
+    </div>
+    <!-- end .row -->
+  </div>
+  <!-- end #slider_block_3 -->
+  {% endif %}
+
+  {% if options.enable_slide_4 == true %}
+  <!-- Slide 4 -->
+  <div id="slider_block_4" class="slider-block">
+    <div class="row  slider-block__wrapper" data-equalizer="slider-block-4" data-equalize-on="medium">
+      <div class="small-12  medium-6  large-6{% if options.slide_4_alignment == 'Right' %}  large-push-6{% endif %}  columns  text-center  large-text-left  slider-block__content" data-equalizer-watch="slider-block-4">
+        <div class="slider-block__content-wrapper">
+          <div class="slider-block__content-wrapper-cell">
+            {% if options.slide_4_title != blank %}
+              <h2 class="slider-block__title">{{ options.slide_4_title }}</h2>
+            {% endif %}
+            {% if options.slide_4_text != blank %}
+              <div class="slider-block__text">{{ options.slide_4_text }}</div>
+            {% endif %}
+            {% if options.enable_slide_4_button_1 == true and options.slide_4_button_1_text != blank %}
+            <a href="{{ options.slide_4_button_1_link }}" class="button  circular  white  slider-block__button  slider-block__button--first" title="{{ options.slide_4_button_1_text }}">{{ options.slide_4_button_1_text }}</a>
+            {% endif %}
+            {% if options.enable_slide_4_button_2 == true and options.slide_4_button_2_text != blank %}
+            <a href="{{ options.slide_4_button_2_link }}" class="button  circular  bordered  white  slider-block__button  slider-block__button--second" title="{{ options.slide_4_button_2_text }}">{{ options.slide_4_button_2_text }}</a>
+            {% endif %}
+          </div>
+          <!-- end .slider-block__content-wrapper-cell -->
+        </div>
+        <!-- end .slider-block__content-wrapper -->
+      </div>
+      <!-- end .slider-block__content -->
+
+      {% if options.slide_4_image != blank %}
+      <div class="small-12  medium-6  large-6{% if options.slide_4_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-4">
+        <img src="{{ options.slide_4_image }}" class="slider-block__image-object" alt="{{ options.slide_4_title }}">
+      </div>
+      <!-- end .slider-block__image -->
+      {% else %}
+      <div class="small-12  medium-6  large-6{% if options.slide_4_alignment == 'Right' %}  large-pull-6{% endif %}  columns  slider-block__image" data-equalizer-watch="slider-block-1">
+        <img src="{{ 'slider-image-demo.png' | asset }}" class="slider-block__image-object" alt="{{ options.slide_1_title }}">
+      </div>
+      {% endif %}
+    </div>
+    <!-- end .row -->
+  </div>
+  <!-- end #slider_block_4 -->
+  {% endif %}
+</div>
+<!-- end #slider -->
+
+<!-- Slider Script -->
+<script type="application/javascript">
+  $(document).ready(function(){
+    $('#slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows:  {% if options.slider_arrows == true %}true{% elsif options.slider_arrows == false %}false{% endif %},
+      dots: true,
+      fade: {% if options.slider_transition == 'Fade' %}true{% elsif options.slider_transition == 'Carousel' %}false{% endif %},
+      cssEase: 'linear',
+      speed: 500,
+      autoplay: {% if options.slider_autoplay == true %}true{% elsif options.slider_autoplay == false %}false{% endif %},
+      autoplaySpeed: {% if options.slider_autoplay_speed != blank %}{{ options.slider_autoplay_speed }}{% else %}6000{% endif %},
+      pauseOnHover: false,
+      pauseOnDotsHover: true
+    });
+  });
+</script>
+<!-- end Slider Script -->

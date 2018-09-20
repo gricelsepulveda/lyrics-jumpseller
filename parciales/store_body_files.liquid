@@ -1,0 +1,49 @@
+{% if template == 'home' or template == 'product' %}
+<!-- Slick Slider JS -->
+<script type="text/javascript" src="{{ 'slick.min.js' | asset }}"></script>
+{% endif %}
+
+<!-- SVGeezy Script -->
+<script type="text/javascript" src="{{ 'svgeezy.min.js' | asset }}"></script>
+<script>svgeezy.init(false, 'png');</script>
+
+<!-- Foundation Javascript Files -->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/5.5.3/js/vendor/modernizr.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/5.5.3/js/vendor/placeholder.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/5.5.3/js/vendor/fastclick.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/5.5.3/js/vendor/jquery.cookie.js"></script>-->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/g/foundation@5.5.3(js/vendor/fastclick.js+js/vendor/jquery.cookie.js+js/vendor/modernizr.js+js/vendor/placeholder.js)"></script>-->
+<script type="text/javascript" src="{{ 'what-input.js' | asset }}"></script>
+
+<!-- Initialiaze Foundation Framework -->
+
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
+<script type="text/javascript">$(document).foundation();</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.filestyle/1.1.0/js/bootstrap-filestyle.min.js"></script>
+
+<script type="text/javascript">
+  $('#customer_details').find('[name^=additional_field]').parent().addClass('field small-12 columns').removeClass('col-sm-12');
+  $('#customer_address').find('[name^=additional_field]').parent().addClass('field small-12 medium-6 large-6 columns').removeClass('col-sm-12');
+</script>
+
+<script type="text/javascript" src="{{ 'custom.js.liquid' | asset }}"></script>
+{% if options.currencies != empty %}
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/money.js/0.2.0/money.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
+<script type="text/javascript">
+  var open_exchange_rates_token = '{{options.open_exchange_rates_token}}';
+  var i18n_decimal_mark = '{{store.i18n_decimal_mark}}';
+
+  if(typeof(Storage) !== "undefined") {
+    if (sessionStorage.getItem('global_currency') == null){
+      sessionStorage.setItem('global_currency', '{{ store.currency_code }}');
+      sessionStorage.setItem('store_currency', '{{ store.currency_code }}');
+    }
+  } else {
+    // Sorry! No Web Storage support..
+    console.log("Unable to use multi-currency on this store. Please update your browser.");
+    $('#current_currency').parents('li').hide();
+  }
+</script>
+{% endif %}

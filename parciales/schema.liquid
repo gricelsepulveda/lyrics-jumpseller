@@ -1,0 +1,88 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/"
+  {% case template %}
+  {% when 'product' %},
+    "@type": "Product",
+    "name": "{{product.name}}",
+    "url": "{{store.url}}{{product.url}}",
+    "itemCondition": "http://schema.org/NewCondition",
+    {% if product.sku != blank %}"sku": "{{product.sku}}",{% endif %}
+    {% if product.images.size > 0 %}"image": "{{product.images.first}}",{% endif %}
+    "description": "{{ product.description | strip_html | escape | strip | strip_newlines}}",
+    {% if product.brand != blank %}
+    "brand": {
+      "@type": "Thing",
+      "name": "{{product.brand}}"
+    },
+    {% endif %}
+    "offers": {
+      {% if product.variants.size > 0 %}
+        {% assign maxPrice = product.variants.first.price %}
+        {% assign minPrice = product.variants.first.price %}
+        {% assign available = false %}
+        {% for variant in product.variants %}
+          {% if variant.price > maxPrice %}
+            {% assign maxPrice = variant.price %}
+          {% endif %}
+          {% if minPrice > variant.price %}
+            {% assign minPrice = variant.price %}
+          {% endif %}
+          {% if variant.stock > 0 or variant.stock_unlimited == true %}
+            {% assign available = true %}
+          {% endif %}
+        {% endfor %}
+        "@type": "AggregateOffer",
+        "price": "{{product.price}}",
+        {% if available == true%}
+        "availability": "http://schema.org/InStock",
+        {% else %}
+        "availability": "http://schema.org/OutOfStock",
+        {% endif %}
+        "lowPrice": "{{minPrice}}",
+        "highPrice": "{{maxPrice}}",
+        "offerCount": "{{product.variants.size}}",
+      {% else %}
+        "@type": "Offer",
+        "price": "{{product.price}}",
+        "itemCondition": "http://schema.org/NewCondition",
+        {% if product.stock == 0 and product.stock_unlimited == false %}
+        "availability": "http://schema.org/OutOfStock"
+        {% else %}
+        "availability": "http://schema.org/InStock",
+        {% endif %}
+      {% endif %}
+      "priceCurrency": "{{store.currency_code}}",
+      "seller": {
+        "@type": "Organization",
+        "name": "{{store.name}}"
+      }
+    }
+  {% when 'contactpage' %},
+      "@type": "Store",
+      "@id": "{{store.url}}",
+      "name": "{{store.name}}",
+      {% if options.phone != blank %}"telephone" : "{{ options.phone }}",{% endif %}
+      {% if store.logo != blank %}"image": "{{store.logo}}",{% endif %}
+      {% if store.address != blank %}
+      "address": {
+        "@type": "PostalAddress",
+        {% if store.address.size > 0 %}"streetAddress": "{{store.address}}",{% endif %}
+        {% if store.city.size > 0 %}"addressLocality": "{{store.city}}",{% endif %}
+        {% if store.region.size > 0 %}"addressRegion": "{{store.region}}",{% endif %}
+        {% if store.postal.size > 0 %}"postalCode": "{{store.postal}}",{% endif %}
+        "addressCountry": "{{store.country}}"
+      },
+      {% endif %}
+      "url": "{{store.url}}"
+  {% when 'home' %},
+      "@type": "WebSite",
+      "url": "{{store.url}}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{store.url}}/search/{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+  {% endcase %}
+}
+</script>

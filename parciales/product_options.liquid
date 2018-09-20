@@ -1,0 +1,56 @@
+<div class="small-12  columns  product-options">
+  <div class="row">
+    {% for option in product.options %}
+    {% capture the_option %}{{ option.name | downcase | replace:' ','-' | replace: 'Á','a' | replace: 'á','a' | replace: 'É','e' | replace: 'é','e' | replace: 'Í','i' | replace: 'í','i' | replace: 'Ó','o' | replace: 'ó','o' | replace: 'Ú','u' | replace: 'ú','u' | replace: 'Ñ','n' | replace: 'ñ','n' }}{% endcapture %}
+
+    <div class="small-12  columns  product-options__wrapper">
+      {% if option.type == 'option' %}
+      <!-- Select Option -->
+      <span class="product-options__title  raleway">{% t "Escoger" %} {{ option.name }}</span>
+      <select name="{{option.name}}" class="form-control prod-options">
+        {% for value in option.values %}
+          {% assign variant_id = nil %}
+          {% assign variant_stock = nil %}
+          {% for variant in product.variants %}
+            {% if variant.values.first.id == value.id %}
+              {% assign variant_id = variant.id %}
+              {% assign variant_stock = variant.stock %}
+            {% endif %}
+          {% endfor %}
+
+          <option data-variant-stock="{{variant_stock}}" data-variant-id="{{variant_id}}" value="{{value.id}}">{{value.name}}</option>
+        {% endfor %}
+      </select>
+      {% elsif option.type == 'input' %}
+      <!-- Input Option -->
+      <span class="product-options__title  raleway">{% t "Escoger" %} {{ option.name }}</span>
+      <input type="text" id="{{ the_option }}_options_input" class="text  text-center  product-options__input" name='{{ option.name }}' placeholder="{% t 'Escribe acá...' %}">
+      {% elsif option.type == 'textarea' %}
+      <!-- Text Area Option -->
+      <span class="product-options__title  raleway">{% t "Escoger" %} {{ option.name }}</span>
+      <textarea type="text" id="{{ the_option }}_options_textarea" class="text  text-left  product-options__textarea" name='{{ option.name }}' placeholder="{% t 'Escribe acá...' %}"></textarea>
+      {% elsif option.type == 'file' %}
+      <!-- File Option -->
+      <span class="product-options__title  raleway">{% t "Escoger" %} {{ option.name }}</span>
+
+     <input class="filestyle product_option_value_file_upload" type="file" name="{{option.name}}"/>
+     <script type="text/javascript">
+       $(document).ready(function(){
+         $(".product_option_value_file_upload").filestyle();
+         setTimeout(function(){
+             $('.group-span-filestyle label').html('{% t 'Subir archivo' %}');
+           }, 500);
+         });
+     </script>
+      {% endif %}
+
+      <!-- end #format_variant_select -->
+    </div>
+    <!-- end .product-options__wrapper -->
+    {% endfor %}
+
+    <hr class="product-options__divider">
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end #product-options -->

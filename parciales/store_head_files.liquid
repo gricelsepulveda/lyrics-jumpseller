@@ -1,0 +1,57 @@
+<!-- CSS Files -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css" integrity="sha256-itWEYdFWzZPBG78bJOOiQIn06QCgN/F0wMDcC4nOhxY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/motion-ui/1.1.1/motion-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="{{ 'styles.css' | asset }}" />
+<link rel="stylesheet" type="text/css" href="{{ 'styles_pickers.css' | asset }}" />
+
+{% if template == 'home' %}
+<!-- Homepage CSS files -->
+<link rel="stylesheet" type="text/css" href="{{ 'styles_home.css' | asset }}" />
+<link rel="stylesheet" type="text/css" href="{{ 'styles_home_lq.css' | asset }}" />
+{% elsif template == 'product' %}
+<!-- Product Page CSS file -->
+<link rel="stylesheet" type="text/css" href="{{ 'styles_product.css' | asset }}" />
+{% elsif template == 'contactpage' %}
+<!-- Contact Page CSS file -->
+<link rel="stylesheet" type="text/css" href="{{ 'styles_contact.css' | asset }}" />
+{% elsif template == 'cart' or template == 'checkout' or template == 'revieworder' %}
+<!-- Shopping Process pages CSS file -->
+<link rel="stylesheet" type="text/css" href="{{ 'styles_process.css' | asset }}" />
+{% elsif template == 'success' %}
+<!-- Success Page CSS file -->
+<link rel="stylesheet" type="text/css" href="{{ 'styles_success.css' | asset }}" />
+{% elsif template == 'customer_login' or template == 'customer_account' or template == 'customer_address' or template == 'customer_reset_password' or template == 'customer_details' %}
+<!-- Customer pages CSS file -->
+<link rel="stylesheet" type="text/css" href="{{ 'styles_customer.css' | asset }}" />
+{% endif %}
+
+{% if template == 'home' or template == 'product' %}
+<!-- Slick Slider Files -->
+<link rel="stylesheet" type="text/css" href="{{ 'slick.css' | asset }}">
+<link rel="stylesheet" type="text/css" href="{{ 'slick-theme.css' | asset }}">
+{% endif %}
+
+<!-- Lyrics CSS file -->
+<link rel="stylesheet" type="text/css" href="{{ 'styles_lyrics.css' | asset }}" />
+
+<!-- Javascript Files -->
+<script type="text/javascript" src="{{ 'jquery.js' | asset }}"></script>
+
+<!-- Font Awesome Icon Library | v.4.6.1 -->
+<script src="//use.fontawesome.com/dc6310ad48.js"></script>
+
+<!-- Script for Product Bottom anchor -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('a[href^="#"]').on('click', function(event) {
+      var target = $( $(this).attr('href') );
+
+      if( target.length ) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top - 70
+        }, 1000);
+      }
+    });
+  });
+</script>

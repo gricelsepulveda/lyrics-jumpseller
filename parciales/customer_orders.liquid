@@ -1,0 +1,169 @@
+{% if customer.orders.size == 0 %}
+<!-- Block -->
+<div class="small-12  columns  customer-orders__block">
+  <div class="row">
+    <div class="small-12  columns  customer-orders__block-heading">
+      <div class="row">
+        <div class="small-6  columns">
+          <span class="customer-orders__block-heading-title">{% t "There are no orders" %}</span>
+        </div>
+      </div>
+      <!-- end .row -->
+    </div>
+    <!-- end .customer-orders__block-heading -->
+
+    <div class="small-12  columns  customer-orders__block-info">
+      <div class="row">
+        <div class="small-12  columns">
+          <span class="customer-orders__block-info-string">{% t "You haven't made any purchases yet at" %} {{ store.name }}</span>
+        </div>
+        <!-- end .accpc-block -->
+      </div>
+      <!-- end .row -->
+    </div>
+    <!-- end .customer-orders__block-info -->
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .customer-orders__block -->
+{% else %}
+{% for order in customer.orders %}
+<!-- Block {{ forloop.index }} -->
+<div class="small-12  columns  customer-orders__block{% if forloop.last %}  customer-orders__block--last{% endif %}">
+  <div class="row">
+    <div class="small-12  columns  customer-orders__block-heading">
+      <div class="row">
+        <div class="small-6  columns">
+          <span class="customer-orders__block-heading-title">{% t "Order Nº" %} {{ order.id }}</span>
+          <small><a href="{{order.duplicate_url}}" target="_blank" style="color: rgba(255,255,255,.5);">({% t "Duplicate" %})</a></small>
+        </div>
+        <div class="small-6  columns  text-right">
+          <span class="customer-orders__block-heading-title">{% t "Date" %}: {{ order.date }}</span>
+        </div>
+      </div>
+      <!-- end .row -->
+    </div>
+    <!-- end .customer-orders__block-heading -->
+
+    <div class="small-12  columns  customer-orders__block-info">
+      <div class="row">
+        <div class="small-12  medium-8  large-8  columns">
+          <span class="customer-orders__block-info-string">
+            <small class="customer-orders__block-info-title">{% t "Shipping Address" %}</small>
+            {{ order.shipping_address.address }}, {{ order.shipping_address.city }}, {{ order.shipping_address.region }}, {{ order.shipping_address.country }}
+          </span>
+        </div>
+        <!-- end .accpc-block -->
+
+        <div class="small-12  medium-2  large-2  columns">
+          <span class="customer-orders__block-info-string">
+            <small class="customer-orders__block-info-title">{% t "Total" %}</small>
+            <span class="customer-orders__block-info-value">{{ order.total | price }}</span>
+          </span>
+        </div>
+        <!-- end .accpc-block -->
+
+        <div class="small-12  medium-2  large-2  columns">
+          <span class="customer-orders__block-info-string">
+            <small class="customer-orders__block-info-title">{% t "Status" %}</small>
+            <strong class="customer-orders__block-info-label  label  radius  {{ order.status_id | downcase | replace:' ','-' }}">{{ order.status | remove:'Pago ' | remove:'Payment ' }}</strong>
+          </span>
+        </div>
+        <!-- end .accpc-products -->
+      </div>
+      <!-- end .row -->
+    </div>
+    <!-- end .customer-orders__block-info -->
+
+    <div class="small-12  columns  customer-orders__products">
+      <div class="row">
+        <ul class="accordion  customer-orders__accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+          <li class="accordion-item  customer-orders__accordion-item" data-accordion-item>
+            <a href="#panel-{{ order.id }}" class="accordion-title  customer-orders__accordion-trigger  trsn">
+              <i class="fa fa-caret-square-o-down fa-fw trsn"></i> {% t "Product list" %}
+            </a>
+
+            <div id="panel_{{ order.id }}" class="accordion-content  customer-orders__accordion-content" data-tab-content>
+              <div class="row">
+                <div class="small-12  columns  customer-orders__accordion-heading">
+                  <div class="row">
+                    <div class="small-7 columns">
+                      <span class="customer-orders__accordion-heading-title">{% t "Product" %}</span>
+                    </div>
+                    <div class="small-2 columns text-center">
+                      <span class="customer-orders__accordion-heading-title">{% t "Quantity" %}</span>
+                    </div>
+                    <div class="small-3 columns text-center">
+                      <span class="customer-orders__accordion-heading-title">{% t "Price" %}</span>
+                    </div>
+                  </div>
+                  <!-- end .row -->
+                </div>
+                <!-- end .customer-orders__accordion-heading -->
+
+                {% for product in order.products %}
+                <div class="small-12  columns  customer-orders__accordion-product">
+                  <div class="row">
+                    <div class="small-12  medium-2  large-2  columns">
+                      <img src="{{ product.image | resize:'60x60' }}" class="customer-orders__accordion-product-image" alt="{{ product.name }}">
+                    </div>
+
+                    <div class="small-12  medium-5  large-5  columns">
+                      <div class="customer-orders__accordion-product-block">
+                        <div class="customer-orders__accordion-product-cell">
+                          <span class="customer-orders__accordion-product-name">{{ product.name }}</span>
+                          {% if product.options.size > 0 %}
+                          {% for option in product.options %}
+                          <span class="customer-orders__accordion-product-option">{{ option.name }}: {{ option.value}}</span>
+                          {% endfor %}
+                          {% endif %}
+                        </div>
+                        <!-- end .customer-orders__accordion-product-cell -->
+                      </div>
+                      <!-- end .customer-orders__accordion-product-block -->
+                    </div>
+
+                    <div class="small-12  medium-2  large-2  columns  text-center">
+                      <div class="customer-orders__accordion-product-block">
+                        <div class="customer-orders__accordion-product-cell">
+                          <span class="customer-orders__accordion-product-number">{{ product.qty }}</span>
+                        </div>
+                        <!-- end .customer-orders__accordion-product-cell -->
+                      </div>
+                      <!-- end .customer-orders__accordion-product -->
+                    </div>
+
+                    <div class="small-12  medium-3  large-3  columns  text-center">
+                      <div class="customer-orders__accordion-product-block">
+                        <div class="customer-orders__accordion-product-cell">
+                          <span class="customer-orders__accordion-product-number value">
+                            {{ product.discount | times: product.qty | times: '-1' | plus: product.subtotal | price }}
+                          </span>
+                        </div>
+                        <!-- end .customer-orders__accordion-product-cell -->
+                      </div>
+                      <!-- end .customer-orders__accordion-product -->
+                    </div>
+                  </div>
+                  <!-- end .row -->
+                </div>
+                <!-- end .customer-orders__accordion-product -->
+                {% endfor %}
+              </div>
+              <!-- end .row -->
+            </div>
+            <!-- end .customer-orders__accordion-content -->
+          </li>
+          <!-- end .customer-orders__accordion-item -->
+        </ul>
+        <!-- end .customer-orders__accordion -->
+      </div>
+      <!-- end .row -->
+    </div>
+    <!-- end .customer-orders__products -->
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .customer-orders__block -->
+{% endfor %}
+{% endif %}

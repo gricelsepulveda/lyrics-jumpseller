@@ -1,0 +1,18 @@
+{
+  "Info": {
+    "name": "Kickstart",
+    "author": "Jumpseller",
+    "default_lang": "en"
+  },
+  "Menus": {
+    "main": {
+      "name": "Main Navigation"
+    },
+    "footer": {
+      "name": "Footer Information Menu"
+    },
+    "footer_products": {
+      "name": "Footer Products Menu"
+    }
+  }
+}

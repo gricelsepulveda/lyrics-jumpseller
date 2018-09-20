@@ -1,0 +1,29 @@
+<div id="search-modal" class="reveal  full  show-for-large" data-reveal data-close-on-click="true" data-animation-in="slide-in-down fast" data-animation-out="slide-out-up fast">
+  <div class="row">
+    <div class="small-12  medium-4  medium-push-1  large-3  large-push-2  columns  text-center  medium-text-right">
+      <div class="search-modal__block">
+        <h1 class="search-modal__title">{% t "¿Que estás buscando" %}?</h1>
+      </div>
+      <!-- end .search-modal__block -->
+    </div>
+
+    <div class="small-12  medium-6  medium-pull-1  large-5  large-pull-2  columns">
+      <div class="search-modal__block">
+        <!-- Form -->
+        <form id="search-modal__form" method="get" action="{{ search.url_send }}">
+          <input type="text" id="search-modal__form-input" class="text  trsn" name="q" placeholder="¿Qué estás buscando?" />
+          <button id="search-modal__form-button" type="submit" class="button  submit  trsn">
+            <i class="fa fa-search fa-fw"></i> {% t "Buscar" %}
+          </button>
+        </form>
+        <!-- end #search-modal__form -->
+      </div>
+      <!-- end .search-modal__block -->
+    </div>
+  </div>
+  <!-- end .row -->
+
+  <button class="close-button  search-modal__close" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

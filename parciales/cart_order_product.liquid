@@ -1,0 +1,84 @@
+<div class="small-12  columns  cart-order__product{% if forloop.last %}  cart-order__product--last{% endif %}">
+  <div class="row">
+    <div class="small-12  medium-7  large-7  columns  text-center  medium-text-left  cart-order__product-block  cart-order__product-block--main">
+      <div class="cart-order__product-block-wrapper">
+        <div class="cart-order__product-block-cell  cart-order__product-block-cell--absolute">
+          {% if product.image %}
+          <a href="{{ product.url }}" class="cart-order__product-anchor" title="{{ product.name }}">
+            <img src="{{ product.image | resize:'70x70' }}" class="cart-order__product-image" alt="{{ product.name }}">
+          </a>
+          {% else %}
+          <a href="{{ product.url }}" class="cart-order__product-anchor" title="{{ product.name }}">
+            <i class="fa fa-picture-o fa-fw"></i>
+          </a>
+          {% endif %}
+          <a href="{{ product.url }}" class="cart-order__product-name  khula" title="{% t 'Ir a la página del producto' %}">
+            {{ product.name }}
+            {% if product.options.size > 0 %}
+            {% for option in product.options %}
+            <small class="cart-order__product-option">{{ option.name }}: {{ option.value }}</small>
+            {% endfor %}
+            {% endif %}
+          </a>
+        </div>
+        <!-- end .cart-order__product-block-cell -->
+      </div>
+      <!-- end .cart-order__product-block-wrapper -->
+    </div>
+    <!-- end .cart-order__product-block--main -->
+
+    <div class="small-12  medium-2  large-2  columns  text-center  cart-order__product-block  cart-order__product-block--price">
+      <div class="cart-order__product-block-wrapper">
+        <div class="cart-order__product-block-cell">
+          <span class="cart-order__product-price  khula">
+            {% if product.discount > 0 %}
+            <span class="cart-order__produdct-price_value">{{ product.price | minus:product.discount | price }}</span>
+            <small class="cart-order__produdct-price-old  khula">{{ product.price | price }}</small>
+            {% else %}
+            <span class="cart-order__produdct-price_value">{{ product.price | price }}</span>
+            {% endif %}
+          </span>
+        </div>
+        <!-- end .cart-order__product-block-cell -->
+      </div>
+      <!-- end .cart-order__product-block-wrapper -->
+    </div>
+    <!-- end .cart-order__product-block--price -->
+
+    <div class="small-6  medium-2  large-2  columns  text-left  medium-text-center  cart-order__product-block  cart-order__product-block--qty">
+      <div class="cart-order__product-block-wrapper">
+        <div class="cart-order__product-block-cell">
+          <span class="cart-order__product-block-title">{% t "Cantidad" %}</span>
+          <select class="select  cart-order__product-qty" name="{{ product.id }}" title="Qty" onchange="$('#cart-order').submit();return false;">
+            {% if product.stock_unlimited %}
+              {% assign qty_limit = product.qty | plus: 30 %}
+            {% else %}
+              {% assign qty_limit = product.qty %}
+            {% endif %}
+            {% for qty in (1..qty_limit) %}
+            <option value="{{qty}}" {% if product.qty == qty %}selected="selected"{% endif %}>{{qty}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <!-- end .cart-order__product-block-cell -->
+      </div>
+      <!-- end .cart-order__product-block-wrapper -->
+    </div>
+    <!-- end .cart-order__product-block--qty -->
+
+    <div class="small-6  medium-1  large-1  columns  text-right  medium-text-center  cart-order__product-block  cart-order__product-block--delete">
+      <div class="cart-order__product-block-wrapper">
+        <div class="cart-order__product-block-cell">
+          <a href="{{ product.remove_url }}" class="cart-order__product-remove" title="{% t "Eliminar producto" %}">
+            <span class="cart-order__product-block-title">{% t "Eliminar" %}</span><i class="fa fa-trash-o fa-fw"></i>
+          </a>
+        </div>
+        <!-- end .cart-order__product-block-cell -->
+      </div>
+      <!-- end .cart-order__product-block-wrapper -->
+    </div>
+    <!-- end .cart-order__product-block--delete -->
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end .cart-order__product -->

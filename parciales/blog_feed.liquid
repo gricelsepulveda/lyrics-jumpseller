@@ -1,0 +1,72 @@
+<!-- Heading -->
+<div class="small-12  columns  text-center  page-heading">
+  <h2 class="page-heading__title">{% if options.blog_feed_title != blank %}{{ options.blog_feed_title }}{% else %}Blog{% endif %}</h2>
+  {% if options.blog_feed_description != blank %}
+  <p class="page-heading__text">{{ options.blog_feed_description | newline_to_br }}</p>
+  {% endif %}
+</div>
+<!-- end .page-heading -->
+
+{% if pages.categories.category["Post"] %}
+  {% if options.blog_feed_display == 'Gallery' %}
+    {% for page in pages.categories.category["Post"].pages reversed %}
+      {% if forloop.index == 1 or forloop.index == 2 %}
+      <article class="small-12  medium-6  large-6  columns  text-center  post-block">
+        {% include 'blog_post' %}
+      </article>
+      <!-- end .post-block -->
+      {% endif %}
+    {% endfor %}
+  {% elsif options.blog_feed_display == 'Slider' %}
+  <!-- Blog Feed Slider -->
+  <div id="blog-feed__slider" class="small-12  columns">
+    {% for page in pages.categories.category["Post"].pages reversed %}
+      {% if forloop.index == 1 or forloop.index == 2 or forloop.index == 3 or forloop.index == 4 %}
+      <div class="small-12  columns  text-center  post-block">
+        {% include 'blog_post' %}
+      </div>
+      <!-- end .post-block -->
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+<!-- end #blog-feed__slider -->
+
+<!-- Blog Feed Slider Script -->
+<script type="application/javascript">
+  $(document).ready(function(){
+    $('#blog-feed__slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      fade: false,
+      centerMode: false,
+      cssEase: 'ease-in-out',
+      speed: 750,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      pauseOnHover: true,
+      pauseOnDotsHover: true,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: 640,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        }
+      ]
+    });
+  });
+</script>
+<!-- end Slider Script -->
+{% endif %}
+
+
+<!-- Actions -->
+<div class="small-12  columns  text-center  blog-feed__actions">
+  <a href="{% if options.blog_feed_link != blank %}{{ options.blog_feed_link }}{% else %}/blog{% endif %}" class="button  blue  circular" title="{% if options.blog_feed_link_text != blank %}{{ options.blog_feed_link_text }}{% else %}{% t "Go to Blog" %}{% endif %}">{% if options.blog_feed_link_text != blank %}{{ options.blog_feed_link_text }}{% else %}{% t "Go to Blog" %}{% endif %} <i class="fa fa-arrow-right fa-fw"></i></a>
+</div>
+<!-- end .blog-feed__actions -->

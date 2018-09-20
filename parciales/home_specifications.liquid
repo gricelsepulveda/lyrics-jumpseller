@@ -1,0 +1,80 @@
+{% if options.product_spec_1_enable %}
+<!-- Product Spec (First) -->
+<div id="product-spec__first" class="row  row-wide  product-spec">
+  <div class="row">
+    <div class="small-12  medium-5  large-5  columns  text-left  product-spec__content  product-spec__content--main">
+      <h2 class="product-spec__content-title">{{ options.product_spec_1_title }}</h2>
+      <p class="product-spec__content-text">{{ options.product_spec_1_text }}</p>
+      {% if options.product_spec_1_button_link != blank %}
+      <a href="{{ options.product_spec_1_button_link }}" class="button  blue  bordered  circular  full-transparent  product-spec__content-button" title="{{ options.product_spec_1_button_text }}">{{ options.product_spec_1_button_text }} <i class="fa fa-arrow-right fa-fw"></i></a>
+      {% endif %}
+    </div>
+    <!-- end .product-spec__content -->
+
+    <div class="small-12  medium-7  large-6  columns  text-center  product-spec__content">
+      {% if options.product_spec_1_image != blank %}
+      <img src="{{ options.product_spec_1_image }}" class="product-spec__content-image" alt="{{ options.product_spec_1_title }}">
+      {% else %}
+        <img src="{{ 'home-demo-1.png' | asset }}" class="product-spec__content-image" alt="{{ options.product_spec_1_title }}">
+      {% endif %}
+    </div>
+    <!-- end .product-spec__content -->
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end #product-spec__first -->
+{% endif %}
+
+{% if options.product_spec_2_enable %}
+<!-- Product Spec (Second) -->
+<div id="product-spec__second" class="row  row-wide  product-spec">
+  <div class="row">
+    <div class="small-12  medium-5  medium-push-7  large-5  large-push-7  columns  text-left  product-spec__content  product-spec__content--main">
+      <h2 class="product-spec__content-title">{{ options.product_spec_2_title }}</h2>
+      <p class="product-spec__content-text">{{ options.product_spec_2_text }}</p>
+      {% if options.product_spec_2_button_link != blank %}
+      <a href="{{ options.product_spec_2_button_link }}" class="button  blue  bordered  circular  full-transparent  product-spec__content-button" title="{{ options.product_spec_2_button_text }}">{{ options.product_spec_2_button_text }} <i class="fa fa-arrow-right fa-fw"></i></a>
+      {% endif %}
+    </div>
+    <!-- end .product-spec__content -->
+
+    <div class="small-12  medium-7  medium-pull-5  large-6  large-pull-6  columns  text-center  product-spec__content">
+      {% if options.product_spec_2_image != blank %}
+      <img src="{{ options.product_spec_2_image }}" class="product-spec__content-image" alt="{{ options.product_spec_2_title }}">
+      {% else %}
+        <img src="{{ 'home-demo-2.png' | asset }}" class="product-spec__content-image" alt="{{ options.product_spec_2_title }}">
+      {% endif %}
+    </div>
+    <!-- end .product-spec__content -->
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end #product-spec__second -->
+{% endif %}
+
+{% if options.product_spec_3_enable %}
+<!-- Product Spec (Third) -->
+<div id="product-spec__third" class="row  row-wide  product-spec">
+  <div class="row">
+    <div class="small-12  medium-5  large-6  columns  text-left  product-spec__content  product-spec__content--main">
+      <h2 class="product-spec__content-title">{{ options.product_spec_3_title }}</h2>
+      <p class="product-spec__content-text">{{ options.product_spec_3_text }}</p>
+      {% if options.product_spec_3_button_link != blank %}
+      <a href="{{ options.product_spec_3_button_link }}" class="button  blue  bordered  circular  full-transparent  product-spec__content-button" title="{{ options.product_spec_3_button_text }}">{{ options.product_spec_3_button_text }} <i class="fa fa-arrow-right fa-fw"></i></a>
+      {% endif %}
+    </div>
+    <!-- end .product-spec__content -->
+
+    <div class="small-12  medium-7  large-6  columns  text-center  product-spec__content">
+      {% if options.product_spec_3_image != blank %}
+      <img src="{{ options.product_spec_3_image }}" class="product-spec__content-image" alt="{{ options.product_spec_3_title }}">
+      {% else %}
+        <img src="{{ 'home-demo-1.png' | asset }}" class="product-spec__content-image" alt="{{ options.product_spec_3_title }}">
+      {% endif %}
+    </div>
+    <!-- end .product-spec__content -->
+  </div>
+  <!-- end .row -->
+</div>
+<!-- end #product-spec__third -->
+{% endif %}

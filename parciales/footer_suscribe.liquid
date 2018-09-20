@@ -1,0 +1,27 @@
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup" class="row">
+  <!-- //upgreen.us14.list-manage.com/subscribe/post?u=37d0843fc21a18eccb8d392eb&amp;id=f7037d65c5 -->
+  <form{% if options.mailchimp_post_url != blank %} action="{{ options.mailchimp_post_url }}"{% endif %} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate  small-12  columns" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll" class="row">
+      <div class="small-12  medium-6  large-7  columns  text-center  medium-text-left  footer-subscribe__field">
+        <h6 class="footer-subscribe__title{% if options.subscribe_text != blank %}  footer-subscribe__title--small{% endif %}">{% if options.subscribe_title != blank %}{{ options.subscribe_title }}{% else %}{{ store.name }} Newsletter{% endif %}</h6>
+        {% if options.subscribe_text != blank %}
+        <p class="footer-subscribe__text">{{ options.subscribe_text }}</p>
+        {% endif %}
+      </div>
+      <!-- end .footer-subscribe__field -->
+
+      <div class="small-12  medium-6  large-5  columns  footer-subscribe__field">
+        <input type="email" id="mce-EMAIL" class="email  footer-subscribe__email" name="EMAIL" placeholder="{% t "Type your email here..." %}" required>
+        <button type="submit" id="mc-embedded-subscribe" class="footer-subscribe__button" name="subscribe"><i class="fa fa-paper-plane fa-fw"></i></button>
+      </div>
+      <!-- end .footer-subscribe__field -->
+
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_37d0843fc21a18eccb8d392eb_f7037d65c5" tabindex="-1" value=""></div>
+    </div>
+    <!-- end #mc-embedded-subscribe-form-->
+  </form>
+  <!-- end #mc_embed_signup_scroll-->
+</div>
+<!-- end #mc_embed_signup -->

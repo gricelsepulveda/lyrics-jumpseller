@@ -1,0 +1,215 @@
+{% if options.enable_subscribe %}
+<!-- Footer Subscribe -->
+<section id="footer-subscribe" class="row  row-wide">
+  {% include 'footer_subscribe' %}
+</section>
+<!-- end #footer-subscribe -->
+{% endif %}
+
+<!-- Footer Top -->
+<section id="footer-top" class="row">
+  <!-- Footer About -->
+  <div id="footer-about" class="small-12  medium-3  large-3  columns  text-center  footer-top__block">
+    <!-- Store Logo/Name -->
+    {% if store.logo != empty %}
+    <img src="{{ store.logo }}" class="footer-about__logo" alt="Logo {{ store.name }}">
+    {% else %}
+    <h2 class="footer-about__title">{{ store.name }}</h2>
+    {% endif %}
+
+    <!-- Store Description -->
+    {% if template == 'home' %}
+    <h2 class="footer-about__description">{% if store.description != blank %}{{ store.description | strip_html }}{% else %}{% t "Don't forget to add your store's description at Settings > General > Description" %}.{% endif %}</h2>
+    {% else %}
+    <p class="footer-about__description">{% if store.description != blank %}{{ store.description | strip_html }}{% else %}{% t "Don't forget to add your store's description at Settings > General > Description" %}.{% endif %}</p>
+    {% endif %}
+
+    <!-- Store Social Nets -->
+    <ul class="no-bullet  footer-about__social">
+      {% if social.facebook_url != blank %}
+      <!-- Facebook -->
+      <li class="footer-about__social-item">
+        <a href="{{ social.facebook_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if social.twitter_url != blank %}
+      <!-- Twitter -->
+      <li class="footer-about__social-item">
+        <a href="{{ social.twitter_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if social.instagram_url != blank %}
+      <!-- Instagram -->
+      <li class="footer-about__social-item">
+        <a href="{{ social.instagram_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if social.pinterest_url != blank %}
+      <!-- Pinterest -->
+      <li class="footer-about__social-item">
+        <a href="{{ social.pinterest_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if options.store_youtube != blank %}
+      <!-- Youtube -->
+      <li class="footer-about__social-item">
+        <a href="{{ options.store_youtube }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if options.store_vimeo != blank %}
+      <!-- Vimeo -->
+      <li class="footer-about__social-item">
+        <a href="{{ options.store_vimeo }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if options.store_linkedin != blank %}
+      <!-- LinkedIn -->
+      <li class="footer-about__social-item">
+        <a href="{{ options.store_linkedin }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if options.store_google_plus != blank %}
+      <!-- Google+ -->
+      <li class="footer-about__social-item">
+        <a href="{{ options.store_google_plus }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+
+      {% if options.store_github != blank %}
+      <!-- GitHub -->
+      <li class="footer-about__social-item">
+        <a href="{{ options.store_github }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+      </li>
+      <!-- end .footer-about__social-item -->
+      {% endif %}
+    </ul>
+    <!-- end .footer-about__social -->
+  </div>
+  <!-- end #footer-about -->
+
+  <!-- Footer Nav -->
+  <div id="footer-nav" class="small-12  medium-6  large-6  columns  text-center  footer-top__block">
+    <div class="row">
+      {% if options.enable_footer_info %}
+      {% if menu.footer %}
+      <!-- Information Nav -->
+      <div class="small-12{% if options.enable_footer_products %}  medium-6  large-6{% endif %}  columns">
+        <h6 class="footer-top__block-title">{% t "Information" %}</h6>
+
+        <ul class="menu  vertical  footer-top__menu">
+          {% for item in menu.footer.items %}
+          <li class="footer-top__menu-item">
+            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Go to" %} {{ item.name }}">{{ item.name }}</a>
+          </li>
+          <!-- end .footer-top__menu-item -->
+          {% endfor %}
+        </ul>
+        <!-- end .footer-top__menu -->
+      </div>
+      {% endif %}
+      {% endif %}
+
+      {% if options.enable_footer_products %}
+      {% if menu.footer_products %}
+      <!-- Products Nav -->
+      <div class="small-12{% if options.enable_footer_info %}  medium-6  large-6{% endif %}  columns">
+        <h6 class="footer-top__block-title">{% t "Our Products" %}</h6>
+
+        <ul class="menu  vertical  footer-top__menu">
+          {% for item in menu.footer_products.items %}
+          <li class="footer-top__menu-item">
+            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Go to" %} {{ item.name }}">{{ item.name }}</a>
+          </li>
+          <!-- end .footer-top__menu-item -->
+          {% endfor %}
+        </ul>
+        <!-- end .footer-top__menu -->
+      </div>
+      <!-- end .footer-nav__menu -->
+      {% endif %}
+      {% endif %}
+    </div>
+    <!-- end .row -->
+  </div>
+  <!-- end #footer-nav -->
+
+  <!-- Footer Contact -->
+  <div id="footer-contact" class="small-12  medium-3  large-3  columns  text-center  footer-top__block">
+    <h6 class="footer-top__block-title">{% t "Contact Us" %}</h6>
+
+    <ul class="menu  vertical  footer-top__menu">
+      {% if options.store_contact_email != blank %}
+      <li class="footer-top__menu-item">
+        <a href="mailto:{{ options.store_contact_email }}" class="footer-top__menu-item-anchor" title="{% t "Email us" %}"><i class="fa fa-envelope-o fa-fw"></i>{{ options.store_contact_email }}</a>
+      </li>
+      <!-- end .footer-top__menu-item -->
+      {% endif %}
+
+      {% if options.store_sales_email != blank %}
+      <li class="footer-top__menu-item">
+        <a href="mailto:{{ options.store_sales_email }}" class="footer-top__menu-item-anchor" title="{% t "Email us" %}"><i class="fa fa-envelope-o fa-fw"></i>{{ options.store_sales_email }}</a>
+      </li>
+      <!-- end .footer-top__menu-item -->
+      {% endif %}
+
+      {% if options.store_contact_phone != blank %}
+      <li class="footer-top__menu-item">
+        <a href="tel:{{ options.store_contact_phone | remove:'(' | remove:')' | remove:' ' }}" class="footer-top__menu-item-anchor" title="{% t "Call us" %}"><i class="fa fa-phone fa-fw"></i>{{ options.store_contact_phone }}</a>
+      </li>
+      <!-- end .footer-top__menu-item -->
+      {% endif %}
+
+      {% if options.store_address != blank %}
+      <li class="footer-top__menu-item">
+        {% if options.store_address_url != blank %}
+        <a href="{{ options.store_address_url }}" class="footer-top__menu-item-anchor" title="{% t "Find us here" %}" target="_blank"><i class="fa fa-map-marker fa-fw"></i>{{ options.store_address }}</a>
+        {% else %}
+        <span class="footer-top__menu-item-string"><i class="fa fa-map-marker fa-fw"></i>{{ options.store_address }}</span>
+        {% endif %}
+      </li>
+      <!-- end .footer-top__menu-item -->
+      {% endif %}
+
+      {% if options.store_hours != blank %}
+      <li class="footer-top__menu-item">
+        <span class="footer-top__menu-item-string"><i class="fa fa-clock-o fa-fw"></i>{{ options.store_hours }}</span>
+      </li>
+      <!-- end .footer-top__menu-item -->
+      {% endif %}
+    </ul>
+    <!-- end .footer-top__menu -->
+  </div>
+  <!-- end #footer-contact -->
+</section>
+<!-- end #footer-top -->
+
+<!-- Footer Copyright -->
+<section id="footer-copyright" class="row">
+  <div class="small-12  columns">
+    <hr class="footer-copyright__divider">
+  </div>
+
+  <div class="small-12  medium-6  large-6  columns  text-center  medium-text-left">
+    <h6 class="footer-copyright__text"><i class="fa fa-copyright fa-fw"></i> Copyright {{ store.name }}. {% t "All Rights Reserved" %}.</h6>
+  </div>
+
+  <div class="small-12  medium-6  large-6  columns  text-center  medium-text-right">
+    <h6 class="footer-copyright__text">{{powered_by}}</h6>
+  </div>
+</section>
+<!-- end #footer-copyright -->

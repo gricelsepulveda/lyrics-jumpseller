@@ -1,0 +1,843 @@
+/* ====================================================================================
+  GENERAL ELEMENTS
+==================================================================================== */
+#cart-container,
+#checkout-container,
+#revieworder-container {
+  padding-top: 0;
+  padding-bottom: 3.875rem;
+  background: #F8F8F8;
+}
+.off-canvas-content {
+  padding-top: 2.875rem;
+}
+.cart-left {
+  margin-bottom: 1.875rem;
+}
+
+/*  Cart Empty
+==================================================================================== */
+.cart-empty {
+    margin-bottom: 1.875rem;
+}
+  .cart-empty__wrapper {
+    padding-top: 3.25rem;
+    padding-bottom: 1.875rem;
+    border: 1px solid rgba(2, 73, 100, .1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #FFFFFF;
+  }
+    .cart-empty__title {
+      font-size: 1.5rem;
+      color: #024964;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 0.9375rem;
+    }
+    .cart-empty__text {
+      font-size: 1.1rem;
+      color: rgba(2, 73, 100, .75);
+    }
+      .cart-empty__text-anchor {
+        color: rgba(2, 73, 100, .75);
+        font-weight: bold;
+      }
+      .cart-empty__text-anchor:hover,
+      .cart-empty__text-anchor:focus {
+        color: #024964;
+      }
+
+/*  Cart Breadcrumbs
+==================================================================================== */
+.cart-breadcrumbs {
+  height: 46px;
+  margin-bottom: 1.875rem;
+  border-bottom: 1px solid #EFF2F4;
+  background: #FFFFFF;
+  background: rgba(255,255,255,.5);
+}
+  .cart-breadcrumbs__menu {
+    width: 100%;
+    height: 45px;
+    margin: 0;
+    display: block;
+  }
+    .cart-breadcrumbs__menu-item {
+      line-height: 45px;
+      height: 45px;
+      margin-right: 1.875rem;
+      float: left;
+      display: block;
+    }
+    .cart-breadcrumbs__menu-item.last {
+      margin-right: 0;
+      float: right;
+    }
+      .cart-breadcrumbs__menu-anchor,
+      .cart-breadcrumbs__menu-string {
+        font-family: "Raleway", sans-serif !important;
+        font-size: 0.725rem;
+        /* color: rgba(2, 73, 100, .75); */
+        color: rgba(2, 73, 100, .35) !important;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        display: block;
+        cursor: pointer !important;
+        height: 45px;
+        padding-top: 1px;
+        overflow: hidden;
+      }
+      .cart-breadcrumbs__menu-string {
+        cursor: default !important;
+      }
+      .cart-breadcrumbs__menu-anchor {
+        color: rgba(2, 73, 100, .75) !important;
+      }
+      .cart-breadcrumbs__menu-anchor:hover,
+      .cart-breadcrumbs__menu-anchor:focus,
+      .current > .cart-breadcrumbs__menu-string {
+        /* color: rgba(2, 73, 100, .75) !important; */
+        color: #024964 !important;
+      }
+        .cart-breadcrumbs__menu-number {
+          font-family: "Khula", sans-serif !important;
+          font-style: normal;
+          line-height: 25px;
+          text-align: center;
+          width: 25px;
+          height: 25px;
+          margin-right: 0.5rem;
+          display: inline-block;
+          border: 2px solid rgba(2, 73, 100, .35);
+          -webkit-border-radius: 25px;
+          -moz-border-radius: 25px;
+          border-radius: 25px;
+        }
+        .current > .cart-breadcrumbs__menu-string > .cart-breadcrumbs__menu-number {
+          color: #FFFFFF;
+          border-color: #41778B;
+          background: #41778B;
+        }
+      .cart-breadcrumbs__menu-back {
+        font-family: "Raleway", sans-serif !important;
+        font-size: 0.7rem;
+        color: rgba(2, 73, 100, .35);
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-right: 0 !important;
+      }
+      .cart-breadcrumbs__menu-back:hover,
+      .cart-breadcrumbs__menu-back:focus {
+        color: rgba(2, 73, 100, .75);
+      }
+
+/*  Cart Heading
+==================================================================================== */
+.cart-heading {
+  margin-bottom: 0.9375rem;
+}
+  .cart-heading__title {
+    font-size: 1.5rem;
+    color: #024964;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+  }
+  .cart-heading__title--padding {
+    padding: 0 0.9375rem;
+  }
+
+/*  Cart Order
+==================================================================================== */
+/*  Cart Order Heading  */
+.cart-order__heading {
+  height: 50px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #DFE6E9 #DFE6E9 #EFF2F4 #DFE6E9;
+  background: #FFFFFF;
+}
+  .cart-order__heading-block-title {
+    font-family: "Raleway", sans-serif !important;
+    font-size: 0.725rem;
+    color: rgba(2, 73, 100, .5);
+    font-weight: bold;
+    line-height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    display: block;
+  }
+
+/*  Cart Order Product  */
+.cart-order__product {
+  padding-top: 0.9375rem;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: transparent #DFE6E9 #EFF2F4 #DFE6E9;
+  background: #FFFFFF;
+}
+.cart-order__product--last {
+  border-bottom-color: #DFE6E9 !important;
+}
+  .cart-order__product-block {
+    margin-bottom: 0.9375rem;
+  }
+    .cart-order__product-block-wrapper {
+      width: 100%;
+      height: 70px;
+      display: table;
+    }
+      .cart-order__product-block-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .cart-order__product-block-cell--absolute {
+        padding-left: 70px;
+        position: relative;
+      }
+        .cart-order__product-anchor {
+          line-height: 70px;
+          width: 70px;
+          height: 70px;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+          .cart-order__product-image {
+            display: block;
+          }
+        .cart-order__product-name {
+          color: rgba(2, 73, 100, .75);
+          font-weight: bold;
+          line-height: 1;
+          width: 100%;
+          padding-left: 0.9375rem;
+          display: block;
+        }
+        .cart-order__product-name:hover,
+        .cart-order__product-name:focus {
+          color: #024964;
+        }
+          .cart-order__product-option {
+            font-size: 0.75rem;
+            color: rgba(2, 73, 100, .5);
+            font-weight: 600;
+            line-height: 1;
+            margin-top: 3px;
+            display: block;
+          }
+        .cart-order__product-price {
+          font-size: 1rem;
+          color: rgba(2, 73, 100, .75);
+          line-height: 1;
+        }
+          .cart-order__produdct-price-old {
+            font-size: 0.85rem;
+            color: rgba(2, 73, 100, .5);
+            line-height: 1;
+            text-decoration: line-through;
+            margin-top: 3px;
+            display: block;
+          }
+        .cart-order__product-qty {
+          width: 56px;
+        }
+        .cart-order__product-remove {
+          font-size: 1rem;
+          color: rgba(2, 73, 100, .5);
+        }
+        .cart-order__product-remove:hover,
+        .cart-order__product-remove:focus {
+          color: rgba(2, 73, 100, .75);
+        }
+        .cart-order__product-block-title {
+          font-size: 0.7rem;
+          color: rgba(2, 73, 100, .5);
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-right: 5px;
+          display: inline-block;
+        }
+
+/*  Cart Coupon
+==================================================================================== */
+.cart-coupon__wrapper {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-width: 0 1px 1px;
+  border-style: solid;
+  border-color: #EFF2F4 #DFE6E9;
+  border-color: #DFE6E9;
+  background: #FFFFFF;
+}
+  .cart-coupon__title {
+    font-size: 1rem;
+    color: rgba(2, 73, 100, .75);
+    line-height: 40px;
+    height: 40px;
+    margin: 0;
+  }
+
+/*  Coupon Form  */
+#coupon_form {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+  #coupon_code {
+    font-size: 0.85rem;
+    color: rgba(2, 73, 100, .75);
+    height: 40px;
+    margin: 0;
+    padding: 0.5rem 6.25rem 0.5rem 0.9375rem;
+    border-color: #DFE6E9;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: #FFFFFF;
+  }
+  #set_coupon_code_button {
+    font-family: "Raleway", sans-serif !important;
+    font-size: 0.75rem;
+    color: rgba(2, 73, 100, .75);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    width: 90px;
+    height: 40px;
+    border: none;
+    -webkit-border-radius: 0 40px 40px 0;
+    -moz-border-radius: 0 40px 40px 0;
+    border-radius: 0 40px 40px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #DFE6E9;
+  }
+  #coupon_form label.error {
+    font-size: 0.725rem;
+    color: #F25C5C;
+    text-align: right;
+    display: block;
+  }
+
+/*  Cart Estimate
+==================================================================================== */
+.cart-estimate__wrapper {
+  padding-top: 1.25rem;
+  border-width: 0 1px 1px;
+  border-style: solid;
+  border-color: #EFF2F4 #DFE6E9;
+  border-color: #DFE6E9;
+  background: #FFFFFF;
+}
+  .cart-estimate__title {
+    font-size: 1rem;
+    color: rgba(2, 73, 100, .75);
+    margin: 0 0 0.75rem;
+  }
+
+/*  Estimate Form  */
+.cart-estimate__field {
+  margin-bottom: 1.25rem;
+}
+  .cart-estimate__field label {
+    font-family: "Khula", sans-serif !important;
+    font-size: 0.785rem;
+    color: rgba(2, 73, 100, .5);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025rem;
+  }
+  .cart-estimate__field .select {
+    font-size: 0.875rem;
+    color: rgba(2, 73, 100, .5);
+    height: 40px;
+    border-color: #DFE6E9;
+    background-color: #FFFFFF;
+  }
+  .cart-estimate__field .select:hover,
+  .cart-estimate__field .select:focus {
+    color: rgba(2, 73, 100, .75);
+  }
+
+/*  Estimate Shipping  */
+#estimates {
+  width: 100%;
+  display: inline-block;
+}
+  #estimates dt,
+  #estimates dd {
+    font-size: 0.825rem;
+    color: rgba(2, 73, 100, .75);
+    line-height: 35px;
+    height: 35px;
+    margin: 0;
+    float: left;
+    display: block;
+    border-bottom: 1px dotted #DDDDDD;
+  }
+  #estimates dt {
+    font-weight: 400;
+    width: 75%;
+  }
+    #estimates dt input[type="radio"] {
+      margin: 0 0.25rem 0 0;
+    }
+  #estimates dd {
+    width: 25%;
+    font-weight: 600;
+    text-align: right;
+  }
+
+/*  Estimate Form Buttons  */
+#estimate_shipping_button,
+#set_shipping_button {
+  font-family: "Raleway", sans-serif !important;
+  font-size: 0.75rem;
+  color: rgba(2, 73, 100, .75);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  width: 100%;
+  height: 40px;
+  margin-top: 22px;
+  display: block;
+  border: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: #DFE6E9;
+}
+#set_shipping_button {
+    width: auto;
+    margin-top: 0;
+    padding: 0 1.875rem;
+    display: inline-block;
+}
+#estimate_shipping_button:hover,
+#estimate_shipping_button:focus,
+#set_shipping_button:hover,
+#set_shipping_button:focus {
+  color: rgb(2, 73, 100);
+}
+
+/*  Cart Summary
+==================================================================================== */
+.cart-summary {
+  margin-bottom: 1.875rem;
+}
+
+/*  Cart Summary Product  */
+.cart-summary__product {
+  height: 90px;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  display: table;
+  border-top: 1px solid #DFE6E9;
+  position: relative;
+}
+  .cart-summary__product-image {
+    width: 60px;
+    padding: 5px;
+    position: absolute;
+    top: 0.9375rem;
+    /* left: 0.9375rem; */
+    left: 0;
+    background: #FFFFFF;
+  }
+  .cart-summary__product-info {
+    width: 100%;
+    padding-left: 60px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+    .cart-summary__product-name,
+    .cart-summary__product-options,
+    .cart-summary__product-price {
+      font-family: "Khula", sans-serif !important;
+      line-height: 1;
+      display: block;
+    }
+    .cart-summary__product-name {
+      font-size: 0.9375rem;
+      color: #024964;
+      font-weight: bolder;
+      margin-bottom: 2px;
+    }
+    .cart-summary__product-options {
+      font-size: 0.75rem;
+      color: rgba(2, 73, 100, .75);
+      margin-bottom: 2px;
+    }
+    .cart-summary__product-price {
+      font-size: 0.875rem;
+      color: #024964;
+      font-weight: 600;
+    }
+
+/*  Cart Summary Totals  */
+.cart-summary__totals {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  border-top: 1px solid #DFE6E9;
+}
+.cart-summary__totals--last {
+  border-bottom: 1px solid #DFE6E9;
+}
+  .cart-summary__totals-string {
+    font-size: 0.825rem;
+    color: rgba(2, 73, 100, .75);
+    /*line-height: 50px;*/
+    text-transform: uppercase;
+    width: 50%;
+    /*height: 50px;*/
+    float: left;
+    display: block;
+  }
+  .cart-summary__totals-string + .cart-summary__totals-string {
+    font-weight: bold;
+  }
+  .cart-summary__totals-string--bold {
+    color: #024964;
+    font-weight: bold;
+  }
+
+/*  Cart Summary Actions  */
+.cart-summary__actions {
+  padding-top: 1.5rem;
+  margin-bottom: 1.875rem;
+}
+  .cart-summary__actions-anchor {
+    font-size: 0.9375rem;
+    color: rgba(2, 73, 100, .5);
+    font-style: italic;
+    margin-right: 0.25rem;
+  }
+  .cart-summary__actions-anchor:hover,
+  .cart-summary__actions-anchor:focus {
+    color: rgba(2, 73, 100, .75);
+  }
+
+
+/* ====================================================================================
+  CHECKOUT PAGE
+==================================================================================== */
+/*  Checkout Form
+==================================================================================== */
+#checkout {
+  border: 1px solid #DFE6E9;
+  background: #FFFFFF;
+}
+
+/*  Checkout Sections  */
+#contacts,
+#shipping_address,
+#billing_address,
+#other {
+  width: 100%;
+  padding: 1.875rem 0.9375rem 0.9375rem;
+  float: left;
+  /*display: inline-block;*/
+  display: block;
+  border-bottom: 1px solid #EFF2F4;
+}
+
+/*  Checkout Legend  */
+#checkout .legend {
+    font-family: "Raleway", sans-serif !important;
+    font-size: 1.1rem;
+    color: rgba(2, 73, 100, .75);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-right: 0.9375rem;
+    margin-bottom: 1.25rem;
+    margin-left: 0.9375rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed #DFE6E9;
+}
+
+/*  Checkout Fields  */
+#checkout .field {
+  width: 50%;
+  min-height: 5.25rem;
+  padding: 0 0.9375rem;
+  float: left;
+}
+  #checkout .field label {
+    font-family: "Khula", sans-serif !important;
+    color: rgba(2, 73, 100, .5);
+    font-weight: 600;
+  }
+  #checkout .field .text,
+  #checkout .field .textarea,
+  #checkout .field .select {
+    font-size: 0.875rem;
+    color: rgba(2, 73, 100, .75);
+    border-width: 2px;
+    border-color: rgba(223, 230, 233, .75);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #FFFFFF;
+  }
+  #checkout .field .text {
+    margin: 0;
+  }
+  #checkout .field .text:focus,
+  #checkout .field .textarea:focus,
+  #checkout .field .select:hover {
+    border-color: #CCD7DD;
+  }
+  #checkout .field span.error {
+    font-size: 0.725rem;
+    color: #F25C5C;
+    font-style: italic;
+    text-align: right;
+  }
+
+/*  Specific Checkout Fields */
+#shipping_address_address,
+#shipping_address_same_as_shipping,
+#other_additional_information {
+  width: 100% !important;
+}
+/*  Checkbox Fields  */
+#checkout .field.checkbox-field {
+  min-height: 0.9375rem !important;
+  margin-bottom: 0.9375rem;
+  position: relative;
+}
+  #checkout .field.checkbox-field .checkbox {
+    margin: 0;
+    float: left;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0.9375rem;
+  }
+  #checkout .field.checkbox-field .checkbox + label {
+    line-height: 1.1;
+    margin: 0;
+    padding-left: 1.25rem;
+    float: left;
+  }
+
+/*  Checkout Required Label  */
+#checkout p.required {
+  font-size: 0.85rem;
+  color: #F25C5C;
+  font-style: italic;
+  width: 100%;
+    margin: 0;
+    float: left;
+    display: block;
+  padding: 0.9375rem 1.875rem 0.75rem;
+  border-bottom: 1px solid #EFF2F4;
+}
+
+/*  Payments & Shipping  */
+#payments,
+#shipping {
+  width: 50%;
+  /* padding: 1.875rem 1.875rem 0.9375rem; */
+  padding: 1.875rem 0.9375rem 0.9375rem;
+  float: left;
+  display: block;
+}
+  #payments_options ul,
+  #shipping_options ul {
+    margin-left: 0.9375rem;
+    list-style-type: none;
+  }
+    #payments_options ul li,
+    #shipping_options ul li {
+      margin-bottom: 0.75rem;
+    }
+      #payments_options ul li .radiobox,
+      #shipping_options ul li .radiobox {
+        margin-right: 0.25rem;
+        margin-bottom: 0;
+      }
+      #payments_options ul li span,
+      #shipping_options ul li span {
+        font-size: 0.9rem;
+        color: rgba(2, 73, 100, .5);
+        font-weight: bolder;
+      }
+      #payments_options .payment_information {
+        margin-top: 0.5rem;
+        padding-left: 1.5rem;
+      }
+        #payments_options .payment_information,
+        #payments_options .payment_information > p {
+          font-size: 0.825rem;
+          color: rgba(2, 73, 100, .5);
+          line-height: 1.25;
+          margin-bottom: 0;
+        }
+        #payments_options .payment_information img {
+          margin-top: 0.5rem;
+        }
+
+/*  Checkout Actions  */
+#checkout .actions {
+  text-align: center;
+  width: 100%;
+  padding: 1.875rem 1.875rem 0.9375rem;
+  display: block;
+  clear: both;
+  border-top: 1px solid #EFF2F4;
+}
+  #checkout .actions .button {
+    font-family: "Raleway", sans-serif !important;
+    /*color: rgba(255, 255, 255, .75);*/
+    color: #FFFFFF;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    padding: 0.9375rem 2.25rem;
+    -webkit-border-radius: 9999px;
+    -moz-border-radius: 9999px;
+    border-radius: 9999px;
+    background: #024964;
+  }
+  #checkout .actions .button:hover,
+  #checkout .actions .button:focus {
+    color: #FFFFFF;
+    /*background: #024964;*/
+    background: #013A4F;
+  }
+
+
+/* ====================================================================================
+  REVIEW ORDER PAGE
+==================================================================================== */
+.review-info {
+    margin-bottom: 1.875rem;
+}
+  .review-info__content {
+    padding-top: 1.875rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFFFFF #DFE6E9 #EFF2F4 #DFE6E9;
+    background: #FFFFFF;
+  }
+  .review-info__content.first {
+    border-top-color: #DFE6E9;
+  }
+  .review-info__content.last {
+    /* padding-top: 1.875rem;
+    padding-bottom: 0.75rem; */
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: transparent #DFE6E9 #DFE6E9;
+    /* background: #FFFFFF; */
+  }
+    .review-info__content-title {
+      font-family: "Raleway", sans-serif !important;
+      font-size: 1.1rem;
+      color: rgba(2, 73, 100, .75);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      /* margin-right: 0.9375rem; */
+      margin-bottom: 1.75rem;
+      /* margin-left: 0.9375rem; */
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed #DFE6E9;
+    }
+
+/*  Review Info Block  */
+.review-info__block {
+  margin-bottom: 1.875rem;
+}
+  .review-info__block-title {
+    font-family: "Raleway", sans-serif !important;
+    font-size: 0.75rem;
+    color: rgba(2, 73, 100, .35);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .review-info__block-string {
+    color: rgba(2, 73, 100, .85);
+    word-wrap: break-word;
+    margin: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #EFF2F4;
+  }
+  .review-info__block-radiobox {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(2, 73, 100, .5);
+    margin: 0;
+  }
+
+
+
+/* ====================================================================================
+  MEDIA QUERIES
+==================================================================================== */
+/*  max-width 639px (Smartphones)
+==================================================================================== */
+@media only screen and (max-width: 639px) {
+  /*  Cart Breadcrumbs  */
+  .cart-breadcrumbs__menu-item {display: none;}
+  .cart-breadcrumbs__menu-item.current,
+  .cart-breadcrumbs__menu-item.last {display: block;}
+
+  /*  Cart Page  */
+  .cart-order__product {border-width: 1px; border-color: #DFE6E9 #DFE6E9 #EFF2F4 #DFE6E9;}
+  .cart-order__product-block--main {margin-bottom: 0.15rem;}
+  .cart-order__product-block-cell--absolute {padding-left: 0;}
+  .cart-order__product-anchor {margin: 0 auto 0.75rem; position: relative;}
+  .cart-order__product-name {padding-left: 0;}
+  .cart-order__product-block--qty,
+  .cart-order__product-block--delete {height: 40px;}
+  .cart-order__product-block-wrapper {height: inherit;}
+  #set_shipping_button {width: 100%;}
+
+  /*  Checkout Page  */
+  #checkout .field {width: 100%; min-height: 1px; margin-bottom: 0.9375rem;}
+  #payments,
+  #shipping {width: 100%;}
+  #payments {padding: 1.875rem 0.9375rem 0;}
+  #shipping {padding: 0.9375rem;}
+
+}
+
+/*  min-width 640px - max-width 768px (iPad mini)
+==================================================================================== */
+@media only screen and (min-width: 640px) and (max-width: 768px) {
+  .cart-left,
+  .cart-summary {width: 100%;}
+}
+
+/*  min-width 640px (Tablets & Desktop)
+==================================================================================== */
+@media only screen and (min-width: 640px) {
+  .cart-order__product-block-title {display: none;}
+}
+
+/*  min-width 1024px (Desktop)
+==================================================================================== */
+@media only screen and (min-width: 1024px) {
+  #cart-container,
+  #checkout-container,
+  #revieworder-container {padding-top: 2.875rem;}
+}

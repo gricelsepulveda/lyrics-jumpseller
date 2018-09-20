@@ -1,0 +1,85 @@
+<!-- Close button -->
+<button class="close-button" aria-label="Close menu" type="button" data-close>
+  <span aria-hidden="true">&times;</span>
+</button>
+
+<!-- Sidebar Summary -->
+<ul id="sidebar-summary" class="no-bullet">
+  <li class="sidebar-summary__title">{% t "Your Cart" %} <br/><span>({{ order.products_count }} {% if order.products_count == 1 %}{% t "product" %}{% else %}{% t "products" %}{% endif %})</span></li>
+  {% if order.products.size > 0 %}
+  {% for product in order.products %}
+  <li class="sidebar-summary__product">
+    {% if template == 'revieworder' %}
+    <img src="{{ product.image | resize:'60x60' }}" class="sidebar-summary__product-image" alt="{{ product.name }}">
+    {% else %}
+    <a href="{{ product.url }}" class="sidebar-summary__product-anchor" title="{{ product.name }}">
+      <img src="{{ product.image | resize:'60x60' }}" alt="{{ product.name }}">
+    </a>
+    <!-- end .sidebar-summary__product-anchor -->
+    {% endif %}
+
+    <div class="sidebar-summary__product-info">
+      <span class="sidebar-summary__product-info-name  khula">{{ product.name }}</span>
+      {% if product.options.size > 0 %}
+      <span class="sidebar-summary__product-info-option  khula">{% for option in product.options %}{{ option.name }}: {{ option.value }}{% unless forloop.last %} / {% endunless %}{% endfor %}</span>
+      {% endif %}
+      <span class="sidebar-summary__product-info-price">{{ product.qty }} &Cross; {{ product.price | minus:product.discount | price }}</span>
+    </div>
+    <!-- .sidebar-summary__product-info -->
+  </li>
+  <!-- end .sidebar-summary__product -->
+  {% endfor %}
+
+  {% if order.subtotal != order.total %}
+  <li class="sidebar-summary__totals">
+    <span class="sidebar-summary__totals-name">{% t "Subtotal" %}</span>
+    <span class="sidebar-summary__totals-value">{{ order.subtotal | price }}</span>
+  </li>
+  <!-- end .sidebar-summary__totals -->
+  {% endif %}
+
+  {% if order.shipping_required %}
+  <li class="sidebar-summary__totals">
+    <span class="sidebar-summary__totals-name">{% t "Shipping" %}</span>
+    <span class="sidebar-summary__totals-value">{{ order.shipping | price }}</span>
+  </li>
+  <!-- end .sidebar-summary__totals -->
+  {% endif %}
+
+  {% if order.tax > 0 %}
+  <li class="sidebar-summary__totals">
+    <span class="sidebar-summary__totals-name">{% t "Taxes" %}</span>
+    <span class="sidebar-summary__totals-value">{{ order.tax | price }}</span>
+  </li>
+  <!-- end .sidebar-summary__totals -->
+  {% endif %}
+
+  {% if order.discount > 0 %}
+  <li class="sidebar-summary__totals">
+    <span class="sidebar-summary__totals-name">{% t "Discounts" %}</span>
+    <span class="sidebar-summary__totals-value">-{{ order.discount | price }}</span>
+  </li>
+  <!-- end .sidebar-summary__totals -->
+  {% endif %}
+
+  <li class="sidebar-summary__totals">
+    <span class="sidebar-summary__totals-name  last">{% t "Total" %}</span>
+    <span class="sidebar-summary__totals-value  last">{{ order.total | price }}</span>
+  </li>
+  <!-- end .sidebar-summary__totals -->
+
+  <li class="sidebar-summary__actions">
+    <a href="{{ order.checkout_url }}" class="button  small  circular  green" title="{% t "Go to Checkout" %}">
+      {% t "Go to Checkout" %} <i class="fa fa-arrow-circle-right fa-fw"></i>
+    </a>
+    <br>
+    <a href="{{ order.url }}" class="button  tiny  radius  white  sidebar-summary__actions-edit" title="{% t "Edit Cart" %}">
+      <i class="fa fa-pencil-square-o fa-fw"></i> {% t "Edit Cart" %}
+    </a>
+  </li>
+  <!-- end .sidebar-summary__actions -->
+  {% else %}
+  <li class="sidebar-summary__item-empty">{% t "Your cart is currently empty." %}</li>
+  {% endif %}
+</ul>
+<!-- end #sidebar-summary -->
