@@ -1,4 +1,4 @@
-<a href="{{ product.url }}" class="product-block__anchor" title="{% t "Go to" %} {{ product.name }}">
+<a href="{{ product.url }}" class="product-block__anchor" title="{% t "Ir a" %} {{ product.name }}">
   {% if product.images.size == 0 %}
   <img src="{{ 'product-block-no-image.jpg' | asset }}" class="product-block__anchor-image" alt="{{ product.name }}">
   {% elsif product.images.size > 0 %}
@@ -11,22 +11,22 @@
 <h3 class="product-block__price">
   {% if product.discount > 0 %}
   <span class="product-block__price_value">{{ product.price | minus:product.discount | price | replace:'USD','<em>USD</em>' }}</span>
-  <small class="product-block__price-old">{% t "Before" %} <span>{{ product.price | price }}</span></small>
+  <small class="product-block__price-old">{% t "Antes" %} <span>{{ product.price | price }}</span></small>
   {% else %}
   <span class="product-block__price_value">{{ product.price | price | replace:'USD','<em>USD</em>' }}</span>
   {% endif %}
 </h3>
 
 {% if product.stock == 0 and product.stock_unlimited == false %}
-<span class="button  small  radius  product-block__status">{% t "Out of Stock" %}</span>
+<span class="button  small  radius  product-block__status">{% t "Sin stock" %}</span>
 {% elsif product.status == 'not-available' %}
-<span class="button  small  radius  product-block__status">{% t "Not Available" %}</span>
+<span class="button  small  radius  product-block__status">{% t "No disponible" %}</span>
 {% else %}
-<a class="button  small  blue  bordered  circular  product-block__button" title="{% t "Buy it now" %}" role="button" data-open="product-modal-{{ product.id }}">{% t "Buy it now" %}</a>
+<a class="button  small  blue  bordered  circular  product-block__button" title="{% t "Comprar ahora" %}" role="button" data-open="product-modal-{{ product.id }}">{% t "Comprar ahora" %}</a>
 <!-- Product Modal -->
 {% include 'product_block_modal' %}
 {% endif %}
 
 <br>
 
-<a href="{{ product.url }}" class="product-block__view-details" title="{% t "See more details" %}">{% t "See more details" %}</a>
+<a href="{{ product.url }}" class="product-block__view-details" title="{% t "Ver más detalle" %}">{% t "Ver más detalle" %}</a>

@@ -1,0 +1,66 @@
+<!-- CHECKOUT PAGE -->
+<div class="row  row-large">
+  {% if order.products.size == 0 %}
+  {% include 'cart_empty_message' %}
+  {% else %}
+  <!-- Cart Breadcrumbs (for Mobiles) -->
+  {% include 'cart_breadcrumbs' %}  
+  <!-- end .cart-breadcrumbs -->
+  
+  <!-- Cart Left -->
+  <section class="small-12  medium-7  large-7  columns  cart-left">
+    <div class="row">
+      <div class="small-12  columns  cart-heading">
+        <h1 class="cart-heading__title">{% t "Agrega tu información" %}</h1>
+      </div>
+      <!-- end .cart-left__heading -->
+      
+      <!-- Checkout Form -->
+      <div class="small-12  columns  cart-content">
+        {{ checkout_form }}
+      </div>
+      <!-- end .cart-content -->
+    </div>
+    <!-- end .row -->
+  </section>
+  <!-- end .cart-left -->
+
+  <!-- Cart Summary -->
+  <section class="small-12  medium-5  large-4  columns  cart-summary">
+    {% include 'cart_summary' %}
+  </section>
+  <!-- end .cart-summary -->
+  {% endif %}
+</div>
+<!-- end .row-large -->
+
+<script>
+  $(document).ready(function(){
+    /*
+    var form = document.getElementById('checkout'); // form has to have ID: <form id="formID">
+form.noValidate = true;
+form.addEventListener('submit', function(event) { // listen for form submitting
+        if (!event.target.checkValidity()) {
+          $('#checkout').find('input').each(function(){
+            if($(this).attr('required') == 'required' && $(this).val() == ''){
+              $(this).css('border','1px solid red');
+            }else{
+              $(this).css('border','1px solid rgba(223, 230, 233, .75)');
+            }
+          });
+          
+          $('#checkout').find('select').each(function(){
+            if($(this).attr('required') == 'required' && $(this).val() == ''){
+              $(this).css('border','1px solid red');
+            }else{
+              $(this).css('border','1px solid rgba(223, 230, 233, .75)');
+            }
+          });
+          
+          
+            event.preventDefault(); // dismiss the default functionality
+        }
+    }, false);
+    */
+  });
+</script>

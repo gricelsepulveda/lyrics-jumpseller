@@ -5,7 +5,7 @@
 
 <!-- Sidebar Summary -->
 <ul id="sidebar-summary" class="no-bullet">
-  <li class="sidebar-summary__title">{% t "Your Cart" %} <br/><span>({{ order.products_count }} {% if order.products_count == 1 %}{% t "product" %}{% else %}{% t "products" %}{% endif %})</span></li>
+  <li class="sidebar-summary__title">{% t "Tu carro" %} <br/><span>({{ order.products_count }} {% if order.products_count == 1 %}{% t "producto" %}{% else %}{% t "productos" %}{% endif %})</span></li>
   {% if order.products.size > 0 %}
   {% for product in order.products %}
   <li class="sidebar-summary__product">
@@ -40,7 +40,7 @@
 
   {% if order.shipping_required %}
   <li class="sidebar-summary__totals">
-    <span class="sidebar-summary__totals-name">{% t "Shipping" %}</span>
+    <span class="sidebar-summary__totals-name">{% t "Envío" %}</span>
     <span class="sidebar-summary__totals-value">{{ order.shipping | price }}</span>
   </li>
   <!-- end .sidebar-summary__totals -->
@@ -48,7 +48,7 @@
 
   {% if order.tax > 0 %}
   <li class="sidebar-summary__totals">
-    <span class="sidebar-summary__totals-name">{% t "Taxes" %}</span>
+    <span class="sidebar-summary__totals-name">{% t "Impuestos" %}</span>
     <span class="sidebar-summary__totals-value">{{ order.tax | price }}</span>
   </li>
   <!-- end .sidebar-summary__totals -->
@@ -56,7 +56,7 @@
 
   {% if order.discount > 0 %}
   <li class="sidebar-summary__totals">
-    <span class="sidebar-summary__totals-name">{% t "Discounts" %}</span>
+    <span class="sidebar-summary__totals-name">{% t "Descuentos" %}</span>
     <span class="sidebar-summary__totals-value">-{{ order.discount | price }}</span>
   </li>
   <!-- end .sidebar-summary__totals -->
@@ -69,17 +69,17 @@
   <!-- end .sidebar-summary__totals -->
 
   <li class="sidebar-summary__actions">
-    <a href="{{ order.checkout_url }}" class="button  small  circular  green" title="{% t "Go to Checkout" %}">
-      {% t "Go to Checkout" %} <i class="fa fa-arrow-circle-right fa-fw"></i>
+    <a href="{{ order.checkout_url }}" class="button  small  circular  green" title="{% t "Ir al Checkout" %}">
+      {% t "Ir al Checkout" %} <i class="fa fa-arrow-circle-right fa-fw"></i>
     </a>
     <br>
-    <a href="{{ order.url }}" class="button  tiny  radius  white  sidebar-summary__actions-edit" title="{% t "Edit Cart" %}">
-      <i class="fa fa-pencil-square-o fa-fw"></i> {% t "Edit Cart" %}
+    <a href="{{ order.url }}" class="button  tiny  radius  white  sidebar-summary__actions-edit" title="{% t "Modificar Carro" %}">
+      <i class="fa fa-pencil-square-o fa-fw"></i> {% t "Modificar carro" %}
     </a>
   </li>
   <!-- end .sidebar-summary__actions -->
   {% else %}
-  <li class="sidebar-summary__item-empty">{% t "Your cart is currently empty." %}</li>
+  <li class="sidebar-summary__item-empty">{% t "Tu carro está vacío." %}</li>
   {% endif %}
 </ul>
 <!-- end #sidebar-summary -->

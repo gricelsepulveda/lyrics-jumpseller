@@ -91,7 +91,7 @@
             <a href="{{ shipping_address.edit_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Editar" %}"><i class="fa fa-pencil fa-fw"></i> {% t "Editar" %}</a>
             <a href="{{ shipping_address.delete_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Borrar" %}"><i class="fa fa-trash fa-fw"></i> {% t "Borrar" %}</a>
             {% if shipping_address.default == false %}
-              <a href="{{ shipping_address.set_primary_url}}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Set as Primary" %}" alt="{% t "Set as Primary" %}"><i class="fa fa-star"></i>{% t "Set as Primary" %}</a>
+              <a href="{{ shipping_address.set_primary_url}}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Hacer principal" %}" alt="{% t "Hacer principal" %}"><i class="fa fa-star"></i>{% t "Hacer principal" %}</a>
             {% endif %}
           </li>
           <!-- end .customer-info__list-actions -->
@@ -106,12 +106,12 @@
 
     <!-- Billing Address -->
     <li class="accordion-item  customer-info__accordion-block" data-accordion-item>
-      <a class="accordion-title" role="button">{% t "Billing Information" %}</a>
+      <a class="accordion-title" role="button">{% t "Información de envío" %}</a>
 
       <div id="customer_billing_address" class="accordion-content" data-tab-content>
       <ul class="no-bullet  customer-info__list">
         <li class="customer-info__list-actions">
-          <a href="{{ customer.add_billing_address_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Add billing details" %}"><i class="fa fa-plus fa-fw"></i> {% t "Add billing details" %}</a>
+          <a href="{{ customer.add_billing_address_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Agregar detalles de envío" %}"><i class="fa fa-plus fa-fw"></i> {% t "Agregar detalles de envío" %}</a>
         </li>
         {% if customer.billing_addresses == blank %}
         <li class="customer-info__list-item">No hay detalles de facturación disponibles.</li>
@@ -121,7 +121,7 @@
         <ul class="no-bullet  customer-info__list">
           <!-- Name -->
           <li class="customer-info__list-item">
-            <small class="customer-info__list-title">{% t "Name" %}</small>
+            <small class="customer-info__list-title">{% t "Nombre" %}</small>
             {{ billing_address.name }}
           </li>
           <!-- end .customer-info__list-item -->
@@ -137,24 +137,24 @@
 
           <!-- Address / Postal Code -->
           <li class="customer-info__list-item">
-            <small class="customer-info__list-title">{% t "Address" %}{% if billing_address.postal != blank %} / {% t "Postal Code" %}{% endif %}</small>
+            <small class="customer-info__list-title">{% t "Dirección" %}{% if billing_address.postal != blank %} / {% t "Código postal" %}{% endif %}</small>
             {{ billing_address.address }}{% if billing_address.postal != blank %}, {{ billing_address.postal }}{% endif %}
           </li>
           <!-- end .customer-info__list-item -->
 
           <!-- City / Region / Country -->
           <li class="customer-info__list-item">
-            <small class="customer-info__list-title">{% t "City / Region / Country" %}</small>
+            <small class="customer-info__list-title">{% t "Ciudad / Región / País" %}</small>
             {{ billing_address.city }}, {{ billing_address.region }}, {{ billing_address.country }}
           </li>
           <!-- end .customer-info__list-item -->
 
           <!-- Edit / Delete -->
           <li class="customer-info__list-actions">
-            <a href="{{ billing_address.edit_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Edit" %}"><i class="fa fa-pencil fa-fw"></i> {% t "Edit" %}</a>
-            <a href="{{ billing_address.delete_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Delete" %}"><i class="fa fa-trash fa-fw"></i> {% t "Delete" %}</a>
+            <a href="{{ billing_address.edit_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Editar" %}"><i class="fa fa-pencil fa-fw"></i> {% t "Editar" %}</a>
+            <a href="{{ billing_address.delete_url }}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Borrar" %}"><i class="fa fa-trash fa-fw"></i> {% t "Borrar" %}</a>
             {% if billing_address.default == false %}
-            <a href="{{ billing_address.set_primary_url}}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Set as Primary" %}" alt="{% t "Set as Primary" %}"><i class="fa fa-star"></i>{% t "Set as Primary" %}</a>
+            <a href="{{ billing_address.set_primary_url}}" class="button  tiny  radius  white  customer-info__list-button" title="{% t "Hacer principal" %}" alt="{% t "Hacer principal" %}"><i class="fa fa-star"></i>{% t "Hacer principal" %}</a>
             {% endif %}
           </li>
           <!-- end .customer-info__list-actions -->

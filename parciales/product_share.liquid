@@ -1,4 +1,4 @@
-{% assign short_description = product.field["Short Description"] %}
+{% assign short_description = product.field["Descripción corta"] %}
 {% capture sharing_description %}{% if short_description and short_description != blank %}{{ short_description.value }}{% else %}{% if product.description != blank %}{{ product.description | strip_html | truncate:120 }}{% endif %}{% endif %}{% endcapture %}
 
 <div class="row  row-large">

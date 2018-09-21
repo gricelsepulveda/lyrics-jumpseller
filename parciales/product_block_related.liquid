@@ -1,4 +1,4 @@
-<a href="{{ prod.url }}" class="product-block__anchor" title="{% t "Go to" %} {{ prod.name }}">
+<a href="{{ prod.url }}" class="product-block__anchor" title="{% t "Ir a" %} {{ prod.name }}">
   {% if prod.images.size == 0 %}
   <img src="{{ 'product-block-no-image.jpg' | asset }}" class="product-block__anchor-image" alt="{{ prod.name }}">
   {% elsif prod.images.size > 0 %}
@@ -11,10 +11,10 @@
 <h2 class="product-block__price  less-margin">
   {% if prod.discount > 0 %}
   {{ prod.price | minus:prod.discount | price | replace:'USD','<em>USD</em>' }}
-  <small class="product-block__price-old">{% t "Before" %} {{ prod.price | price }}</small>
+  <small class="product-block__price-old">{% t "Antes" %} {{ prod.price | price }}</small>
   {% else %}
   {{ prod.price | price | replace:'USD','<em>USD</em>' }}
   {% endif %}
 </h2>
 
-<a href="{{ prod.url }}" class="product-block__view-details" title="{% t "See more details" %}">{% t "See more details" %}</a>
+<a href="{{ prod.url }}" class="product-block__view-details" title="{% t "Ver más detalles" %}">{% t "Ver más detalles" %}</a>

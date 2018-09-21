@@ -3,9 +3,9 @@
     <!-- Cart -->
     <li class="cart-breadcrumbs__menu-item{% if template == 'cart' %}  current{% endif %}">
       {% if template == 'checkout' or template == 'revieworder' %}
-      <a href="{{ order.url }}" class="cart-breadcrumbs__menu-anchor" title="{% t "Go to Cart" %}"><div class="cart-breadcrumbs__menu-number"><i class="fa fa-check fa-fw"></i></div>{% t "Cart" %}</a>
+      <a href="{{ order.url }}" class="cart-breadcrumbs__menu-anchor" title="{% t "Ir al carro" %}"><div class="cart-breadcrumbs__menu-number"><i class="fa fa-check fa-fw"></i></div>{% t "Carro" %}</a>
       {% else %}
-      <span class="cart-breadcrumbs__menu-string"><div class="cart-breadcrumbs__menu-number">1</div>{% t "Cart" %}</span>
+      <span class="cart-breadcrumbs__menu-string"><div class="cart-breadcrumbs__menu-number">1</div>{% t "Carro" %}</span>
       {% endif %}
     </li>
     <!-- end .cart-breadcrumbs__menu-item -->

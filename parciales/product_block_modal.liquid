@@ -17,13 +17,13 @@
     <h3 class="product-modal__price">
       {% if product.discount > 0 %}
       <span class="product-modal__price-current">{{ product.price | minus:product.discount | price | replace:'USD','<em>USD</em>' }}</span>
-      <small class="product-modal__price-old">{% t "Before" %} <span>{{ product.price | price }}</span></small>
+      <small class="product-modal__price-old">{% t "Antes" %} <span>{{ product.price | price }}</span></small>
       {% else %}
       <span class="product-modal__price-current">{{ product.price | price | replace:'USD','<em>USD</em>' }}</span>
       {% endif %}
     </h3>
     {% if product.description != blank %}
-      <a href="{{ product.url }}" class="product-modal__anchor  raleway" title="{% t "More Details" %}">{% t "More Details" %} <i class="fa fa-angle-right fa-fw"></i></a>
+      <a href="{{ product.url }}" class="product-modal__anchor  raleway" title="{% t "Más detalles" %}">{% t "Más detalles" %} <i class="fa fa-angle-right fa-fw"></i></a>
     {% endif %}
     <br>
     {% if product.images.size > 0 %}
@@ -82,7 +82,7 @@
 
       <!-- Add to Cart -->
       <div class="small-12  medium-12  large-8  columns  text-center  large-text-left  product-form__actions">
-        <input type="submit" id="product-form__actions-add-{{ product.id }}" class="button  large  circular  green  product-form__actions-button" value="{% t "Add to Cart" %}" onclick="$('#product-form-modal').submit()"/>
+        <input type="submit" id="product-form__actions-add-{{ product.id }}" class="button  large  circular  green  product-form__actions-button" value="{% t "Agregar al carro" %}" onclick="$('#product-form-modal').submit()"/>
       </div>
       <!-- end .product-form__actions -->
     </div>

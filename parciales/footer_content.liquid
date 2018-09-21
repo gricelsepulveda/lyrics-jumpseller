@@ -29,7 +29,7 @@
       {% if social.facebook_url != blank %}
       <!-- Facebook -->
       <li class="footer-about__social-item">
-        <a href="{{ social.facebook_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+        <a href="{{ social.facebook_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -37,7 +37,7 @@
       {% if social.twitter_url != blank %}
       <!-- Twitter -->
       <li class="footer-about__social-item">
-        <a href="{{ social.twitter_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+        <a href="{{ social.twitter_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -45,7 +45,7 @@
       {% if social.instagram_url != blank %}
       <!-- Instagram -->
       <li class="footer-about__social-item">
-        <a href="{{ social.instagram_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+        <a href="{{ social.instagram_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -53,7 +53,7 @@
       {% if social.pinterest_url != blank %}
       <!-- Pinterest -->
       <li class="footer-about__social-item">
-        <a href="{{ social.pinterest_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
+        <a href="{{ social.pinterest_url }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -61,7 +61,7 @@
       {% if options.store_youtube != blank %}
       <!-- Youtube -->
       <li class="footer-about__social-item">
-        <a href="{{ options.store_youtube }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+        <a href="{{ options.store_youtube }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -69,7 +69,7 @@
       {% if options.store_vimeo != blank %}
       <!-- Vimeo -->
       <li class="footer-about__social-item">
-        <a href="{{ options.store_vimeo }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
+        <a href="{{ options.store_vimeo }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -77,7 +77,7 @@
       {% if options.store_linkedin != blank %}
       <!-- LinkedIn -->
       <li class="footer-about__social-item">
-        <a href="{{ options.store_linkedin }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+        <a href="{{ options.store_linkedin }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -85,7 +85,7 @@
       {% if options.store_google_plus != blank %}
       <!-- Google+ -->
       <li class="footer-about__social-item">
-        <a href="{{ options.store_google_plus }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
+        <a href="{{ options.store_google_plus }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -93,7 +93,7 @@
       {% if options.store_github != blank %}
       <!-- GitHub -->
       <li class="footer-about__social-item">
-        <a href="{{ options.store_github }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "on GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+        <a href="{{ options.store_github }}" class="footer-about__social-item-anchor" title="{{ store.name }} {% t "en GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
       </li>
       <!-- end .footer-about__social-item -->
       {% endif %}
@@ -109,12 +109,12 @@
       {% if menu.footer %}
       <!-- Information Nav -->
       <div class="small-12{% if options.enable_footer_products %}  medium-6  large-6{% endif %}  columns">
-        <h6 class="footer-top__block-title">{% t "Information" %}</h6>
+        <h6 class="footer-top__block-title">{% t "Información" %}</h6>
 
         <ul class="menu  vertical  footer-top__menu">
           {% for item in menu.footer.items %}
           <li class="footer-top__menu-item">
-            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Go to" %} {{ item.name }}">{{ item.name }}</a>
+            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Ir a" %} {{ item.name }}">{{ item.name }}</a>
           </li>
           <!-- end .footer-top__menu-item -->
           {% endfor %}
@@ -128,12 +128,12 @@
       {% if menu.footer_products %}
       <!-- Products Nav -->
       <div class="small-12{% if options.enable_footer_info %}  medium-6  large-6{% endif %}  columns">
-        <h6 class="footer-top__block-title">{% t "Our Products" %}</h6>
+        <h6 class="footer-top__block-title">{% t "Nuestros productos" %}</h6>
 
         <ul class="menu  vertical  footer-top__menu">
           {% for item in menu.footer_products.items %}
           <li class="footer-top__menu-item">
-            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Go to" %} {{ item.name }}">{{ item.name }}</a>
+            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Ir a" %} {{ item.name }}">{{ item.name }}</a>
           </li>
           <!-- end .footer-top__menu-item -->
           {% endfor %}
@@ -150,19 +150,19 @@
 
   <!-- Footer Contact -->
   <div id="footer-contact" class="small-12  medium-3  large-3  columns  text-center  footer-top__block">
-    <h6 class="footer-top__block-title">{% t "Contact Us" %}</h6>
+    <h6 class="footer-top__block-title">{% t "Contáctanos" %}</h6>
 
     <ul class="menu  vertical  footer-top__menu">
       {% if options.store_contact_email != blank %}
       <li class="footer-top__menu-item">
-        <a href="mailto:{{ options.store_contact_email }}" class="footer-top__menu-item-anchor" title="{% t "Email us" %}"><i class="fa fa-envelope-o fa-fw"></i>{{ options.store_contact_email }}</a>
+        <a href="mailto:{{ options.store_contact_email }}" class="footer-top__menu-item-anchor" title="{% t "Escríbenos" %}"><i class="fa fa-envelope-o fa-fw"></i>{{ options.store_contact_email }}</a>
       </li>
       <!-- end .footer-top__menu-item -->
       {% endif %}
 
       {% if options.store_sales_email != blank %}
       <li class="footer-top__menu-item">
-        <a href="mailto:{{ options.store_sales_email }}" class="footer-top__menu-item-anchor" title="{% t "Email us" %}"><i class="fa fa-envelope-o fa-fw"></i>{{ options.store_sales_email }}</a>
+        <a href="mailto:{{ options.store_sales_email }}" class="footer-top__menu-item-anchor" title="{% t "Escríbenos" %}"><i class="fa fa-envelope-o fa-fw"></i>{{ options.store_sales_email }}</a>
       </li>
       <!-- end .footer-top__menu-item -->
       {% endif %}
@@ -177,7 +177,7 @@
       {% if options.store_address != blank %}
       <li class="footer-top__menu-item">
         {% if options.store_address_url != blank %}
-        <a href="{{ options.store_address_url }}" class="footer-top__menu-item-anchor" title="{% t "Find us here" %}" target="_blank"><i class="fa fa-map-marker fa-fw"></i>{{ options.store_address }}</a>
+        <a href="{{ options.store_address_url }}" class="footer-top__menu-item-anchor" title="{% t "Encuéntranos acá" %}" target="_blank"><i class="fa fa-map-marker fa-fw"></i>{{ options.store_address }}</a>
         {% else %}
         <span class="footer-top__menu-item-string"><i class="fa fa-map-marker fa-fw"></i>{{ options.store_address }}</span>
         {% endif %}
@@ -205,7 +205,7 @@
   </div>
 
   <div class="small-12  medium-6  large-6  columns  text-center  medium-text-left">
-    <h6 class="footer-copyright__text"><i class="fa fa-copyright fa-fw"></i> Copyright {{ store.name }}. {% t "All Rights Reserved" %}.</h6>
+    <h6 class="footer-copyright__text"><i class="fa fa-copyright fa-fw"></i> Copyright {{ store.name }}. {% t "Algunos derechos reservados" %}.</h6>
   </div>
 
   <div class="small-12  medium-6  large-6  columns  text-center  medium-text-right">

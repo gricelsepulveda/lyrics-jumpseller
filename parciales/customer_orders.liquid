@@ -5,7 +5,7 @@
     <div class="small-12  columns  customer-orders__block-heading">
       <div class="row">
         <div class="small-6  columns">
-          <span class="customer-orders__block-heading-title">{% t "There are no orders" %}</span>
+          <span class="customer-orders__block-heading-title">{% t "No hay órdenes" %}</span>
         </div>
       </div>
       <!-- end .row -->
@@ -15,7 +15,7 @@
     <div class="small-12  columns  customer-orders__block-info">
       <div class="row">
         <div class="small-12  columns">
-          <span class="customer-orders__block-info-string">{% t "You haven't made any purchases yet at" %} {{ store.name }}</span>
+          <span class="customer-orders__block-info-string">{% t "No has hecho ninguna compra aún en" %} {{ store.name }}</span>
         </div>
         <!-- end .accpc-block -->
       </div>
@@ -34,11 +34,11 @@
     <div class="small-12  columns  customer-orders__block-heading">
       <div class="row">
         <div class="small-6  columns">
-          <span class="customer-orders__block-heading-title">{% t "Order Nº" %} {{ order.id }}</span>
-          <small><a href="{{order.duplicate_url}}" target="_blank" style="color: rgba(255,255,255,.5);">({% t "Duplicate" %})</a></small>
+          <span class="customer-orders__block-heading-title">{% t "Orden Nº" %} {{ order.id }}</span>
+          <small><a href="{{order.duplicate_url}}" target="_blank" style="color: rgba(255,255,255,.5);">({% t "Duplicada" %})</a></small>
         </div>
         <div class="small-6  columns  text-right">
-          <span class="customer-orders__block-heading-title">{% t "Date" %}: {{ order.date }}</span>
+          <span class="customer-orders__block-heading-title">{% t "Fecha" %}: {{ order.date }}</span>
         </div>
       </div>
       <!-- end .row -->
@@ -49,7 +49,7 @@
       <div class="row">
         <div class="small-12  medium-8  large-8  columns">
           <span class="customer-orders__block-info-string">
-            <small class="customer-orders__block-info-title">{% t "Shipping Address" %}</small>
+            <small class="customer-orders__block-info-title">{% t "Dirección de envío" %}</small>
             {{ order.shipping_address.address }}, {{ order.shipping_address.city }}, {{ order.shipping_address.region }}, {{ order.shipping_address.country }}
           </span>
         </div>
@@ -65,8 +65,8 @@
 
         <div class="small-12  medium-2  large-2  columns">
           <span class="customer-orders__block-info-string">
-            <small class="customer-orders__block-info-title">{% t "Status" %}</small>
-            <strong class="customer-orders__block-info-label  label  radius  {{ order.status_id | downcase | replace:' ','-' }}">{{ order.status | remove:'Pago ' | remove:'Payment ' }}</strong>
+            <small class="customer-orders__block-info-title">{% t "Estado" %}</small>
+            <strong class="customer-orders__block-info-label  label  radius  {{ order.status_id | downcase | replace:' ','-' }}">{{ order.status | remove:'Pago' | remove:'Pago' }}</strong>
           </span>
         </div>
         <!-- end .accpc-products -->
@@ -80,7 +80,7 @@
         <ul class="accordion  customer-orders__accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
           <li class="accordion-item  customer-orders__accordion-item" data-accordion-item>
             <a href="#panel-{{ order.id }}" class="accordion-title  customer-orders__accordion-trigger  trsn">
-              <i class="fa fa-caret-square-o-down fa-fw trsn"></i> {% t "Product list" %}
+              <i class="fa fa-caret-square-o-down fa-fw trsn"></i> {% t "Lista de productos" %}
             </a>
 
             <div id="panel_{{ order.id }}" class="accordion-content  customer-orders__accordion-content" data-tab-content>
@@ -88,13 +88,13 @@
                 <div class="small-12  columns  customer-orders__accordion-heading">
                   <div class="row">
                     <div class="small-7 columns">
-                      <span class="customer-orders__accordion-heading-title">{% t "Product" %}</span>
+                      <span class="customer-orders__accordion-heading-title">{% t "Producto" %}</span>
                     </div>
                     <div class="small-2 columns text-center">
-                      <span class="customer-orders__accordion-heading-title">{% t "Quantity" %}</span>
+                      <span class="customer-orders__accordion-heading-title">{% t "Cantidad" %}</span>
                     </div>
                     <div class="small-3 columns text-center">
-                      <span class="customer-orders__accordion-heading-title">{% t "Price" %}</span>
+                      <span class="customer-orders__accordion-heading-title">{% t "Precio" %}</span>
                     </div>
                   </div>
                   <!-- end .row -->

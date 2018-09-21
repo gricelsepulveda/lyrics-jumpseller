@@ -31,7 +31,7 @@
 <!-- Sidebar Nav Menu -->
 <div class="small-12  columns  sidebar-wrapper">
   <!-- Sidebar Menu -->
-  <ul id="sidebar-menu" class="vertical menu" data-drilldown data-back-button='<li class="js-drilldown-back"><a tabindex="0">{% t "Go Back" %}</a></li>'>
+  <ul id="sidebar-menu" class="vertical menu" data-drilldown data-back-button='<li class="js-drilldown-back"><a tabindex="0">{% t "Ir atrás" %}</a></li>'>
     {% if menu.main %}
     {% for item in menu.main.items %}
     <li class="sidebar-menu__item{% if forloop.first %}  sidebar-menu__item--first{% endif %}">
@@ -75,7 +75,7 @@
 
     {% if store.customers_enabled %}
     <li class="sidebar-menu__item">
-      <a class="sidebar-menu__item-anchor" role="button">{% if customer %}{% t "My cuenta" %}{% else %}{% t "Ingresar" %}{% endif %} <i class="fa fa-angle-right fa-fw"></i></a>
+      <a class="sidebar-menu__item-anchor" role="button">{% if customer %}{% t "Mi cuenta" %}{% else %}{% t "Ingresar" %}{% endif %} <i class="fa fa-angle-right fa-fw"></i></a>
 
       <ul class="vertical  menu  sidebar-menu__submenu">
         <li class="sidebar-menu__submenu-title">{% if customer %}{% t "Mi cuenta" %}{% else %}{% t "Ingresar" %}{% endif %}</li>

@@ -1,0 +1,200 @@
+<!-- REVIEW ORDER -->
+<div class="row  row-large">
+  <!-- Cart Breadcrumbs (for Mobiles) -->
+  {% include 'cart_breadcrumbs' %}  
+  <!-- end .cart-breadcrumbs -->
+  
+  <!-- Cart Left -->
+  <section class="small-12  medium-7  large-7  columns  cart-left">
+    <div class="row">
+      <div class="small-12  columns  cart-heading">
+        <h1 class="cart-heading__title">{% t "Revisa tu orden" %}</h1>
+      </div>
+      <!-- end .cart-left__heading -->
+      
+      <!-- Review Info -->
+      <div class="small-12  columns  review-info">
+        <!-- Contact -->
+        <div class="small-12  columns  review-info__content  first">
+          <div class="small-12  columns">
+            <h1 class="review-info__content-title">{% t "Contacto" %}</h1>
+          </div>
+          
+          <!-- Email -->
+          <div class="small-12  medium-8  large-8  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Correo" %}</span>
+            <p class="review-info__block-string">{{ order.email }}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- Phone -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Celular" %}</span>
+            <p class="review-info__block-string">{% if order.phone != blank %}{{ order.phone }}{% else %}{% t "No has indicado un número de teléfono" %}{% endif %}</p>
+          </div>
+          <!-- end .review-info__block -->
+        </div>
+        <!-- end .review-info__content -->
+        
+        {% if order.shipping_required %}
+        <!-- Shipping Information -->
+        <div class="small-12  columns  review-info__content">
+          <div class="small-12  columns">
+            <h1 class="review-info__content-title">{% t "Información de envio" %}</h1>
+          </div>
+          
+          <!-- Name -->
+          <div class="small-12{% if order.shipping_address.taxid != blank %}  medium-8  large-8{% endif %}  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Nombre" %}</span>
+            <p class="review-info__block-string">{{ order.shipping_address.name }}</p>
+          </div>
+          <!-- end .review-info__block -->
+          
+          {% if order.shipping_address.taxid != blank %}
+          <!-- Tax ID -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Rut" %}</span>
+            <p class="review-info__block-string">{{ order.shipping_address.taxid }}</p>
+          </div>
+          <!-- end .review-info__block -->
+          {% endif %}
+
+          <!-- Address / Postal Code -->
+          <div class="small-12  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Dirección" %}{% if order.shipping_address.postal != blank %}{% t "/ Código postal" %}{% endif %}</span>
+            <p class="review-info__block-string">{{ order.shipping_address.address }}, {% if order.shipping_address.postal != blank %}, {{ order.shipping_address.postal }}{% endif %}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- Country -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "País" %}</span>
+            <p class="review-info__block-string">{{ order.shipping_address.country }}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- City -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Ciudad" %}</span>
+            <p class="review-info__block-string">{{ order.shipping_address.city }}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- Region -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Región" %}</span>
+            <p class="review-info__block-string">{{ order.shipping_address.region }}</p>
+          </div>
+          <!-- end .review-info__block -->
+          
+          {% if order.shipping_address.formatted == order.billing_address.formatted %}
+          <!-- Billing same as Shipping -->
+          <div class="small-12  columns  review-info__block">
+            <p class="review-info__block-radiobox">
+              <i class="fa fa-check-square-o fa fw"></i> {% t "La dirección de envío es la misma dirección de pago" %}
+            </p>
+          </div>
+          <!-- end .review-info__block -->
+          {% endif %}
+        </div>
+        <!-- end .review-info__content -->
+        {% endif %}
+
+        {% if order.billing_address.formatted != order.shipping_address.formatted %}
+        <!-- Billing Information -->
+        <div class="small-12  columns  review-info__content">
+          <div class="small-12  columns">
+            <h1 class="review-info__content-title">{% t "Información de pago" %}</h1>
+          </div>
+          
+          <!-- Name -->
+          <div class="small-12{% if order.billing_address.taxid != blank %}  medium-8  large-8{% endif %}  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Nombre" %}</span>
+            <p class="review-info__block-string">{{ order.billing_address.name }}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- Surname -->
+          <div class="small-12{% if order.billing_address.taxid != blank %}  medium-4  large-4{% else %}  medium-6  large-6{% endif %}  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Apellido" %}</span>
+            <p class="review-info__block-string">{{ order.billing_address.surname }}</p>
+          </div>
+          <!-- end .review-info__block -->
+          
+          {% if order.billing_address.taxid != blank %}
+          <!-- Tax ID -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Rut" %}</span>
+            <p class="review-info__block-string">{{ order.billing_address.taxid }}</p>
+          </div>
+          <!-- end .review-info__block -->
+          {% endif %}
+
+          <!-- Address / Comuna / Postal Code -->
+          <div class="small-12  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Dirección" %}{% if order.additional_field["Comuna"] == true and order.additional_field["Comuna"] != blank %}{% t "/ Comuna" %}{% endif %}{% if order.billing_address.postal != blank %}{% t "/ Código postal" %}{% endif %}</span>
+            <p class="review-info__block-string">{{ order.billing_address.address }}{% if order.additional_field["Comuna"] == true and order.additional_field["Comuna"] != blank %}, {{ order.additional_field["Comuna"] }}{% endif %}{% if order.billing_address.postal != blank %}, {{ order.billing_address.postal }}{% endif %}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- Country -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "País" %}</span>
+            <p class="review-info__block-string">{{ order.billing_address.country }}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- City -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Ciudad" %}</span>
+            <p class="review-info__block-string">{{ order.billing_address.city }}</p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- Region -->
+          <div class="small-12  medium-4  large-4  columns  review-info__block">
+            <span class="review-info__block-title">{% t "Región" %}</span>
+            <p class="review-info__block-string">{{ order.billing_address.region }}</p>
+          </div>
+          <!-- end .review-info__block -->
+        </div>
+        <!-- end .review-info__content -->
+        {% endif %}
+
+        <!-- Shipping & Payment options -->
+        <div class="small-12  columns  review-info__content  last">
+          <!-- Shipping Method -->
+          <div class="small-12  medium-6  large-6  columns  review-info__block">
+            <h1 class="review-info__content-title">{% t "Método de envio" %}</h1>
+
+            <p class="review-info__block-radiobox">
+              <i class="fa fa-check-square-o fa fw"></i> {{ order.shipping_method }}
+            </p>
+          </div>
+          <!-- end .review-info__block -->
+
+          <!-- Payment Method -->
+          <div class="small-12  medium-6  large-6  columns  review-info__block">
+            <h1 class="review-info__content-title">{% t "Método de envio" %}</h1>
+
+            <p class="review-info__block-radiobox">
+              <i class="fa fa-check-square-o fa fw"></i> {{ order.payment_method }}
+            </p>
+          </div>
+          <!-- end .review-info__block -->
+        </div>
+        <!-- end .review-info__content -->
+      </div>
+      <!-- end .review-info -->
+    </div>
+    <!-- end .row -->
+  </section>
+  <!-- end .cart-left -->
+
+  <!-- Cart Summary -->
+  <section class="small-12  medium-5  large-4  columns  cart-summary">
+    {% include 'cart_summary' %}
+  </section>
+  <!-- end .cart-summary -->
+</div>
+<!-- end .row-large -->

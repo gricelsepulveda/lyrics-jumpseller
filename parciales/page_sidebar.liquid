@@ -1,12 +1,12 @@
 <div class="small-12  columns  page-sidebar__box">
-  <h1 class="page-sidebar__title">{% t "Information" %}</h1>
+  <h1 class="page-sidebar__title">{% t "Información" %}</h1>
 
   <ul class="no-bullet  page-sidebar__list">
     {% if options.store_contact_email != blank %}
     <!-- Contact Email -->
-    <li class="page-sidebar__list-title">{% t "Contact Email" %}</li>
+    <li class="page-sidebar__list-title">{% t "Correo de contacto" %}</li>
     <li class="page-sidebar__list-item">
-      <a href="mailto:{{ options.store_contact_email }}" class="page-sidebar__list-anchor" title="{% t "Send us an email" %}">
+      <a href="mailto:{{ options.store_contact_email }}" class="page-sidebar__list-anchor" title="{% t "Envíanos un correo" %}">
         <i class="fa fa-envelope-o fa-fw"></i> {{ options.store_contact_email }}
       </a>
     </li>
@@ -15,9 +15,9 @@
 
     {% if options.store_sales_email != blank %}
     <!-- Sales Email -->
-    <li class="page-sidebar__list-title">{% t "Sales Email" %}</li>
+    <li class="page-sidebar__list-title">{% t "Correo de ventas" %}</li>
     <li class="page-sidebar__list-item">
-      <a href="mailto:{{ options.store_sales_email }}" class="page-sidebar__list-anchor" title="{% t "Send us an email" %}">
+      <a href="mailto:{{ options.store_sales_email }}" class="page-sidebar__list-anchor" title="{% t "Envíanos un correo" %}">
         <i class="fa fa-envelope-o fa-fw"></i> {{ options.store_sales_email }}
       </a>
     </li>
@@ -26,7 +26,7 @@
 
     {% if options.store_contact_phone_1 != blank %}
     <!-- Contact Phone 1 -->
-    <li class="page-sidebar__list-title">{% t "Phone" %}{% if options.store_contact_phone_2 != blank %}s{% endif %}</li>
+    <li class="page-sidebar__list-title">{% t "Teléfono" %}{% if options.store_contact_phone_2 != blank %}s{% endif %}</li>
     <li class="page-sidebar__list-item">
       <span class="page-sidebar__list-string"><i class="fa fa-phone fa-fw"></i> {{ options.store_contact_phone_1 }}</span>
       {% if options.store_contact_phone_2 != blank %}
@@ -39,7 +39,7 @@
 
     {% if options.store_address != blank %}
     <!-- Contact Address -->
-    <li class="page-sidebar__list-title">{% t "Address" %}</li>
+    <li class="page-sidebar__list-title">{% t "Dirección" %}</li>
     <li class="page-sidebar__list-item">
       <span class="page-sidebar__list-string">
         <i class="fa fa-map-signs fa-fw"></i> {{ options.store_address }}
@@ -50,7 +50,7 @@
 
     {% if options.store_hours != blank %}
     <!-- Contact Hours -->
-    <li class="page-sidebar__list-title">{% t "Open from/to" %}</li>
+    <li class="page-sidebar__list-title">{% t "Abierto desde/a" %}</li>
     <li class="page-sidebar__list-item">
       <span class="page-sidebar__list-string">
         <i class="fa fa-clock-o fa-fw"></i> {{ options.store_hours }}
@@ -60,51 +60,51 @@
     {% endif %}
 
     <!-- Social Nets -->
-    <li class="page-sidebar__list-title">{% t "Follow Us" %}</li>
+    <li class="page-sidebar__list-title">{% t "Síguenos" %}</li>
     <li class="page-sidebar__list-item">
       {% if social.facebook_url != blank %}
       <!-- Facebook -->
-      <a href="{{ social.facebook_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+      <a href="{{ social.facebook_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
       {% endif %}
 
       {% if social.twitter_url != blank %}
       <!-- Twitter -->
-      <a href="{{ social.twitter_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+      <a href="{{ social.twitter_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
       {% endif %}
 
       {% if social.instagram_url != blank %}
       <!-- Instagram -->
-      <a href="{{ social.instagram_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+      <a href="{{ social.instagram_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
       {% endif %}
 
       {% if social.pinterest_url != blank %}
       <!-- Pinterest -->
-      <a href="{{ social.pinterest_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
+      <a href="{{ social.pinterest_url }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
       {% endif %}
 
       {% if options.store_youtube != blank %}
       <!-- Youtube -->
-      <a href="{{ options.store_youtube }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+      <a href="{{ options.store_youtube }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
       {% endif %}
 
       {% if options.store_vimeo != blank %}
       <!-- Vimeo -->
-      <a href="{{ options.store_vimeo }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
+      <a href="{{ options.store_vimeo }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
       {% endif %}
 
       {% if options.store_linkedin != blank %}
       <!-- LinkedIn -->
-      <a href="{{ options.store_linkedin }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+      <a href="{{ options.store_linkedin }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
       {% endif %}
 
       {% if options.store_google_plus != blank %}
       <!-- Google+ -->
-      <a href="{{ options.store_google_plus }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
+      <a href="{{ options.store_google_plus }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
       {% endif %}
 
       {% if options.store_github != blank %}
       <!-- GitHub -->
-      <a href="{{ options.store_github }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "on GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+      <a href="{{ options.store_github }}" class="page-sidebar__list-social" title="{{ store.name }} {% t "en GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
       {% endif %}
     </li>
     <!-- end .page-sidebar__list-item -->

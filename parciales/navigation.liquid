@@ -6,72 +6,72 @@
     <ul class="dropdown  menu  main-nav__menu" data-dropdown-menu>
       {% if template == 'cart' %}
       <li class="main-nav__menu-item">
-        <a href="{{ store.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--lighter" title="{% t "Continue Shopping" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Continue Shopping" %}</a>
+        <a href="{{ store.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--lighter" title="{% t "Continuar comprando" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Continuar comprando" %}</a>
       </li>
       {% elsif template == 'checkout' or template == 'revieworder' %}
       <li class="main-nav__menu-item">
-        <a href="{{ cart.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--lighter" title="{% t "Edit Order" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Edit Order" %}</a>
+        <a href="{{ cart.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--lighter" title="{% t "Editar orden" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Editar orden" %}</a>
       </li>
       {% else %}
       {% if social.facebook_url != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ social.facebook_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+        <a href="{{ social.facebook_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if social.twitter_url != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ social.twitter_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+        <a href="{{ social.twitter_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Twitter" %}" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if social.instagram_url != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ social.instagram_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+        <a href="{{ social.instagram_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Instagram" %}" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if social.pinterest_url != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ social.pinterest_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
+        <a href="{{ social.pinterest_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Pinterest" %}" target="_blank"><i class="fa fa-pinterest fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if options.store_youtube != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ options.store_youtube }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+        <a href="{{ options.store_youtube }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Youtube" %}" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if options.store_vimeo != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ options.store_vimeo }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
+        <a href="{{ options.store_vimeo }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Vimeo" %}" target="_blank"><i class="fa fa-vimeo fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if options.store_linkedin != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ options.store_linkedin }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+        <a href="{{ options.store_linkedin }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en LinkedIn" %}" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if options.store_google_plus != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ options.store_google_plus }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
+        <a href="{{ options.store_google_plus }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Google+" %}" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
 
       {% if options.store_github != blank %}
       <li class="main-nav__menu-item">
-        <a href="{{ options.store_github }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "on GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+        <a href="{{ options.store_github }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en GitHub" %}" target="_blank"><i class="fa fa-github fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
       {% endif %}
@@ -81,7 +81,7 @@
 
       {% if options.enable_search %}
       <li class="main-nav__menu-item">
-        <a class="main-nav__menu-item-anchor" title="{% t "Search" %}" role="button" data-open="search-modal"><i class="fa fa-search fa-fw"></i> {% t "Search" %}</a>
+        <a class="main-nav__menu-item-anchor" title="{% t "Buscar" %}" role="button" data-open="search-modal"><i class="fa fa-search fa-fw"></i> {% t "Buscar" %}</a>
       </li>
       <!-- end .main-nav__menu-item -->
 
@@ -91,7 +91,7 @@
 
       {% if store.customers_enabled %}
       <li class="main-nav__menu-item">
-        <a href="{% if customer %}{{ customer_account_url }}{% else %}{{ customer_login_url }}{% endif %}" class="main-nav__menu-item-anchor" title="{% if customer %}{% t "Go to my Account" %}{% else %}{% t "Login" %}{% endif %}">{% if customer %}{% t "Account" %}{% else %}{% t "Login" %}{% endif %}</a>
+        <a href="{% if customer %}{{ customer_account_url }}{% else %}{{ customer_login_url }}{% endif %}" class="main-nav__menu-item-anchor" title="{% if customer %}{% t "Ir a mi cuenta" %}{% else %}{% t "Ingresar" %}{% endif %}">{% if customer %}{% t "Cuenta" %}{% else %}{% t "Ingresar" %}{% endif %}</a>
       </li>
       <!-- end .main-nav__menu-item -->
 
@@ -148,8 +148,8 @@
       {% endif  %}
 
       <li class="main-nav__menu-item">
-        <a href="{{ cart.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--cart" title="{% t "Go to Cart" %}">
-          <i class="fa fa-shopping-cart fa-fw"></i> {% t "Cart" %} <span>{{ order.products_count }}</span>
+        <a href="{{ cart.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--cart" title="{% t "Ir al carro" %}">
+          <i class="fa fa-shopping-cart fa-fw"></i> {% t "Carro" %} <span>{{ order.products_count }}</span>
         </a>
       </li>
       <!-- end .main-nav__menu-item -->
@@ -162,7 +162,7 @@
     <div class="top-bar-left">
       <ul class="dropdown  menu  main-nav__menu" data-dropdown-menu>
         <li class="main-nav__menu-logo">
-          <a href="{{ store.url }}" class="main-nav__menu-logo-anchor" title="{% t "Go to Home page" %}">
+          <a href="{{ store.url }}" class="main-nav__menu-logo-anchor" title="{% t "Volver al inicio" %}">
             {% if store.logo != blank %}
             <img src="{{ store.logo }}" class="main-nav__menu-logo-object" alt="Logo {{ store.name }}">
             {% else %}
@@ -176,11 +176,11 @@
         <!-- Cart -->
         <li class="main-nav__menu-item">
           {% if template == 'checkout' or template == 'revieworder' %}
-          <a href="{{ order.url }}" class="main-nav__menu-item-anchor" title="{% t "Go to Cart" %}">
-            <em class="main-nav__menu-item-string-number"><i class="fa fa-check fa-fw"></i></em> {% t "Cart" %}
+          <a href="{{ order.url }}" class="main-nav__menu-item-anchor" title="{% t "Ir al carro" %}">
+            <em class="main-nav__menu-item-string-number"><i class="fa fa-check fa-fw"></i></em> {% t "Carro" %}
           </a>
           {% else %}
-          <span class="main-nav__menu-item-string{% if template == 'cart' %}  current{% endif %}"><em class="main-nav__menu-item-string-number">1</em> {% t "Cart" %}</span>
+          <span class="main-nav__menu-item-string{% if template == 'cart' %}  current{% endif %}"><em class="main-nav__menu-item-string-number">1</em> {% t "Carro" %}</span>
           {% endif %}
         </li>
         <!-- end .main-nav__menu-item -->
@@ -188,7 +188,7 @@
         <!-- Checkout -->
         <li class="main-nav__menu-item">
           {% if template == 'revieworder' %}
-          <a href="{{ order.checkout_url }}" class="main-nav__menu-item-anchor" title="{% t "Go to Checkout" %}">
+          <a href="{{ order.checkout_url }}" class="main-nav__menu-item-anchor" title="{% t "Ir al Checkout" %}">
             <em class="main-nav__menu-item-string-number"><i class="fa fa-check fa-fw"></i></em> {% t "Checkout" %}
           </a>
           {% else %}
@@ -202,32 +202,32 @@
         <!-- Review Order -->
         <li class="main-nav__menu-item">
           <span class="main-nav__menu-item-string{% if template == 'revieworder' %}  current{% endif %}">
-            <em class="main-nav__menu-item-string-number">3</em> {% t "Review Order" %}
+            <em class="main-nav__menu-item-string-number">3</em> {% t "Revisar orden" %}
           </span>
         </li>
         <!-- end .main-nav__menu-item -->
 
         <!-- Success -->
         <li class="main-nav__menu-item">
-          <span class="main-nav__menu-item-string"><em class="main-nav__menu-item-string-number">4</em> {% t "Success" %}</span>
+          <span class="main-nav__menu-item-string"><em class="main-nav__menu-item-string-number">4</em> {% t "Completado" %}</span>
         </li>
         <!-- end .main-nav__menu-item -->
         {% else %}
         {% if menu.main %}
         {% for item in menu.main.items %}
         <li class="main-nav__menu-item">
-          <a href="{{ item.url }}" class="main-nav__menu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Go to" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}{% if item.dropdown %}<i class="fa fa-angle-down fa-fw"></i>{% endif %}</a>
+          <a href="{{ item.url }}" class="main-nav__menu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Ir a" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}{% if item.dropdown %}<i class="fa fa-angle-down fa-fw"></i>{% endif %}</a>
           {% if item.dropdown %}
           <ul class="menu  vertical  main-nav__submenu">
             {% for item in item.items %}
             <li class="main-nav__submenu-item">
-              <a href="{{ item.url }}" class="main-nav__submenu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Go to" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}{% if item.dropdown %}<i class="fa fa-angle-right fa-fw"></i>{% endif %}</a>
+              <a href="{{ item.url }}" class="main-nav__submenu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Ir a" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}{% if item.dropdown %}<i class="fa fa-angle-right fa-fw"></i>{% endif %}</a>
 
               {% if item.dropdown %}
               <ul class="menu  vertical  main-nav__submenu">
                 {% for item in item.items %}
                 <li class="main-nav__submenu-item">
-                  <a href="{{ item.url }}" class="main-nav__submenu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Go to" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}</a>
+                  <a href="{{ item.url }}" class="main-nav__submenu-item-anchor{% if active_items contains item.id %}  main-nav__menu-item-anchor--active{% endif %}" title="{% t "Ir a" %} {{ item.name }}"{% if item.external %} target="_blank"{% endif %}>{{ item.name }}</a>
                 </li>
                 <!-- end .main-nav__submenu-item -->
                 {% endfor %}
