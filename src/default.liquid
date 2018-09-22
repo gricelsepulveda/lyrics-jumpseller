@@ -1,0 +1,312 @@
+<!-- Product Top -->
+<section id="product-top" class="row  row-wide">
+  <div class="row  row-large">
+    <!-- Product Info Main (Tablets & Mobile devices) -->
+    <div class="small-12  columns  hide-for-large  text-center  product-info__main">
+      {% include 'product_heading' %}
+    </div>
+    <!-- end .product-info__main -->
+
+    <!-- Product Images -->
+    <section id="product-images" class="small-12  medium-12  large-7  columns">
+      {% if product.images.size == 0 %}
+      <!-- No iamge available -->
+      <img src="{{ 'product-image-blank.png' | asset }}" alt="{{ product.name }}">
+      {% elsif product.images.size == 1 %}
+      <img src="{{ product.images.first | resize:'540x540' }}" class="product-images__main" alt="{{ product.name }}">
+      {% elsif product.images.size > 1 %}
+      <!-- Product Slider -->
+      <div id="product-slider">
+        {% for image in product.images  limit:10 %}
+        <div class="product-slider__block">
+          <img src="{{ image | resize:'540x540' }}" class="product-slider__block-image" alt="{{ product.name }} - Image {{ forloop.index }}">
+        </div>
+        {% endfor %}
+      </div>
+      <!-- end #product-slider -->
+
+      <!-- Product Slider Script -->
+      <script type="application/javascript">
+        $(document).ready(function(){
+          $('#product-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow trsn"><i class="fa fa-angle-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow trsn"><i class="fa fa-angle-right"></i></button>',
+            dots: false,
+            fade: false,
+            cssEase: 'linear',
+            speed: 500,
+            autoplay: false,
+            pauseOnHover: false,
+            pauseOnDotsHover: true
+          });
+        });
+      </script>
+      <!-- end Product Slider Script -->
+      {% endif %}
+    </section>
+    <!-- end #product-images -->
+
+    <!-- Product Info -->
+    <section id="product-info" class="small-12  medium-12  large-5  columns  text-center">
+      <div class="row">
+        <!-- Product Info Main (Desktop devices) -->
+        <div class="small-12  columns  show-for-large  product-info__main">
+          {% include 'product_heading' %}
+        </div>
+        <!-- end .product-info__main -->
+
+        {% if product.stock == 0 and product.stock_unlimited == false %}
+        <!-- Out of Stock -->
+        <div class="small-12  columns  product-form__availability">
+          <div class="small-12  columns  product-form__availability-wrapper">
+            <h2 class="product-form__availability-title">{% t "Fuera de stock" %}</h2>
+            <p class="product-form__availability-text">{% t "Este producto está fuera de stock. Si quieres puedes escribirnos" %}</p>
+            <a href="{{ contact.url }}" class="button  small  blue  radius" title="{% t "Contáctanos" %}">{% t "Contáctanos" %}</a>
+            <br>
+            <a href="{{ store.url }}" class="product-form__availability-anchor" title="{% t "o continua comprando" %}">{% t "o continua comprando" %}</a>
+          </div>
+          <!-- end .product-form__availability-wrapper -->
+        </div>
+        <!-- end .product-form__availability -->
+        {% elsif product.status == 'not-available' %}
+        <!-- Not Available -->
+        <div class="small-12  columns  product-form__availability">
+          <div class="small-12  columns  product-form__availability-wrapper">
+            <h2 class="product-form__availability-title">{% t "No disponible" %}</h2>
+            <p class="product-form__availability-text">{% t "Este producto está fuera de stock. Si quieres puedes escribirnos" %}.</p>
+            <a href="{{ contact.url }}" class="button  small  blue  radius" title="{% t "Contáctanos" %}">{% t "Contáctanos" %}</a>
+            <br>
+            <a href="{{ store.url }}" class="product-form__availability-anchor" title="{% t "o continua comprando" %}">{% t "o continua comprando" %}</a>
+          </div>
+          <!-- end .product-form__availability-wrapper -->
+        </div>
+        <!-- end .product-form__availability -->
+        {% else %}
+        <!-- Product Form -->
+        <form id="product-form" class="small-12  columns" action="{{ product.add_to_cart_url }}" method="post" name="buy" enctype="multipart/form-data">
+          <div class="row">
+            {% if product.options.size > 0 %}
+            {% include 'product_options' %}
+            {% endif %}
+
+            <!-- Quantity -->
+            <div class="small-12  medium-12  large-4  columns  text-center  large-text-right  product-form__qty">
+              <div class="product-form__qty-wrapper">
+                <span class="product-form__qty-plus"><i class="fa fa-caret-up fa-fw"></i></span>
+
+                {% capture maxStock  %} max= "{{ product.stock }}" {% endcapture  %}
+                <input type="text" id="input-qty" class="text  text-center  product-form__qty-input prod-options" name="qty" maxlength="5" value="1" {% if product.stock_unlimited != true %}{{maxStock}}{% endif %}/>
+                <span class="product-form__qty-minus"><i class="fa fa-caret-down fa-fw"></i></span>
+              </div>
+
+              <script type="text/javascript">
+                $(document).ready(function(){
+                  $('.product-form__qty').find('.product-form__qty-plus').on('click', function(){
+                    // Fake input
+                    var divUpd = $(this).parent().find('.product-form__qty-input'),
+                      newVal = parseInt(divUpd.val(), 10)+1;
+                      divUpd.val(newVal);
+
+                    // Hidden input
+                    var divUpdMain = $(this).parent().find('#hidden_qty'),
+                      newMainVal = parseInt(divUpdMain.val(), 10)+1;
+                      divUpdMain.val(newMainVal);
+                  });
+
+                  $('.product-form__qty').find('.product-form__qty-minus').on('click', function(){
+                    // Fake input
+                    var divUpd = $(this).parent().find('.product-form__qty-input'),
+                      newVal = parseInt(divUpd.val(), 10)-1;
+                    if(newVal>=1) divUpd.val(newVal);
+
+                    // Hidden input
+                    var divUpdMain = $(this).parent().find('#hidden_qty'),
+                      newMainVal = parseInt(divUpdMain.val(), 10)-1;
+                    if(newMainVal>=1) divUpdMain.val(newMainVal);
+                  });
+                });
+              </script>
+            </div>
+            <!-- end .product-form__qty -->
+
+            <!-- Add to Cart -->
+            <div class="small-12  medium-12  large-8  columns  text-center  large-text-left  product-form__actions">
+              <input type="submit" id="product-form__actions-add" class="button  large  circular  green  product-form__actions-button" value="{% t "Add to Cart" %}" onclick="$('#product-form').submit()"/>
+            </div>
+            <!-- end .product-form__actions -->
+          </div>
+          <!-- end .row -->
+        </form>
+        <!-- end #product-form -->
+        {% endif %}
+      </div>
+      <!-- end .row -->
+    </section>
+    <!-- end #product-info -->
+  </div>
+  <!-- end .row-large -->
+</section>
+<!-- end #product-top -->
+
+{% if options.enable_product_share %}
+<!-- Product Share -->
+<section id="product-share" class="row  row-wide">
+  {% include 'product_share' %}
+</section>
+<!-- end #product-share -->
+{% endif %}
+
+{% if product.description != blank %}
+<!-- Product Bottom -->
+<div id="product-bottom" class="row  row-wide  text-center">
+  {% include 'product_bottom' %}
+</div>
+<!-- end #product-bottom -->
+{% endif %}
+
+{% if options.related_products_visibility %}
+{% if product.field["Related Products"] and product.field["Related Products"].value != blank %}
+<!-- Related Products -->
+<section id="related-products" class="row  row-wide  text-center">
+  {% include 'product_related' %}
+</section>
+<!-- end #related-products -->
+{% else %}
+
+<section id="related-products" class="row  row-wide  text-center">
+  {% include 'product_related_default' %}
+</section>
+{% endif %}
+{% endif %}
+
+{% if product.options.size > 0 %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    //------ update hidden product variant select(s)
+    {% for option in product.options %}
+    {% capture the_option %}{{ option.name | downcase | replace:' ','-' | replace: 'Á','a' | replace: 'á','a' | replace: 'É','e' | replace: 'é','e' | replace: 'Í','i' | replace: 'í','i' | replace: 'Ó','o' | replace: 'ó','o' | replace: 'Ú','u' | replace: 'ú','u' | replace: 'Ñ','n' | replace: 'ñ','n' }}{% endcapture %}
+    $(".product-options__list-value--{{ the_option }}").click(function() {
+      var variant_id = $(this).attr('id');
+      $('#{{ the_option }}_variant_select').val(variant_id).change();
+    });
+    {% endfor %}
+    //------------------------------------------
+
+    // hidden select listener callback function
+    var callbackFunction = function(event, productInfo){
+       // variant information
+       console.log({% for option in product.options %}{% capture the_option %}{{ option.name | downcase | replace:' ','-' | replace: 'Á','a' | replace: 'á','a' | replace: 'É','e' | replace: 'é','e' | replace: 'Í','i' | replace: 'í','i' | replace: 'Ó','o' | replace: 'ó','o' | replace: 'Ú','u' | replace: 'ú','u' | replace: 'Ñ','n' | replace: 'ñ','n' }}{% endcapture %}$('#{{ the_option }}_variant_select').find('option:selected').attr('name'){% unless forloop.last %} + '|' + {% endunless %}{% endfor %});
+
+
+      if (productInfo.image != '') {
+        $('.slick-list .slick-active img').attr('src',productInfo.image);
+      }
+
+      {% if options.product_sku_visibility %}
+      if(productInfo.sku && productInfo.sku != ''){
+        $( "<h2>" +productInfo.sku+"</h2>" ).insertAfter( ".product-info__price" );
+      }
+      {% endif %}
+
+
+       // update price
+      if(productInfo.discount == 0){
+        $('.product-info__price-current').text(productInfo.price_formatted);
+      }
+      else{
+        $('.product-info__price-current').text(productInfo.price_discount_formatted);
+        $('.product-info__price-old > span').text(productInfo.price_formatted);
+      }
+
+      if(productInfo.stock_unlimited){
+        $('#input-qty').removeAttr('max');
+      }else{
+        $('#input-qty').attr('max',productInfo.stock);
+      }
+
+          var $qty = $('#input-qty');
+          var $adc = $('#product-form__actions-add');
+          verifyQuantity($qty,$adc);
+
+           {% if options.currencies != empty %}
+            changeCurrency(true);
+          {% endif %}
+      }
+
+
+    // apply listener on hidden selects
+    Jumpseller.productVariantListener("#product-form select", {product: '{{ product | json }}', callback: callbackFunction});
+
+    var parentId;
+    var parentOptionCounter = 0;
+
+    $.each($(".prod-options option"), function( index, option ) {
+      var stock = $(option).data("variant-stock");
+      if(index == 0 || parentId !== $(option).parent().attr('id')){
+        parentId = $(option).parent().attr('id');
+        parentOptionCounter = 0;
+      }
+      if(stock != '0' && parentOptionCounter > 0){
+        $(option).prop('selected', true).trigger('change'); // selecting the first non-stock zero option.
+        return false;
+      }
+
+      parentOptionCounter++;
+    });
+  });
+
+</script>
+{% endif %}
+
+<!-- Add to Cart Script -->
+<script type="text/javascript">
+function verifyQuantity($qty,$adc){
+  if(parseInt($qty.val()) > parseInt($qty.attr('max'))){
+      $('#input-qty').addClass('maxStockQty');
+      $('#product-form__actions-add').prop('disabled', true);
+    } else {
+      $('#input-qty').removeClass('maxStockQty');
+      $('#product-form__actions-add').prop('disabled', false);
+    }
+  }
+
+  $(document).on('keyup','#input-qty',function(){
+    var $qty = $('#input-qty');
+    var $adc = $('#product-form__actions-add');
+    verifyQuantity($qty,$adc);
+  });
+
+  $(document).on('click','.product-form__qty-plus',function(){
+    var $qty = $('#input-qty');
+    var $adc = $('#product-form__actions-add');
+    verifyQuantity($qty,$adc);
+  })
+
+  $(document).on('click','.product-form__qty-minus',function(){
+    var $qty = $('#input-qty');
+    var $adc = $('#product-form__actions-add');
+    verifyQuantity($qty,$adc);
+  })
+
+  function addItem(product_id,qty,options) {
+      Jumpseller.addProductToCart(product_id, qty, options, {callback: addToCartCallback});
+  }
+
+  function addToCartCallback(data) {
+    var addedQty = $('#input-qty').val();
+    var currentValue = parseInt($(".main-nav__menu-item-anchor--cart").find('span').text(),10);
+    var newValue = parseInt(parseFloat(currentValue)) + parseInt(parseFloat(addedQty));
+
+    if(data.status == 404) {
+      $('#product-message__error').foundation('open');
+    }
+    else {
+      $('#product-message__success').foundation('open');
+      $(".main-nav__menu-item-anchor--cart").find('span').text(newValue);
+    }
+  }
+</script>
+<!-- end Script -->

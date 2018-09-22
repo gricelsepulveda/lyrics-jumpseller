@@ -1,0 +1,137 @@
+<!-- Blog Post -->
+<div id="blog-post" class="row  row-wide">
+  {% capture no_heading %}{{ 'blog-post-no-heading.jpg' | asset }}{% endcapture %}
+  <!-- Heading -->
+  <section id="blog-post__heading" class="row  row-wide  text-center"style="background: url('{% if page.images.size == 0 %}{{ no_heading }}{% else %}{{ page.images.first }}{% endif %}');">
+    <div class="row  row-large  blog-post__heading-content">
+      <div class="small-12  medium-10  medium-push-1  large-8  large-push-2  columns">
+        <span class="blog-post__heading-date">{{ page.date | date: "%d | %m | %Y" }}</span>
+        <h1 class="blog-post__heading-title">{{ page.title }}</h1>
+      </div>
+    </div>
+    <!-- end .blog-post__heading-content -->
+
+    <div class="blog-post__heading-overlay"></div>
+  </section>
+  <!-- end #blog-post__heading -->
+
+  <!-- Content -->
+  <section id="blog-post__content" class="row  row-large">
+    <div class="small-12  medium-10  medium-push-1  large-8  large-push-2  columns  blog-post__content-wrapper">
+      {{ page.body }}
+    </div>
+    <!-- end .blog-post__content-wrapper -->
+  </section>
+  <!-- end #blog-post__content -->
+
+  <!-- Blog Post Pager -->
+  <section id="blog-post__pager" class="row  row-large">
+    <div class="small-12  medium-10  medium-push-1  large-8  large-push-2  columns  blog-post__pager-wrapper">
+      <div class="row">
+        <div class="small-12  columns">
+          <hr class="blog-post__pager-divider">
+        </div>
+
+        {% if pages.categories.category["Post"] %}
+          {% assign current_post = page.title %}
+          {% for page in pages.categories.category["Post"].pages reversed %}
+          {% if page.title == current_post %}
+          {% assign next_index = forloop.index | minus:1 %}
+          {% assign prev_index = forloop.index | plus:1 %}
+
+          {% for page in pages.categories.category["Post"].pages reversed %}
+          {% if forloop.index == prev_index %}
+          <div class="small-12  medium-5  large-5  columns  text-left  blog-post__pager-block  left">
+            <a href="{{ page.url }}" class="blog-post__pager-anchor" title="{% t "Ir al post anterior" %}">
+              <img src="{{ page.images.first | thumb:'60x60' }}" class="blog-post__pager-anchor-image" alt="{{ page.title }}">
+              <span class="blog-post__pager-anchor-info  khula">
+                <small class="blog-post__pager-anchor-subtitle  raleway">{% t "Ir al post anterior" %}</small>{{ page.title }}
+              </span>
+            </a>
+          </div>
+          <!-- end .blog-post__pager-block -->
+          {% endif %}
+          {% endfor %}
+
+          {% for page in pages.categories.category["Post"].pages reversed %}
+          {% if forloop.index == next_index %}
+          <div class="small-12  medium-5  medium-push-2  large-5  large-push-2  columns  text-right  blog-post__pager-block  right">
+            <a href="{{ page.url }}" class="blog-post__pager-anchor" title="{% t "Ir al siguiente post" %}">
+              {% if page.images.size == 0 %}
+              <img src="{{ 'blog-post-no-image-min.jpg' | asset }}" class="blog-post__pager-anchor-image" alt="{{ page.title }}">
+              {% else %}
+              <img src="{{ page.images.first | thumb:'60x60' }}" class="blog-post__pager-anchor-image" alt="{{ page.title }}">
+              {% endif %}
+              <span class="blog-post__pager-anchor-info  khula">
+                <small class="blog-post__pager-anchor-subtitle  raleway">{% t "Siguiente post" %}</small>{{ page.title }}
+              </span>
+            </a>
+          </div>
+          <!-- end .blog-post__pager-block -->
+          {% endif %}
+          {% endfor %}
+
+
+          <div class="small-12  medium-2  medium-pull-5  large-2  large-pull-5  columns  text-center  blog-post__pager-block">
+            <a href="#blog-post" class="blog-post__pager-go-top" role="button">
+              <i class="fa fa-arrow-up  fa-fw"></i><br>{% t "Ir arriba" %}
+            </a>
+          </div>
+          <!-- end .blog-post__pager-block -->
+          {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+      <!-- end .row -->
+    </div>
+    <!-- end .blog-post__pager-wrapper -->
+  </section>
+  <!-- end #blog-post__pager -->
+
+  <!-- Blog Post Share -->
+  <section id="blog-post__share" class="row  row-wide  text-center">
+    <div class="small-12  columns">
+      <ul class="no-bullet  blog-post__share-list">
+        <li class="blog-post__share-list-title  raleway">{% t "Compartir artítulo" %}</li>
+
+        <!-- Facebook -->
+        <li class="blog-post__share-list-item">
+          <a href="http://www.facebook.com/sharer.php?s=100&p[url]={{ page.url }}&p[images][0]=https:{{ page.images.first | resize:'630x315' }}&p[title]={{ page.title }}&p[summary]={{ page.body | strip_html | truncate:200}}" class="blog-post__share-list-anchor  blog-post__share-list-anchor--facebook" title="{% t "Compartir en Facebook" %}" target="_blank">
+            <i class="fa fa-facebook fa-fw"></i> Facebook
+          </a>
+        </li>
+
+        <!-- Twitter -->
+        <li class="blog-post__share-list-item">
+          <a href="https://twitter.com/share?url={{ page.url }}&text={{ page.title }}{% if options.store_twitter_user != blank %}&via={{ options.store_twitter_user | remove:'@' }}{% endif %}" class="blog-post__share-list-anchor  blog-post__share-list-anchor--twitter" title="{% t "Compartir en Twitter" %}" target="_blank">
+            <i class="fa fa-twitter fa-fw"></i> Twitter
+          </a>
+        </li>
+
+        <!-- Google+ -->
+        <li class="blog-post__share-list-item">
+          <a href="https://plus.google.com/share?url={{ page.url }}" class="blog-post__share-list-anchor  blog-post__share-list-anchor--google" title="{% t "Compartir en Google+" %}" target="_blank">
+            <i class="fa fa-google-plus fa-fw"></i> Google+
+          </a>
+        </li>
+
+        <!-- LinkedIn -->
+        <li class="blog-post__share-list-item">
+          <a href="https://www.linkedin.com/shareArticle?url={{ page.url }}&title={{ page.title }}" class="blog-post__share-list-anchor  blog-post__share-list-anchor--linkedin" title="{% t "Compartir en LinkedIn" %}" target="_blank">
+            <i class="fa fa-linkedin fa-fw"></i> LinkedIn
+          </a>
+        </li>
+
+        <!-- Tumblr -->
+        <li class="blog-post__share-list-item">
+          <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ page.url }}&title={{ page.title }}&caption={{ page.body | strip_html | truncate:200 }}" class="blog-post__share-list-anchor  blog-post__share-list-anchor--tumblr" title="{% t "Compartir en Tumblr" %}" target="_blank">
+            <i class="fa fa-tumblr fa-fw"></i> Tumblr
+          </a>
+        </li>
+      </ul>
+      <!-- end .blog-post__share-list -->
+    </div>
+  </section>
+  <!-- end #blog-post__share -->
+</div>
+<!-- end #blog-post -->

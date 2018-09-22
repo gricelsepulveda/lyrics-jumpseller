@@ -174,7 +174,7 @@
 
         {% if template == 'cart' or template == 'checkout' or template == 'revieworder' %}
         <!-- Cart -->
-        <li class="main-nav__menu-item">
+        <li class="main-nav__menu-item cart-steps">
           {% if template == 'checkout' or template == 'revieworder' %}
           <a href="{{ order.url }}" class="main-nav__menu-item-anchor" title="{% t "Ir al carro" %}">
             <em class="main-nav__menu-item-string-number"><i class="fa fa-check fa-fw"></i></em> {% t "Carro" %}
@@ -186,7 +186,7 @@
         <!-- end .main-nav__menu-item -->
 
         <!-- Checkout -->
-        <li class="main-nav__menu-item">
+        <li class="main-nav__menu-item cart-steps">
           {% if template == 'revieworder' %}
           <a href="{{ order.checkout_url }}" class="main-nav__menu-item-anchor" title="{% t "Ir al Checkout" %}">
             <em class="main-nav__menu-item-string-number"><i class="fa fa-check fa-fw"></i></em> {% t "Checkout" %}
@@ -200,7 +200,7 @@
         <!-- end .main-nav__menu-item -->
 
         <!-- Review Order -->
-        <li class="main-nav__menu-item">
+        <li class="main-nav__menu-item cart-steps">
           <span class="main-nav__menu-item-string{% if template == 'revieworder' %}  current{% endif %}">
             <em class="main-nav__menu-item-string-number">3</em> {% t "Revisar orden" %}
           </span>
@@ -208,7 +208,7 @@
         <!-- end .main-nav__menu-item -->
 
         <!-- Success -->
-        <li class="main-nav__menu-item">
+        <li class="main-nav__menu-item cart-steps">
           <span class="main-nav__menu-item-string"><em class="main-nav__menu-item-string-number">4</em> {% t "Completado" %}</span>
         </li>
         <!-- end .main-nav__menu-item -->
