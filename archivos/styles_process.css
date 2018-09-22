@@ -77,7 +77,7 @@
     }
       .cart-breadcrumbs__menu-anchor,
       .cart-breadcrumbs__menu-string {
-        font-family: "Raleway", sans-serif !important;
+        font-family: "Lato", sans-serif !important;
         font-size: 0.725rem;
         /* color: rgba(2, 73, 100, .75); */
         color: rgba(2, 73, 100, .35) !important;
@@ -103,7 +103,7 @@
         color: #024964 !important;
       }
         .cart-breadcrumbs__menu-number {
-          font-family: "Khula", sans-serif !important;
+          font-family: "Lato", sans-serif !important;
           font-style: normal;
           line-height: 25px;
           text-align: center;
@@ -122,7 +122,7 @@
           background: #41778B;
         }
       .cart-breadcrumbs__menu-back {
-        font-family: "Raleway", sans-serif !important;
+        font-family: "Lato", sans-serif !important;
         font-size: 0.7rem;
         color: rgba(2, 73, 100, .35);
         font-weight: 600;
@@ -161,7 +161,7 @@
   background: #FFFFFF;
 }
   .cart-order__heading-block-title {
-    font-family: "Raleway", sans-serif !important;
+    font-family: "Lato", sans-serif !important;
     font-size: 0.725rem;
     color: rgba(2, 73, 100, .5);
     font-weight: bold;
@@ -304,7 +304,7 @@
     background: #FFFFFF;
   }
   #set_coupon_code_button {
-    font-family: "Raleway", sans-serif !important;
+    font-family: "Lato", sans-serif !important;
     font-size: 0.75rem;
     color: rgba(2, 73, 100, .75);
     font-weight: 600;
@@ -349,7 +349,7 @@
   margin-bottom: 1.25rem;
 }
   .cart-estimate__field label {
-    font-family: "Khula", sans-serif !important;
+    font-family: "Lato", sans-serif !important;
     font-size: 0.785rem;
     color: rgba(2, 73, 100, .5);
     font-weight: 600;
@@ -400,7 +400,7 @@
 /*  Estimate Form Buttons  */
 #estimate_shipping_button,
 #set_shipping_button {
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Lato", sans-serif !important;
   font-size: 0.75rem;
   color: rgba(2, 73, 100, .75);
   font-weight: 600;
@@ -462,7 +462,7 @@
     .cart-summary__product-name,
     .cart-summary__product-options,
     .cart-summary__product-price {
-      font-family: "Khula", sans-serif !important;
+      font-family: "Lato", sans-serif !important;
       line-height: 1;
       display: block;
     }
@@ -552,7 +552,7 @@
 
 /*  Checkout Legend  */
 #checkout .legend {
-    font-family: "Raleway", sans-serif !important;
+    font-family: "Lato", sans-serif !important;
     font-size: 1.1rem;
     color: rgba(2, 73, 100, .75);
     font-weight: bold;
@@ -701,7 +701,7 @@
   border-top: 1px solid #EFF2F4;
 }
   #checkout .actions .button {
-    font-family: "Raleway", sans-serif !important;
+    font-family: "Lato", sans-serif !important;
     /*color: rgba(255, 255, 255, .75);*/
     color: #FFFFFF;
     font-weight: 900;
@@ -746,7 +746,7 @@
     /* background: #FFFFFF; */
   }
     .review-info__content-title {
-      font-family: "Raleway", sans-serif !important;
+      font-family: "Lato", sans-serif !important;
       font-size: 1.1rem;
       color: rgba(2, 73, 100, .75);
       font-weight: bold;
@@ -764,7 +764,7 @@
   margin-bottom: 1.875rem;
 }
   .review-info__block-title {
-    font-family: "Raleway", sans-serif !important;
+    font-family: "Lato", sans-serif !important;
     font-size: 0.75rem;
     color: rgba(2, 73, 100, .35);
     font-weight: 700;

@@ -1,11 +1,3 @@
-{% if options.enable_subscribe %}
-<!-- Footer Subscribe -->
-<section id="footer-subscribe" class="row  row-wide">
-  {% include 'footer_subscribe' %}
-</section>
-<!-- end #footer-subscribe -->
-{% endif %}
-
 <!-- Footer Top -->
 <section id="footer-top" class="row">
   <!-- Footer About -->
@@ -105,48 +97,26 @@
   <!-- Footer Nav -->
   <div id="footer-nav" class="small-12  medium-6  large-6  columns  text-center  footer-top__block">
     <div class="row">
-      {% if options.enable_footer_info %}
-      {% if menu.footer %}
       <!-- Information Nav -->
-      <div class="small-12{% if options.enable_footer_products %}  medium-6  large-6{% endif %}  columns">
-        <h6 class="footer-top__block-title">{% t "Información" %}</h6>
-
+      <div class="small-12  medium-6  large-6 columns">
+        <h6 class="footer-top__block-title">{% t "Medios de pago" %}</h6>
         <ul class="menu  vertical  footer-top__menu">
-          {% for item in menu.footer.items %}
           <li class="footer-top__menu-item">
-            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Ir a" %} {{ item.name }}">{{ item.name }}</a>
+           	<img src="https://assets.jumpseller.com/store/lyrics/themes/151416/webpay.png" class="webpay-logo"/>
           </li>
           <!-- end .footer-top__menu-item -->
-          {% endfor %}
         </ul>
         <!-- end .footer-top__menu -->
       </div>
-      {% endif %}
-      {% endif %}
 
-      {% if options.enable_footer_products %}
-      {% if menu.footer_products %}
-      <!-- Products Nav -->
-      <div class="small-12{% if options.enable_footer_info %}  medium-6  large-6{% endif %}  columns">
-        <h6 class="footer-top__block-title">{% t "Nuestros productos" %}</h6>
-
-        <ul class="menu  vertical  footer-top__menu">
-          {% for item in menu.footer_products.items %}
-          <li class="footer-top__menu-item">
-            <a href="{{ item.url }}" class="footer-top__menu-item-anchor" title="{% t "Ir a" %} {{ item.name }}">{{ item.name }}</a>
-          </li>
-          <!-- end .footer-top__menu-item -->
-          {% endfor %}
-        </ul>
-        <!-- end .footer-top__menu -->
+      <div class="small-12  medium-6  large-6 columns">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26629.99341118088!2d-70.64191473071158!3d-33.45584072492316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5624dee7f7f%3A0x23460230fa42ae0a!2sLyrics+Music+Tech+Mac+Garage!5e0!3m2!1ses!2scl!4v1537650789445" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
-      <!-- end .footer-nav__menu -->
-      {% endif %}
-      {% endif %}
     </div>
     <!-- end .row -->
   </div>
   <!-- end #footer-nav -->
+
 
   <!-- Footer Contact -->
   <div id="footer-contact" class="small-12  medium-3  large-3  columns  text-center  footer-top__block">

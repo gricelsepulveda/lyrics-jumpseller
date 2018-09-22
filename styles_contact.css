@@ -1,0 +1,251 @@
+/* ====================================================================================
+  CONTACT PAGE
+==================================================================================== */
+/*  Contact Heading
+==================================================================================== */
+#contact-heading {
+  padding-top: 3.875rem;
+  background-color: #024964;
+}
+
+/*  Contact Heading Main  */
+.contact-heading__main {
+  margin-bottom: 2.875rem;
+}
+  .contact-heading__title {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .contact-heading__description {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.75);
+  }
+
+/*  Contact Heading Info  */
+.contact-heading__info {
+  margin-bottom: 2.875rem;
+}
+  .contact-heading__info-block {
+    margin-bottom: 1.875rem;
+  }
+    .contact-heading__info-icon {
+      font-size: 0.875rem;
+      color: #FFFFFF;
+      line-height: 48px;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 0.75rem;
+      display: block;
+      border: 1px solid #FFFFFF;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+      background: rgba(0,0,0,.1);
+    }
+    .contact-heading__info-anchor,
+    .contact-heading__info-string {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,.75);
+      font-weight: 600;
+      display: inline-block;
+    }
+    .contact-heading__info-anchor:hover,
+    .contact-heading__info-anchor:focus {
+      color: #FFFFFF;
+    }
+    .contact-heading__info-list {
+      width: 100%;
+      margin: 0;
+      display: block;
+    }
+      .contact-heading__info-list-item {
+        margin: 0 0.5rem;
+        display: inline-block;
+      }
+        .contact-heading__info-list-anchor {
+          font-size: 1.25rem;
+          color: rgba(255,255,255,.75);
+        }
+        .contact-heading__info-list-anchor:hover,
+        .contact-heading__info-list-anchor:focus {
+          color: #FFFFFF;
+        }
+
+/*  Contact Form
+==================================================================================== */
+/*  Contact Form Heading  */
+.contact-form__heading {
+  margin-bottom: 1.875rem;
+  padding-top: 3.875rem;
+}
+  .contact-form__heading-title {
+    font-size: 1.875rem;
+    color: rgba(2, 73, 100, .75);
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+  }
+
+/*  Contact Form Container  */
+.contact-form__container {
+  margin-bottom: 2.875rem;
+}
+#contact_form {
+  width: 100%;
+  padding: 0 0.9375rem;
+  float: left;
+  display: block;
+}
+#contactpage {
+  max-width: none;
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+}
+#contactpage:after,
+#contactpage:before {
+    content: ' ';
+    display: table;
+}
+#contactpage:after {
+    clear: both;
+}
+
+/*  Form Fields  */
+#contact_form h2.error,
+#contact_form h2.success {
+  font-size: 1.25rem;
+  line-height: 1;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1.875rem;
+  padding: 0 0.9375rem;
+  float: left;
+}
+#contact_form h2.error {
+  color: #F25C5C;
+}
+#contact_form h2.success {
+  color: #A3CD59;
+}
+#contact_form .field,
+#contactpage_message {
+  min-height: 6.5rem;
+  padding: 0 0.9375rem;
+  float: left;
+  display: block;
+}
+#contact_form .field {
+  width: 33.3333%;
+}
+#contactpage_message {
+  width: 100%;
+  margin-bottom: 1.875rem;
+}
+
+  #contact-form {background: #fefefe;}
+
+  #contact_form .field label,
+  #contactpage_message label {
+    font-family: "Lato", sans-serif !important;
+    font-size: 0.75rem;
+    color: rgba(2, 73, 100, .5);
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+  }
+  #contact_form .field br,
+  #contactpage_message br {
+    display: none;
+  }
+  #contact_form .field .text,
+  #contactpage_message .text {
+    color: rgba(2, 73, 100, .75);
+    height: 45px;
+    margin: 0;
+    border: 1px solid rgba(2, 73, 100, .1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background: rgba(2, 73, 100, .05);
+  }
+  #contact_form .field .text:focus,
+  #contactpage_message .text:focus {
+    border: 1px solid rgba(2, 73, 100, .25);
+    background: rgba(2, 73, 100, .05);
+  }
+  #contact_form .field span.error,
+  #contactpage_message span.error {
+    font-size: 0.75rem;
+    color: #F25C5C;
+    font-style: italic;
+  }
+
+/*  Form Required & Actions  */
+#contact_form p.required,
+#contact_form .actions {
+  width: 50%;
+  height: 45px;
+  margin-bottom: 0.9375rem;
+  padding: 0 0.9375rem;
+  float: left;
+}
+#contact_form p.required {
+  font-size: 0.85rem;
+  color: #F25C5C;
+  font-style: italic;
+  line-height: 45px;
+  height: 45px;
+}
+#contact_form .actions .button {
+  color: #FFFFFF;
+  height: 45px;
+  margin-bottom: 0;
+  padding: 0 1.875rem;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: #024964;
+}
+#contact_form .actions .button:hover,
+#contact_form .actions .button:focus {
+  color: #FFFFFF;
+  background: #013A4F;
+}
+
+/*  Contact Map
+==================================================================================== */
+#contact-map {
+  height: 350px;
+  overflow: hidden;
+}
+  #contact-map iframe {
+    width: 100%;
+    height: 350px;
+  }
+
+/*  Contact Media Queries
+==================================================================================== */
+
+/* max-width 639px (Smartphones) */
+@media only screen and (max-width: 639px) {
+  #contact_form .field,
+  #contactpage_message {width: 100%;}
+}
+
+/*  Contact Color Assignments
+==================================================================================== */
+#contact-heading {
+  {% if options.contact_background != blank %}
+  background: url("{{ options.contact_background }}") scroll no-repeat center center;
+  {% endif %}
+  background-color: {{ options.contact_background_color }} !important;
+  background-size: cover !important;
+}

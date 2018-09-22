@@ -4,6 +4,14 @@
 </section>
 {% endif %}
 
+{% if options.enable_subscribe %}
+<!-- Footer Subscribe -->
+<section id="footer-subscribe" class="row  row-wide">
+  {% include 'footer_subscribe' %}
+</section>
+<!-- end #footer-subscribe -->
+{% endif %}
+
 {% if options.enable_features %}
 <section id="features" class="row row-wide text-center">
   <div class="row">

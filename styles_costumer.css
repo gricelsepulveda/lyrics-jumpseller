@@ -1,0 +1,354 @@
+/* ====================================================================================
+  GENERAL STYLES
+==================================================================================== */
+.off-canvas-content {
+  background: #F4F4F4;
+}
+.customer-container {
+  padding-top: 2.875rem;
+  padding-bottom: 3.875rem;
+}
+
+/*  Customer Box
+==================================================================================== */
+.customer-box {
+    margin-bottom: 1.875rem;
+    padding-top: 1.875rem;
+    border: 1px solid #EEEEEE;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: #FFFFFF;
+}
+
+/*  Heading  */
+.customer-box__heading {
+  margin-bottom: 0.9375rem;
+}
+  .customer-box__heading-subtitle {
+    font-family: "Lato", sans-serif !important;
+    font-size: 0.725rem;
+    color: rgba(2, 73, 100, .5);
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+    margin-bottom: 0.25rem;
+    }
+  .customer-box__heading-title {
+    font-size: 1.875rem;
+    color: #024964;
+    font-weight: 600;
+    margin: 0;
+  }
+
+/*  Customer Form  */
+.customer-form {
+    margin-bottom: 0.9375rem;
+}
+  .customer-form .legend {
+    font-size: 1rem;
+    color: rgba(2, 73, 100, .75);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(2, 73, 100, .1);
+  }
+  .customer-form .field {
+    margin-bottom: 1.5rem;
+  }
+    .customer-form .field label {
+      font-size: 0.75rem;
+      color: rgba(2, 73, 100, .5);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .customer-form .field .text,
+    .customer-form .field .select {
+      text-align: center;
+      height: 45px;
+      margin-bottom: 0;
+      border-color: rgba(2, 73, 100, .25);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+    .customer-form .field .text:focus,
+    .customer-form .field .select:hover {
+      border-color: rgba(2, 73, 100, .5);
+    }
+  .customer-form .actions {
+    margin-bottom: 0.9375rem;
+  }
+    .customer-form .actions .button {
+      margin-bottom: 0.75rem;
+    }
+    .customer-form .actions a:not(.button) {
+      font-size: 0.875rem;
+      color: #999999;
+    }
+    .customer-form .actions a:not(.button):hover,
+    .customer-form .actions a:not(.button):focus {
+      color: #666666;
+    }
+  .customer-form div.notice,
+  .customer-form div.warning,
+  .customer-form div.error {
+    font-size: 0.875rem;
+    color: #666666;
+    margin-bottom: 0.9375rem;
+  }
+  .customer-form div.warning,
+  .customer-form div.warning a,
+  .customer-form div.error {
+    color: #F74545;
+  }
+    .customer-form div.warning a {
+      font-weight: bold;
+    }
+
+/*  New Customer
+==================================================================================== */
+.new-customer {
+    margin-bottom: 2.875rem;
+}
+  .new-customer__title {
+    font-size: 1.15rem;
+    color: #333333;
+    font-weight: 500;
+  }
+  .new-customer__text {
+    font-size: 0.875rem;
+    color: #666666;
+  }
+
+
+/* ====================================================================================
+  CUSTOMER ACCOUNT
+==================================================================================== */
+#customer-page {
+  padding-top: 2.875rem;
+}
+
+/*  Customer Page Heading
+==================================================================================== */
+.customer-page__heading {
+  margin-bottom: 0.9375rem;
+}
+  .customer-page__heading-title {
+    font-size: 1.25rem;
+    color: #024964;
+    font-weight: 600;
+    margin: 0;
+  }
+
+/*  Customer Info
+==================================================================================== */
+/*  Accordion  */
+#customer-info__accordion {
+  margin-bottom: 1.875rem;
+}
+  #customer-info__accordion .accordion {
+    margin: 0;
+    /* border-bottom: 1px solid rgba(0,0,0,.15); */
+    /* border-bottom: 1px solid #2548A3; */
+    /* border-bottom: 1px solid #2447A0; */
+    background: #FFFFFF;
+  }
+    #customer-info__accordion .accordion-title {
+      font-family: "Raleway", sans-serif !important;
+      font-size: 0.875rem;
+      color: #FFFFFF;
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: 1.25rem 1rem 1rem;
+      border-width: 0 0 1px;
+      border-style: solid;
+      border-color: #024964;
+      background: rgba(2, 73, 100, .85);
+    }
+    #customer-info__accordion .accordion-content {
+      padding: 0;
+      border: none;
+      background: #024964;
+    }
+
+/*  Info List  */
+.customer-info__list {
+  padding: 0 1rem;
+}
+  .customer-info__list-item,
+  .customer-info__list-actions {
+    padding: 1rem 0;
+  }
+  .customer-info__list-item {
+    font-size: 0.9375rem;
+    color: #FFFFFF;
+    word-wrap: break-word;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+  }
+    .customer-info__list-title {
+      font-family: "Khula", sans-serif !important;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,.5);
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      margin-bottom: 0.15rem;
+      display: block;
+    }
+    .customer-info__list-hint {
+      font-size: 0.825rem;
+      color: rgba(255,255,255,.75);
+      font-style: italic;
+      display: block;
+    }
+    .customer-info__list-button {
+      margin-right: 0.5rem;
+      padding: 0.55rem 0.65rem 0.5rem 0.5rem !important;
+    }
+
+/*  Customer Orders
+==================================================================================== */
+/*  Order Block  */
+.customer-orders__block {
+  border-bottom: 1px solid #E6E6E6;
+  background: #FFFFFF;
+}
+  .customer-orders__block-heading {
+    padding-top: 0.5rem;
+    padding-bottom: 0.65rem;
+    background: rgba(2, 73, 100, .85);
+  }
+    .customer-orders__block-heading-title {
+      font-family: "Khula", sans-serif !important;
+      font-size: 0.75rem;
+      color: #FFFFFF;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  .customer-orders__block-info {
+    padding-top: 1.25rem;
+    /* padding-bottom: 0.75rem; */
+    padding-bottom: 1.25rem;
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: #E6E6E6;
+  }
+    .customer-orders__block-info-string {
+      font-family: "Khula", sans-serif !important;
+      font-size: 0.875rem;
+      color: rgba(2, 73, 100, .85);
+      display: block;
+    }
+      .customer-orders__block-info-title {
+        font-family: "Khula", sans-serif !important;
+        color: rgba(2, 73, 100, .5);
+        font-weight: 500;
+        line-height: 1;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+      .customer-orders__block-info-label {
+        font-family: "Khula", sans-serif !important;
+        font-size: 0.725rem;
+        font-weight: 600;
+        line-height: 1;
+        white-space: inherit;
+        width: 100%;
+        margin-top: -5px;
+        padding: 0.5rem 0.5rem 0.35rem;
+        display: inline-block;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+      .customer-orders__block-info-label.pending-payment {
+        color: rgba(0,0,0,.5);
+        background: #EFE300 !important;
+      }
+      .customer-orders__block-info-label.paid {
+        background: #91BF4B !important;
+      }
+      .customer-orders__block-info-label.canceled,
+      .customer-orders__block-info-label.cancelled {
+        background: #E8574B !important;
+      }
+  .customer-orders__accordion {
+    margin: 0 !important;
+    background: #FAFAFA !important;
+  }
+    .customer-orders__accordion-trigger {
+      font-family: "Khula", sans-serif !important;
+      color: #999999 !important;
+      padding: 0.9375rem;
+      background: transparent !important;
+    }
+    .is-active > .customer-orders__accordion-trigger {
+      color: #666666 !important;
+    }
+    .customer-orders__accordion-content {
+      padding: 0 0.9375rem !important;
+    }
+      .customer-orders__accordion-heading {
+        padding-top: 0.5rem;
+        padding-bottom: 0.35rem;
+        background: #FAFAFA;
+      }
+        .customer-orders__accordion-heading-title {
+          font-family: "Khula", sans-serif !important;
+          font-size: 0.725rem;
+          color: #999999;
+          text-transform: uppercase;
+          display: block;
+        }
+      .customer-orders__accordion-product {
+        padding-top: 0.9375rem;
+        padding-bottom: 0.9375rem;
+        border-top: 1px solid #E6E6E6;
+      }
+        .customer-orders__accordion-product-image {
+          width: 60px;
+          padding: 0.25rem;
+          border: 1px solid #EEEEEE;
+        }
+        .customer-orders__accordion-product-block {
+          width: 100%;
+          height: 60px;
+          display: table;
+        }
+          .customer-orders__accordion-product-cell {
+            display: table-cell;
+            vertical-align: middle;
+          }
+          .customer-orders__accordion-product-name,
+          .customer-orders__accordion-product-option,
+          .customer-orders__accordion-product-number {
+            font-family: "Khula", sans-serif !important;
+            font-size: 0.875rem;
+            color: #666666;
+            font-weight: 500;
+            display: block;
+          }
+          .customer-orders__accordion-product-option {
+            font-size: 0.75rem;
+          }
+
+/*  Order Actions  */
+.customer-orders__actions {
+  padding-top: 1.875rem;
+}
+  .customer-orders__actions-text {
+    font-size: 0.9375rem;
+    color: #666666;
+  }

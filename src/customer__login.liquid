@@ -1,0 +1,39 @@
+<!-- Login Page -->
+<div class="row  row-large  customer-container">
+  <div class="small-12  medium-10  medium-push-1  large-4  large-push-4  columns  text-center">
+    <!-- Customer Box -->
+    <div class="small-12  columns  customer-box">
+      <!-- Heading -->
+      <div class="small-12  columns  customer-box__heading">
+        <h2 class="customer-box__heading-subtitle">{% t "Ingresa a tu cuenta en" %}</h2>
+        <h1 class="customer-box__heading-title">{{ store.name }}</h1>
+      </div>
+      <!-- end .customer-box__heading -->
+      
+      <!-- Form -->
+      {{ login_form }}
+      <!-- end Form -->
+    </div>
+    <!-- end .customer-box -->
+    
+    <!-- New Customer -->
+    <div class="small-12  columns  new-customer">
+      <h1 class="new-customer__title">{% t "¿Eres nuevo?" %}</h1>
+      <p class="new-customer__text">{% t "Crea una cuenta y compra más fácil. Podrás recibir ofertas y consultar tu historial de compras." %}</p>
+      <a href="{{ customer_registration_url }}" class="button  small  light-blue  radius" title="{% t "Crear cuentas" %}">{% t "Crear cuenta" %}</a>
+    </div>
+    <!-- end .new-customer -->
+  </div>
+</div>
+<!-- end .customer-container -->
+
+<!-- Script -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#login').addClass('small-12 columns customer-form');
+    $('#credentials').addClass('row');
+    $('#login .field, #login .actions, #login div.notice, #login div.warning, #login div.error').addClass('small-12 columns');
+    $('#submit_login').addClass('expanded blue radius');
+  });
+</script>
+<!-- end Script -->

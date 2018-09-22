@@ -13,12 +13,32 @@
         <a href="{{ cart.url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--lighter" title="{% t "Editar orden" %}"><i class="fa fa-angle-left fa-fw"></i> {% t "Editar orden" %}</a>
       </li>
       {% else %}
-      {% if social.facebook_url != blank %}
+      
+      <!-- Custom phone-->
+      
+      {% if options.store_contact_phone_1 != blank %}
+       <li class="main-nav__menu-item">
+        <a href="tel:{{ options.store_contact_phone_1 | remove:'(' | remove:')' | remove:' ' }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social">
+          <i class="fa fa-phone fa-fw"></i>
+        </a>
+      </li>
+      {% endif %}
+      
+      {% if options.store_contact_phone_2 != blank %}
+       <li class="main-nav__menu-item">
+        <a href="tel:{{ options.store_contact_phone_2 | remove:'(' | remove:')' | remove:' ' }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social">
+          <i class="fa fa-whatsapp fa-fw"></i>
+        </a>
+      </li>
+      {% endif %}
+      <!--Custom phone-->
+      
       <li class="main-nav__menu-item">
         <a href="{{ social.facebook_url }}" class="main-nav__menu-item-anchor  main-nav__menu-item-anchor--social" title="{{ store.name }} {% t "en Facebook" %}" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
       </li>
       <!-- end .main-nav__menu-item -->
-      {% endif %}
+
+      
 
       {% if social.twitter_url != blank %}
       <li class="main-nav__menu-item">

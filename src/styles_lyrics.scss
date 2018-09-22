@@ -892,3 +892,122 @@ label[for="order_shipping_address_postal"]{
 input#order_shipping_address_postal{
   margin-top: 25px!important;
 }
+
+.banner-blog {
+  width: 100%;
+  height: 350px;
+  background: {
+    image: url('https://images.jumpseller.com/store/lyrics/page/95272//coverblog.jpg');
+    size: cover;
+    repeat: no-repeat;
+    position: left bottom;
+  }
+  @media #{$sm}{
+    height: 150px;
+  }
+  margin-bottom: 20px;
+}
+
+#blog-page {
+  h1.page-heading__title{
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .post-block {
+    .post-block__excerpt{
+      color: $black!important;
+    }
+    a.button.tiny.light-blue.radius.post-block__anchor{
+      background-color: $black!important;
+      background: $black!important;
+      color: $white;
+      opacity: 1;
+      @include animate;
+      i {
+        color: $white;
+      }
+      &:hover{
+        opacity: 1;
+        background-color: $black!important;
+        background: $black!important;
+        color: $white;
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+#category-container {
+  .page-heading {
+    h1.page-heading__title{
+      font-weight: 500;
+      margin-top: 60px;
+      text-transform: uppercase
+    }
+  }
+}
+
+#customer_login-container{
+  .customer-box {
+    margin-top: 40px;
+    h2.customer-box__heading-subtitle{
+      color: $black!important;
+    }
+    #credentials{
+      label {
+        color: $black!important;
+      }
+      input {
+        border: 1px solid ligthen(black, 10%)!important;
+        background: rgba($black, 0.125)!important;
+        background-color: rgba($black, 0.125)!important;
+        color: $black!important;
+      }
+      #submit_login{
+        background: $black!important;
+        background-color: $black!important;
+        color: $white!important;
+        @include animate;
+        &:hover {
+          background: lighten(black, 10%);
+          background-color: lighten(black, 10%);
+          color: $white!important;
+        }
+      }
+    }
+  }
+  .button.small.light-blue.radius {
+    background: $black!important;
+    background-color: $black!important;
+    color: $white!important;
+    @include animate;
+    &:hover {
+      background: lighten(black, 10%);
+      background-color: lighten(black, 10%);
+      color: $white!important;
+    }
+  }
+}
+
+#footer-subscribe{
+  background-color: lighten(black, 10%)!important;
+  background: lighten(black, 10%)!important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .footer-subscribe__field{
+    margin-bottom: 0px!important;
+  }
+}
+
+.webpay-logo{
+  width: 100%;
+  height: auto;
+}
+
+.testimonials-logos__block{
+  @media #{$sm}{
+    padding: 5px!important;
+  }
+}

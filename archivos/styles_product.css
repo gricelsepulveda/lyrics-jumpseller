@@ -97,7 +97,7 @@
         vertical-align: top;
       }
     .product-info__description {
-      font-family: "Open Sans", sans-serif !important;
+      font-family: "Lato", sans-serif !important;
       font-size: 1rem;
       color: #777777;
       margin-bottom: 1.25rem;
@@ -153,7 +153,7 @@
       margin-bottom: 1.25rem;
     }
     .product-form__availability-anchor {
-      font-family: "Raleway", sans-serif !important;
+      font-family: "Lato", sans-serif !important;
       font-size: 0.875rem;
       color: #777777;
       font-style: italic;
